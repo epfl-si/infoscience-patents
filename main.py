@@ -10,8 +10,6 @@ logger_infoscience = logging.getLogger('INFOSCIENCE')
 logger_epo = logging.getLogger('EPO')
 
 
-
-
 def valid_input_date(s):
     try:
         return datetime.datetime.strptime(s, "%Y-%m-%d")

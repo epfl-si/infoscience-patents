@@ -19,6 +19,11 @@ def add_logging_argument(parser):
     return parser
 
 
+class InfoFilter(logging.Filter):
+    def filter(self, rec):
+        return rec.levelno in (logging.DEBUG, logging.INFO)
+
+
 def set_logging_from_args(args):
     """
     Use --verbose and/or --debug from arguments to fix level of logging
@@ -38,7 +43,7 @@ def set_logging_from_args(args):
 
     h1 = logging.StreamHandler(sys.stdout)
     h1.setLevel(logging.DEBUG)
-    h1.addFilter(lambda record: record.levelno <= logging.INFO)
+    h1.addFilter(InfoFilter())
     h1.setFormatter(default_formatter)
     h2 = logging.StreamHandler()
     h2.setLevel(logging.WARNING)
