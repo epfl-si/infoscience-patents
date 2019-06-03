@@ -12,3 +12,7 @@ name = "pypi"
 [packages]
 
 mock = "*"
+requests = "*"
+oauthlib = "*"
+cacheout = "*"
+requests-oauthlib = "*"

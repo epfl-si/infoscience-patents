@@ -1,0 +1,15 @@
+{u'ops:world-patent-data': {u'@xmlns': {u'$': u'http://www.epo.org/exchange',
+   u'ops': u'http://ops.epo.org',
+   u'xlink': u'http://www.w3.org/1999/xlink'},
+  u'ops:biblio-search': {u'@total-result-count': u'1',
+   u'ops:query': {u'$': u'WO2007002167', u'@syntax': u'CQL'},
+   u'ops:range': {u'@begin': u'1', u'@end': u'25'},
+   u'ops:search-result': {u'ops:publication-reference': {u'@family-id': u'37595785',
+     u'@system': u'ops.epo.org',
+     u'document-id': {u'@document-id-type': u'docdb',
+      u'country': {u'$': u'WO'},
+      u'doc-number': {u'$': u'2007002167'},
+      u'kind': {u'$': u'A2'}}}}},
+  u'ops:meta': {u'@name': u'elapsed-time', u'@value': u'22'}}}
+  
+  

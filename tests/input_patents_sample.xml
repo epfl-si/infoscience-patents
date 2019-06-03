@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Search-Engine-Total-Number-Of-Results: 10 -->
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+<record>
+  <controlfield tag="001">265180</controlfield>
+  <controlfield tag="005">20190527113250.0</controlfield>
+  <datafield tag="013" ind1=" " ind2=" ">
+    <subfield code="a">EP0998482</subfield>
+    <subfield code="b">A1</subfield>
+  </datafield>
+  <datafield tag="037" ind1=" " ind2=" ">
+    <subfield code="a">PATENT</subfield>
+  </datafield>
+  <datafield tag="245" ind1=" " ind2=" ">
+    <subfield code="a">[TEST RECORD] Lorem ipsum PATENT</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="c">2019-04</subfield>
+  </datafield>
+  <datafield tag="269" ind1=" " ind2=" ">
+    <subfield code="a">2019-04</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">67</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Patents</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</subfield>
+  </datafield>
+  <datafield tag="542" ind1=" " ind2=" ">
+    <subfield code="f">CC BY</subfield>
+  </datafield>
+  <datafield tag="653" ind1="1" ind2=" ">
+    <subfield code="a">dolor</subfield>
+  </datafield>
+  <datafield tag="653" ind1="1" ind2=" ">
+    <subfield code="a">voluptate</subfield>
+  </datafield>
+  <datafield tag="653" ind1="1" ind2=" ">
+    <subfield code="a">laborum</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="0">263734</subfield>
+    <subfield code="a">Bianchi, Alessandra</subfield>
+  </datafield>
+  <datafield tag="710" ind1=" " ind2=" ">
+    <subfield code="a">Google Inc.</subfield>
+  </datafield>
+  <datafield tag="720" ind1=" " ind2="5">
+    <subfield code="a">EPFL</subfield>
+    <subfield code="e">"app."</subfield>
+  </datafield>
+  <datafield tag="720" ind1=" " ind2="5">
+    <subfield code="a">Google Inc.</subfield>
+    <subfield code="e">"app."</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">83516</subfield>
+    <subfield code="u">http://infoscience.epfl.ch/record/265180/files/Submitted.pdf</subfield>
+  </datafield>
+  <datafield tag="856" ind1="0" ind2=" ">
+    <subfield code="f">alessandra.bianchi@epfl.ch</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="1">
+    <subfield code="y">inventor's page</subfield>
+    <subfield code="u">https://people.epfl.ch/alessandra.bianchi?lang=en</subfield>
+  </datafield>
+  <datafield tag="909" ind1="C" ind2="0">
+    <subfield code="0">252778</subfield>
+    <subfield code="m">manon.velasco@epfl.ch</subfield>
+    <subfield code="p">PLACEBOLAB</subfield>
+    <subfield code="x">S20732</subfield>
+    <subfield code="z">Velasco, Manon</subfield>
+  </datafield>
+  <datafield tag="960" ind1=" " ind2=" ">
+    <subfield code="a">alessandra.bianchi@epfl.ch</subfield>
+  </datafield>
+  <datafield tag="961" ind1=" " ind2=" ">
+    <subfield code="a">fantin.reichler@epfl.ch</subfield>
+  </datafield>
+  <datafield tag="973" ind1=" " ind2=" ">
+    <subfield code="a">EPFL</subfield>
+  </datafield>
+  <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="a">PATENT</subfield>
+  </datafield>
+  <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">overwrite</subfield>
+  </datafield>
+</record>
+<record>
+  <controlfield tag="001">264825</controlfield>
+  <controlfield tag="005">20190331143725.0</controlfield>
+  <datafield tag="013" ind1=" " ind2=" ">
+    <subfield code="a">US9930523B2</subfield>
+    <subfield code="b">US</subfield>
+  </datafield>
+  <datafield tag="037" ind1=" " ind2=" ">
+    <subfield code="a">PATENT</subfield>
+  </datafield>
+  <datafield tag="245" ind1=" " ind2=" ">
+    <subfield code="a">Method and device for proving his identity</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="c">2018</subfield>
+  </datafield>
+  <datafield tag="269" ind1=" " ind2=" ">
+    <subfield code="a">2018</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Patents</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">The invention is related to a method allowing a prover holding a secret key (x) to prove its identity to a verifier and to prove to this verifier that he is within a predetermined distance of this verifier, said method comprising an initialization phase during which: the prover picks a first nonce (Np) and communicates this first nonce to the verifier; the verifier picks a first random vector (a), a leak function (Lμ), and a second nonce (Nv); the verifier uses said leak function (Lμ) to compute a modified secret (x′) depending on the leak (Lμ(x)) of said secret; the verifier transmits to said prover said leak function and said second nonce; the prover retrieves said first random vector and said modified secret, wherein said first random vector and said modified secret are used by said prover for computing responses (ri) to challenges (ci).</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="0">241950</subfield>
+    <subfield code="a">Vaudenay, Serge</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="a">Carlson, Ioana C.</subfield>
+  </datafield>
+  <datafield tag="856" ind1="0" ind2=" ">
+    <subfield code="f">fatih.balli@epfl.ch</subfield>
+  </datafield>
+  <datafield tag="909" ind1="C" ind2="0">
+    <subfield code="0">252183</subfield>
+    <subfield code="m">fatih.balli@epfl.ch</subfield>
+    <subfield code="p">LASEC</subfield>
+    <subfield code="x">U10433</subfield>
+    <subfield code="z">Grolimund, Raphael</subfield>
+  </datafield>
+  <datafield tag="909" ind1="C" ind2="O">
+    <subfield code="o">oai:infoscience.epfl.ch:264825</subfield>
+    <subfield code="p">IC</subfield>
+  </datafield>
+  <datafield tag="960" ind1=" " ind2=" ">
+    <subfield code="a">fatih.balli@epfl.ch</subfield>
+  </datafield>
+  <datafield tag="961" ind1=" " ind2=" ">
+    <subfield code="a">fantin.reichler@epfl.ch</subfield>
+  </datafield>
+  <datafield tag="973" ind1=" " ind2=" ">
+    <subfield code="a">EPFL</subfield>
+  </datafield>
+  <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="a">PATENT</subfield>
+  </datafield>
+  <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">overwrite</subfield>
+  </datafield>
+</record>
+</collection>

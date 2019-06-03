@@ -1,0 +1,493 @@
+status;id;n_013;original;013__a;013__b;013__c;013__d;260__c;n_500;500__a
+TO_UPDATE;162;1;WO9829819-A;WO9829819;WO;A;;1999;1;European Patent n. EP946919A1
+TO_UPDATE;163;1;US6175604-B1;US6175604;US;B1;;1998;0;
+ERROR;164;0;;;;;;1998;1;US Patent Application
+TO_UPDATE;229;1;US6611955-B1;US6611955;US;B1;;1999;1;US Patent
+ERROR;295;0;;;;;;1999;1;Application filed
+ERROR;297;0;;;;;;1998;0;
+ERROR;299;0;;;;;;1998;0;
+ERROR;332;0;;;;;;1998;1;US patent application filed
+ERROR;349;0;;;;;;2000;1;International Patent Application
+TO_UPDATE;350;1;WO200184761-A1;WO0184761;WO;A1;2001;2001;1;International Patent Application
+TO_UPDATE;380;1;WO200203091-A;WO0203091;WO;A;2002;2001;1;US Patent filed July 2, 2001
+TO_UPDATE;395;1;US2003163729-A1;US2003163729;US;A1;2003;2002;1;US Patent Application
+TO_UPDATE;421;1;US2002136202-A1;US2002136202;US;A1;2002;2000;1;European Patent Office Application No: 00114246.2 NOVELTY - A packet processing unit is selected among several packet processing units (PPU 11-PPU M) in response to entry of a data packet at an input port (114) of a router (110). A request is forwarded to the selected packet processing unit for acquiring information about the output port to which the packet is to be forwarded. USE - For processing data packets in switched communication network. ADVANTAGE - Resource utilization is optimized resulting in higher packet processing speed and lower power requirements.
+TO_UPDATE;422;1;WO2004002109-A1;WO2004002109;WO;A1;2004;2002;1;European Patent Office Application No: 02014116.4
+TO_UPDATE;28505;1;EP626760-A,;EP626760;EP;A;;1996;1;United States Patent
+TO_UPDATE;28537;1;CH688425-A5;CH688425;CH;A5;;1997;1;No CH 688 425
+TO_UPDATE;28679;1;EP1246052-A;EP1246052;EP;A;;2001;1;EPFL, Europe, application No 01201221.7 Electro-optic flexible touch display controlled by programmable logic circuits, uses several distinct modules connected together to form a display
+TO_UPDATE;28783;1;WO200154053-A;WO0154053;WO;A;2001;2000;0;
+ERROR;29421;1;CH-96-10763;;;;;1996;0;
+ERROR;29438;1;CH-1752/96;;;;;1996;1;Brevet suisse 1752/96 PCT Application no. EP97/03817 filed 15 July 97
+ERROR;29460;1;EP97/05495;;;;;1997;0;
+TO_UPDATE;29468;1;WO9802237-A;WO9802237;WO;A;;1997;1;Brevet européen PCT Application No EP/97/03817
+TO_UPDATE;29513;1;PCT/EP98/06630;PCT/EP98/06630;;;;1999;0;
+TO_UPDATE;29514;1;WO200071178-A;WO0071178;WO;A;2000;1999;1;Patent Application CH 0935/99
+TO_UPDATE;29609;1;WO2003068673-A;WO03068673;WO;A;2003;2003;1;PCT Int. Appl. 15 p.
+ERROR;33739;1;P-26-526-US;;;;;2004;0;
+TO_UPDATE;52859;1;US 5369837;US5369837;US;;;1994;1;United States Patent. 6 December 1994. Company: Swatch - Mercedes-Benz. http://freepatentsonline.com/5369837.html
+TO_UPDATE;52860;1;EP0686822;EP0686822;EP;;;1995;1;European Patent. 95108414.4 26 July 1995. Company: Swatch - Mercedes-Benz. http://v3.espacenet.com/origdoc?DB=EPODOC&IDX=US5667030&F=0&RPN=EP0686822&DOC=cca34af1984f0ccb884700b9823ae1b158
+TO_UPDATE;52861;1;EP0668177;EP0668177;EP;;;1995;1;European Patent. 95101903.3 11 April 1995. Company: Swatch - Mercedes-Benz. http://v3.espacenet.com/origdoc?DB=EPODOC&IDX=US5735338&F=0&RPN=EP0668177&DOC=cca34af1984f0cc98840febc853de4b45b
+TO_UPDATE;52862;1;EP0645267;EP0645267;EP;;;1994;1;European Patent. 94114524.5 9 Nov. 1994. Company: Swatch - Mercedes-Benz. http://v3.espacenet.com/origdoc?DB=EPODOC&IDX=PL305104&F=0&RPN=EP0645267&DOC=cca34af1984f0cc7833cf9b77f37deae55
+TO_UPDATE;52863;1;EP0611675;EP0611675;EP;;;1994;1;European Patent. 94101768.3 7 April 1994. Company: Swatch - Mercedes-Benz. http://v3.espacenet.com/origdoc?DB=EPODOC&IDX=PL302236&F=0&RPN=EP0611675&DOC=cca34af1984f0cc47c39f7b37c34dbab52
+TO_UPDATE;52864;1;EP0529389;EP0529389;EP;;;1992;1;European Patent. 92113608.1 6 Oct. 1992. Company: Swatch - Mercedes-Benz. http://v3.espacenet.com/textdoc?DB=EPODOC&IDX=MD1326&F=0
+TO_UPDATE;52865;1;EP0566944;EP0566944;EP;;;1993;1;European Patent. 93105915.8 8 June 1993. Company: Swatch - Mercedes-Benz. http://v3.espacenet.com/textdoc?DB=EPODOC&IDX=ES2085068T&F=0
+TO_UPDATE;52882;1;US 5735338;US5735338;US;;;1998;1;United States Patent. 5735338. Company: Swatch - Mercedes-Benz http://freepatentsonline.com/5735338.html
+TO_UPDATE;52886;1;US 5486019;US5486019;US;;;1996;1;United States Patent.  January, 23, 1996. Company: Swatch - Mercedes-Benz.  http://freepatentsonline.com/5486019.html
+TO_UPDATE;52887;1;US 5667030;US5667030;US;;;1997;1;United States Patent. September 16, 1997. Company: Swatch - Mercedes-Benz. http://freepatentsonline.com/5667030.html
+TO_UPDATE;53107;1;US2007162902-A1;US2007162902;US;A1;2007;2003;0;
+TO_UPDATE;53122;1;PCT/EP2005/051730;PCT/EP2005/051730;;;;2004;0;
+ERROR;55761;0;;;;;;2000;1;European patent in progress. Application N°: 00810322.8-2201
+ERROR;64375;1;US-11/260,390;;;;;2005;0;
+ERROR;77931;1;2001042220;;;;;2001;0;
+ERROR;78303;1;2003000647;;;;;2003;0;
+ERROR;78355;1;99-19923274 19923274;;;;;2000;0;
+ERROR;78583;1;2004-EP12220 2005054254;;;;;2005;0;
+ERROR;78733;1;75-2513746-2513746;;;;;1976;0;
+ERROR;78790;1;79-810174-13257;;;;;1980;0;
+ERROR;78820;1;80-3033693-3033693;;;;;1981;0;
+ERROR;78823;1;80-3032303-3032303;;;;;1981;0;
+ERROR;78827;1;80-3031414-3031414;;;;;1981;0;
+ERROR;78850;1;81-13248-2486705;;;;;1982;0;
+ERROR;78859;1;81-13247-2486511;;;;;1982;0;
+ERROR;78865;1;82-810037-57669;;;;;1982;0;
+ERROR;78874;1;82-810217-66540;;;;;1982;0;
+ERROR;78895;1;82-304467-73639;;;;;1983;0;
+ERROR;78899;1;78-6729-634280;;;;;1983;0;
+ERROR;78910;1;81-2147-25912;;;;;1983;0;
+ERROR;78983;1;85-CH66-8505119;;;;;1985;0;
+ERROR;79102;1;88-AT70-8902418;;;;;1989;0;
+ERROR;79108;1;88-204172-4847231;;;;;1989;0;
+ERROR;79163;1;91-EP734-9116719;;;;;1991;0;
+ERROR;79202;1;92-CH33-9214741;;;;;1992;0;
+ERROR;79207;1;92-CH34-9214836;;;;;1992;0;
+ERROR;79212;1;91-7404-2677766;;;;;1992;0;
+ERROR;79215;1;91-4118626-4118626;;;;;1992;0;
+ERROR;79216;1;91-113767-472124;;;;;1992;0;
+ERROR;79218;1;93-CH68-9319479;;;;;1993;0;
+ERROR;79235;1;88-256912-5223634;;;;;1993;0;
+ERROR;79237;1;92-4207659-4207659;;;;;1993;0;
+ERROR;79262;1;93-EP2221-9404497;;;;;1994;0;
+ERROR;79265;1;92-9507-2694451;;;;;1994;0;
+ERROR;79295;1;93-119597-602488;;;;;1994;0;
+ERROR;79307;1;95-100174-664570;;;;;1995;0;
+ERROR;79311;1;94-IB88-9529924;;;;;1995;0;
+ERROR;79341;1;94-1511-686571;;;;;1996;0;
+ERROR;79355;1;95-119462-718288;;;;;1996;0;
+ERROR;79402;1;97-CH104-9735227;;;;;1997;0;
+ERROR;79419;1;96-19646411-19646411;;;;;1998;0;
+ERROR;79420;1;97-19711713-19711713;;;;;1998;0;
+ERROR;79430;1;98-IB680-9850393;;;;;1998;0;
+ERROR;79460;1;99-EP3261-9959218;;;;;1999;0;
+ERROR;79461;1;98-GB1872-9903868;;;;;1999;0;
+ERROR;79478;1;98-CH324-9907028;;;;;1999;0;
+ERROR;79530;1;2000-EP6350-2001002624;;;;;2001;0;
+ERROR;79559;1;2000-810681-1176646;;;;;2002;0;
+ERROR;79568;1;2000-810691-1175938;;;;;2002;0;
+ERROR;79569;1;2000-810839-1188711;;;;;2002;0;
+ERROR;79574;1;2001-810286-1244168;;;;;2002;0;
+ERROR;79576;1;2000-CH358-2002002232;;;;;2002;0;
+ERROR;79583;1; 2000-EP11510-2002040073;;;;;2002;0;
+ERROR;79599;1;2001-810752-1282180;;;;;2003;0;
+ERROR;79600;1;2003-417659-2003196692;;;;;2003;0;
+ERROR;79602;1;2003-JP5426-2003098731;;;;;2003;0;
+ERROR;79609;1;2001-810672-1274148;;;;;2003;0;
+ERROR;79636;1;2002-372351-2004206945;;;;;2004;0;
+ERROR;79653;1;2003-405306-1473745;;;;;2004;0;
+ERROR;79673;1;2004-885224-2005006714;;;;;2005;0;
+ERROR;79684;1;2004-5751-2412119;;;;;2005;0;
+ERROR;79708;1;2004-405484-1622178;;;;;2006;0;
+ERROR;79709;1; US. Patent Application Nr.: 09/666529;;;;;2000;0;
+ERROR;79731;1;74-2442105 2442105;;;;;1975;0;
+ERROR;79732;1;74-2438210 2438210;;;;;1975;0;
+ERROR;79733;1;74-2442106 2442106;;;;;1975;0;
+ERROR;79735;1;73-13025 586666;;;;;1977;0;
+ERROR;79741;1;82-101587 60437;;;;;1982;0;
+ERROR;79747;1;83-CH145 8402522;;;;;1984;0;
+ERROR;79751;1;84-3426114 3426114;;;;;1985;0;
+ERROR;79755;1;86-810463 221022;;;;;1987;0;
+ERROR;79805;1;97-FR836 9743465;;;;;1997;0;
+ERROR;79847;1;2000-810147 1031645;;;;;2000;0;
+ERROR;79861;1;2000-EP9712 2001025508;;;;;2001;0;
+ERROR;79919;1;2004-GR6 2005072860;;;;;2005;0;
+ERROR;80266;1;88-198975 4855593;;;;;1989;0;
+ERROR;80280;1;89-107303 394504;;;;;1990;0;
+ERROR;80283;1;88-3839820 3839820;;;;;1990;0;
+ERROR;80288;1;89-3940633 3940633;;;;;1991;0;
+ERROR;80298;1;91-108878 515718;;;;;1992;0;
+ERROR;80302;1;90-EP1131 9201235;;;;;1992;0;
+ERROR;80324;1;92-120930 601229;;;;;1994;0;
+ERROR;80335;1;94-104031 672916;;;;;1995;0;
+ERROR;80395;1;99-119845 1098204;;;;;2001;0;
+ERROR;80630;1;98-19815901 19815901;;;;;1999;0;
+ERROR;80635;1;98-EP5215 9909044;;;;;1999;0;
+ERROR;80747;1;93-3816 686980;;;;;1996;0;
+ERROR;80789;1;2000-EP4120 2000073485;;;;;2000;0;
+ERROR;80984;1;42734;;;;;1966;0;
+ERROR;81016;1;93-EP976 9321528;;;;;1993;0;
+ERROR;81033;1;96-IB496 9638726;;;;;1996;0;
+ERROR;81070;1;97-IB920 9905509;;;;;1999;0;
+ERROR;81077;1;2000-EP4491 2000073798;;;;;2000;0;
+ERROR;81087;1;2001-CH239 2001079820;;;;;2001;0;
+ERROR;81092;1;2001-EP14134 2002046766;;;;;2002;0;
+ERROR;81097;1;2002-EP14489 2003052136;;;;;2003;0;
+ERROR;81098;1;2002-229863 2003098248;;;;;2003;0;
+ERROR;81132;1;2005-IB1479 2005121226;;;;;2005;0;
+ERROR;81136;1;2005-EP8510 2006013109;;;;;2006;0;
+ERROR;81141;1;76-195738 128189;;;;;1977;0;
+ERROR;81142;1;76-195736 127729;;;;;1977;0;
+ERROR;81144;1;79-211566 142345;;;;;1980;0;
+ERROR;81145;1;80-222918 152287;;;;;1981;0;
+ERROR;81146;1;80-223799 153002;;;;;1981;0;
+ERROR;81147;1;77-200557 151073;;;;;1981;0;
+ERROR;81148;1;81-227046 156979;;;;;1982;0;
+ERROR;81150;1;82-237128 203305;;;;;1983;0;
+ERROR;81151;1;81-233614 200395;;;;;1983;0;
+ERROR;81152;1;82-241934 205690;;;;;1984;0;
+ERROR;81154;1;82-238888 207583;;;;;1984;0;
+ERROR;81155;1;83-253020 217193;;;;;1985;0;
+ERROR;81156;1;82-242765 217195;;;;;1985;0;
+ERROR;81160;1;87-3733587 3733587;;;;;1988;0;
+ERROR;81161;1;87-114585 264710;;;;;1988;0;
+ERROR;81165;1;86-295032 276856;;;;;1990;0;
+ERROR;81169;1;86-295024 292218;;;;;1991;0;
+ERROR;81170;1;86-295025 292219;;;;;1991;0;
+ERROR;81174;1;86-295034 292641;;;;;1991;0;
+ERROR;81175;1;86-295026 292642;;;;;1991;0;
+ERROR;81176;1;87-304590 290901;;;;;1991;0;
+ERROR;81249;1;99-IB455 9947574;;;;;1999;0;
+ERROR;81267;1;2001-US18101 2001092584;;;;;2001;0;
+ERROR;81275;1;99-406031 6294622;;;;;2001;0;
+ERROR;81283;1;2002-97470 2002137858;;;;;2002;0;
+ERROR;81284;1;2002-97786 2002132948;;;;;2002;0;
+ERROR;81335;1;99-19903895 19903895;;;;;2000;0;
+ERROR;81345;1;2002-GB1636 2002083937;;;;;2002;0;
+ERROR;81370;1;2003-EP10859 2004031404;;;;;2004;0;
+ERROR;81374;1;2004-IB1733 2004104588;;;;;2004;0;
+ERROR;81375;1;2003-EP10889 2004031405;;;;;2004;0;
+ERROR;81378;1;2005-EP50900 2005085470;;;;;2005;0;
+ERROR;81382;1;2005-EP50899 2005085431;;;;;2005;0;
+ERROR;81384;1;2004-EP11289 2005038050;;;;;2005;0;
+ERROR;81445;1;1279678;;;;;1968;7;"CAN 70:37429, 25, Noncondensed Aromatic Compounds, Patent, written in German., 19681010, 588-72-7P; 588-73-8P; 766-90-5P; 768-49-0P; 873-66-5P; 4110-77-4P; 4604-28-8P; 6911-81-5P; 7302-03-6P; 21370-50-3P; 21370-53-6P; 21370-55-8P; 21370-56-9P; 21370-57-0P; 21370-59-2P; 21453-89-4P; 21477-44-1P Role: SPN (Synthetic preparation), PREP (Preparation) (prepn. of)"
+ERROR;81447;1;1270545;;;;;1968;7;"CAN 69:86586, 25, Noncondensed Aromatic Compounds, Patent, written in German., 19680620, 103-30-0P; 768-00-3P; 873-66-5P; 1005-64-7P; 6111-82-6P; 13389-42-9P; 14850-23-8P; 15192-80-0P Role: IMF (Industrial manufacture), PREP (Preparation) (manuf. of)"
+ERROR;81576;1;85-810234 166683;;;;;1986;12;"CAN 105:97240, 26-2, Biomolecules and Their Synthetic Analogs, Patent, written in German., 19860102, 38568-98-8P; 103841-93-6P; 103841-94-7P; 103841-95-8P; 103841-96-9P Role: SPN (Synthetic preparation), PREP (Preparation) (prepn. of, as pheromone pesticide for Laspyresia pomonella); 33956-49-9 Role: PROC (Process) (substitution of, with chlorotrialkylsilanes, silyl derivs. from); 13465-78-6D Role: PROC (Process) (substitution of, with dodecadienol, dodecadienyloxysilane derivs. from), Designated States R: AT, BE, CH, DE, FR, GB, IT, LI, NL., A2, CH, 84-2572, 19840525"
+ERROR;81786;1;2005-EP6065 2006002731;;;;;2006;11;"CAN 144:129105, 29-7, Organometallic and Organometalloidal Compounds, Patent, written in English., 20060112, 10049-08-8 (Ruthenium trichloride); 35138-22-8; 37366-09-9; 52462-29-0 Role: CAT (Catalyst use), USES (Uses) (prepn. of asym. substituted biaryldiphosphines and their use as cocatalysts for transition metal catalyzed enantioselective hydrogenation); 871707-42-5P; 871707-44-7P Role: CAT (Catalyst use), RCT (Reactant), SPN (Synthetic preparation), PREP (Preparation), USES (Uses), RACT (Reactant or reagent) (prepn. of asym. substituted biaryldiphosphines and their use as cocatalysts for transition metal catalyzed enantioselective hydrogenation); 871915-66-1P; 871915-67-2P; 871915-68-3P; 871915-69-4P Role: CAT (Catalyst use), SPN (Synthetic preparation), PREP (Preparation), USES (Uses) (prepn. of asym. substituted biaryldiphosphines and their use as cocatalysts for transition metal catalyzed enantioselective hydrogenation); 100-46-9 (Benzylamine); 108-36-1 (1,3-Dibromobenzene); 141-97-9 (Ethyl acetoacetate); 617-52-7 (Dimethyl itaconate); 638-07-3 (Ethyl 4-chloro-3-oxobutyrate); 1079-66-9 (Chlorodiphenylphosphine); 5469-45-4; 14428-98-9; 16523-54-9 (Chlorodicyclohexylphosphine); 52386-78-4 Role: RCT (Reactant), RACT (Reactant or reagent) (prepn. of asym. substituted biaryldiphosphines and their use as cocatalysts for transition metal catalyzed enantioselective hydrogenation); 19821-80-8P (1,3-Dibromo-2-iodobenzene); 97038-96-5P; 507241-82-9P; 873110-78-2P; 873110-79-3P Role: RCT (Reactant), SPN (Synthetic preparation), PREP (Preparation), RACT (Reactant or reagent) (prepn. of asym. substituted biaryldiphosphines and their use as cocatalysts for transition metal catalyzed enantioselective hydrogenation); 152578-86-4 Role: RGT (Reagent), RACT (Reactant or reagent) (prepn. of asym. substituted biaryldiphosphines and their use as cocatalysts for transition metal catalyzed enantioselective hydrogenation); 2018-61-3P; 3618-96-0P; 17480-69-2P; 22644-27-5P; 24915-95-5P; 86728-85-0P Role: SPN (Synthetic preparation), PREP (Preparation) (prepn. of asym. substituted biaryldiphosphines and their use as cocatalysts for transition metal catalyzed enantioselective hydrogenation), A1, EP, 2004-14908, 20040625"
+ERROR;81787;1;2005-EP6064 2006002730;;;;;2006;11;"CAN 144:129104, 29-7, Organometallic and Organometalloidal Compounds, Patent, written in English., 20060112, 10049-08-8 (Ruthenium trichloride); 12112-67-3; 35138-22-8; 37366-09-9; 52462-29-0 Role: CAT (Catalyst use), USES (Uses) (prepn. of asym. substituted biaryldiphosphines as ligands for transition metal catalyzed enantioselective hydrogenation); 871707-42-5P; 871707-44-7P Role: CAT (Catalyst use), RCT (Reactant), SPN (Synthetic preparation), PREP (Preparation), USES (Uses), RACT (Reactant or reagent) (prepn. of asym. substituted biaryldiphosphines as ligands for transition metal catalyzed enantioselective hydrogenation); 871915-66-1P; 871915-67-2P; 871915-68-3P; 871915-69-4P; 871915-70-7P; 871915-71-8P Role: CAT (Catalyst use), SPN (Synthetic preparation), PREP (Preparation), USES (Uses) (prepn. of asym. substituted biaryldiphosphines as ligands for transition metal catalyzed enantioselective hydrogenation); 100-46-9 (Benzylamine); 108-36-1 (1,3-Dibromobenzene); 141-97-9 (Ethyl acetoacetate); 617-52-7 (Dimethyl itaconate); 638-07-3 (Ethyl 4-chloro-3-oxobutyrate); 1079-66-9 (Chlorodiphenylphosphine); 5469-45-4; 14428-98-9; 16523-54-9 (Chlorodicyclohexylphosphine); 52386-78-4 Role: RCT (Reactant), RACT (Reactant or reagent) (prepn. of asym. substituted biaryldiphosphines as ligands for transition metal catalyzed enantioselective hydrogenation); 19821-80-8P (1,3-Dibromo-2-iodobenzene); 97038-96-5P (2,2',6,6'-Tetrabromo-1,1'-biphenyl); 871707-37-8P; 871707-41-4P; 871707-43-6P; 873110-78-2P; 873110-79-3P Role: RCT (Reactant), SPN (Synthetic preparation), PREP (Preparation), RACT (Reactant or reagent) (prepn. of asym. substituted biaryldiphosphines as ligands for transition metal catalyzed enantioselective hydrogenation); 152578-86-4 Role: RGT (Reagent), RACT (Reactant or reagent) (prepn. of asym. substituted biaryldiphosphines as ligands for transition metal catalyzed enantioselective hydrogenation); 2018-61-3P; 3618-96-0P; 10172-89-1P; 17480-69-2P; 22644-27-5P; 24915-95-5P; 38235-77-7P; 56816-01-4P; 86728-85-0P; 90866-33-4P Role: SPN (Synthetic preparation), PREP (Preparation) (prepn. of asym. substituted biaryldiphosphines as ligands for transition metal catalyzed enantioselective hydrogenation), A1, EP, 2004-14909, 20040625"
+TO_UPDATE;83859;1;PCT/CH03/00156;PCT/CH03/00156;;;;2003;0;
+ERROR;84215;1;71-2130606 2130606;;;;;1973;6;CAN 78:113337, 48-8, Unit Operations and Processes, Patent, written in German., 19730111
+ERROR;84220;1;75-2505705 2505705;;;;;1976;7;"CAN 86:120782, 23-12, Aliphatic Compounds, Patent, written in German., 19761202, 111-30-8P; 870-72-4P Role: SPN (Synthetic preparation), PREP (Preparation) (prepn. of); 50-00-0 Role: RCT (Reactant), RACT (Reactant or reagent) (sulfonation of, hydroxymethanesulfonate from)"
+ERROR;84222;1;75-2545845 2545845;;;;;1977;7;"CAN 87:38924, 23-17, Aliphatic Compounds, Patent, written in German., 19770428, 74-85-1 Role: RCT (Reactant), RACT (Reactant or reagent) (addn. reaction of, with acetic acid, catalysts for); 64-19-7 Role: RCT (Reactant), RACT (Reactant or reagent) (addn. reaction of, with ethylene, catalysts for); 64-67-5; 7664-93-9 Role: CAT (Catalyst use), USES (Uses) (catalysts from silica and, for addn. of ethylene to acetic acid); 141-78-6P Role: PREP (Preparation) (manuf. of, by ethylene addn. to acetic acid, catalysts for)"
+ERROR;84225;1;76-2605991 2605991;;;;;1977;1;"CAN 87:167861 27-2 Heterocyclic Compounds (One Hetero Atom) Patent written in German. 19770825 74-85-1 Role: RCT (Reactant), RACT (Reactant or reagent) (oxidn. of, to ethylene oxide, selectivity increase in); 75-21-8P Role: SPN (Synthetic preparation), PREP (Preparation) (prepn. of, by ethylene oxidn., selectivity increase in)"
+ERROR;84227;1;76-2618021 2618021;;;;;1977;7;"CAN 88:50298, 23-16, Aliphatic Compounds, Patent, written in German., 19771110, 1333-82-0 Role: RCT (Reactant), RACT (Reactant or reagent) (acetic acid purifn. by distn. from aq. soln. of); 64-19-7P Role: PUR (Purification or recovery), PREP (Preparation) (purifn. of, by distn. from aq. solns. with chromic acid)"
+ERROR;84228;1;75-2542127 2542127;;;;;1977;7;"CAN 87:41299, 49-2, Industrial Inorganic Chemicals, Patent, written in German., 19770331, 7446-09-5 Role: REM (Removal or disposal), PROC (Process) (removal of, from hydrochloric acid, app. for); 7647-01-0P Role: PREP (Preparation) (sulfur dioxide removal from, app. for)"
+ERROR;84229;1;77-2700435 2700435;;;;;1978;7;"CAN 89:168299, 59-2, Air Pollution and Industrial Hygiene, Patent, written in German., 19780713, 17778-88-0 Role: RCT (Reactant), RACT (Reactant or reagent) (in redn. of nitrogen oxide in plasma jet); 11104-93-1 Role: REM (Removal or disposal), PROC (Process) (removal of, from waste gases, redn. with atm. nitrogen in plasma jet in)"
+ERROR;84230;1;77-2730011 2730011;;;;;1979;7;"CAN 90:189237, 49-2, Industrial Inorganic Chemicals, Patent, written in German., 19790118, 7790-94-5P Role: IMF (Industrial manufacture), PREP (Preparation) (manuf. of, app. for); 7446-11-9 Role: RCT (Reactant), RACT (Reactant or reagent) (reaction of, with hydrochloric acid, app. for); 7647-01-0P Role: RCT (Reactant), PREP (Preparation), RACT (Reactant or reagent) (reaction of, with sulfur trioxide, app. for)"
+ERROR;84231;1;77-2734573 2734573;;;;;1979;7;CAN 90:209400, 59-2, Air Pollution and Industrial Hygiene, Patent, written in German., 19790208, 75-44-5 Role: RCT (Reactant), RACT (Reactant or reagent) (hydrolysis of, in water, in waste gas purifn.)
+ERROR;84240;1;81-106614 70330;;;;;1983;11;CAN 98:217758, 47-3, Apparatus and Plant Equipment, Patent, written in German., 19830126, Designated States R: AT, BE, CH, DE, FR, GB, IT, LI, LU, NL, SE., A2, CH, 81-4707, 19810717
+ERROR;84241;1;82-110446 79595;;;;;1983;12;"CAN 99:86901, 17-6, Food and Feed Chemistry, Patent, written in French., 19830525, 111-30-8; 7631-86-9; 9012-76-4 Role: BIOL (Biological study) (enzyme immobilization by, in food manuf.); 9001-57-4; 9002-07-7; 9031-11-2 Role: PROC (Process) (immobilization of, in food manuf.), Designated States R: BE, DE, FR, GB, IT, NL, SE., A1, CH, 81-7375, 19811117"
+ERROR;84246;1;83-103946 96201;;;;;1983;12;CAN 100:86343, 35-9, Chemistry of Synthetic High Polymers, Patent, written in German., 19831221, 9003-53-6P Role: IMF (Industrial manufacture), PREP (Preparation) (manuf. of, by continuous bulk polymn., app. for), Designated States R: AT, BE, CH, DE, FR, GB, IT, LI, LU, NL, SE., A1, CH, 82-3410, 19820603
+ERROR;84270;1;87-3719055 3719055;;;;;1988;8;"CAN 111:38869, 23-14, Aliphatic Compounds, Patent, written in German., 19881215, 67-56-1 (Methanol) Role: RCT (Reactant), RACT (Reactant or reagent) (dehydrogenation of, catalytic, formaldehyde from); 50-00-0P (Formaldehyde) Role: SPN (Synthetic preparation), PREP (Preparation) (prepn. of, by catalytic dehydrogenation of methanol), A1"
+ERROR;84271;1;88-108653 294684;;;;;1988;12;"CAN 110:193565, 35-2, Chemistry of Synthetic High Polymers, Patent, written in German., 19881214, 7440-23-5 (Sodium) Role: CAT (Catalyst use), USES (Uses) (catalysts, contg. indium, for methanol dehydrogenation in formaldehyde manuf.); 13770-61-1 Role: CAT (Catalyst use), USES (Uses) (catalysts, contg. sodium tetraborate, for methanol dehydrogenation in formaldehyde manuf.); 7440-74-6 (Indium) Role: CAT (Catalyst use), USES (Uses) (catalysts, contg. sodium, for methanol dehydrogenation in formaldehyde manuf.); 144-55-8 (Sodium hydrogen carbonate); 497-19-8 (Sodium carbonate); 1330-43-4 (Sodium tetraborate); 7631-95-0 (Sodium molybdate); 7632-05-5 (Sodium phosphate); 7757-82-6 (Sodium sulfate) Role: CAT (Catalyst use), USES (Uses) (catalysts, for methanol dehydrogenation in formaldehyde manuf.); 1312-43-2 (Indium oxide) Role: CAT (Catalyst use), USES (Uses) (catalysts, with sodium carbonate, for methanol dehydrogenation in formaldehyde manuf.); 67-56-1 (Methanol) Role: RCT (Reactant), RACT (Reactant or reagent) (dehydrogenation of, formaldehyde from, catalysts for); 50-00-0P (Formaldehyde) Role: IMF (Industrial manufacture), PREP (Preparation) (manuf. of, by methanol dehydrogenation, catalysts for), Designated States R: BE, CH, DE, ES, FR, GB, IT, LI, NL., A2, DE, 87-3719055, 19870606"
+ERROR;84305;1;93-104638 566877;;;;;1993;12;"CAN 119:269183, 16-2, Fermentation and Bioindustrial Chemistry, Patent, written in French., 19931027, 9001-92-7 (Protease) Role: BIOL (Biological study) (alk., whey proteins hydrolysis with, app. for); 8049-47-6 (Pancreatin); 9002-07-7 (Trypsin); 9004-07-3 (Chymotrypsin) Role: BIOL (Biological study) (protein hydrolysis with, app. for), Designated States R: AT, BE, CH, DE, DK, ES, FR, GB, GR, IE, IT, LI, LU, NL, PT, SE., A2, CH, 92-1160, 19920409"
+ERROR;84380;1;99-810305 1044935;;;;;2000;9;"CAN 133:312622, 57-1, Ceramics, Patent, written in English., 20001018, 7440-44-0 (Carbon) Role: TEM (Technical or engineered material use), USES (Uses) (active material; manuf. of low wt. resistant porous glass fibers by leaching aluminoborosilicate glass fibers and their applications); 78-10-4; 2031-67-6 (Methyltriethoxysilane); 7664-93-9 (Sulfuric acid); 7784-27-2 (Aluminum nitrate nonahydrate); 7789-02-8; 10031-43-3; 13825-74-6; 13986-27-1; 14285-63-3 Role: NUU (Other use, unclassified), PEP (Physical, engineering or chemical process), TEM (Technical or engineered material use), PROC (Process), USES (Uses) (coating precursor; manuf. of low wt. resistant porous glass fibers modified by metal oxides); 1308-38-9P (Chromium oxide (Cr2O3); 1317-38-0P (Copper oxide (CuO); 1344-28-1P (Aluminum oxide (Al2O3); 7631-86-9P (Silica); 13463-67-7P (Titania) Role: DEV (Device component use), SPN (Synthetic preparation), TEM (Technical or engineered material use), PREP (Preparation), USES (Uses) (coating; manuf. of low wt. resistant porous glass fibers modified by metal oxides); 74-98-6 (Propane) Role: NUU (Other use, unclassified), PEP (Physical, engineering or chemical process), PROC (Process), USES (Uses) (complete oxidn.; manuf. of glass fiber catalysts and their applications); 7440-06-4 (Platinum); 7440-57-5 (Gold) Role: MOA (Modifier or additive use), USES (Uses) (deposited on porous fiber, catalyst; manuf. of low wt. resistant porous glass fibers by leaching aluminoborosilicate glass fibers and their applications); 108-95-2 (Phenol) Role: PEP (Physical, engineering or chemical process), PROC (Process) (hydroxylation; manuf. of glass fiber catalysts and their applications); 1314-62-1 (Vanadium oxide (V2O5) Role: MOA (Modifier or additive use), USES (Uses) (in coating; manuf. of low wt. resistant porous glass fibers by leaching aluminoborosilicate glass fibers and their applications); 7647-01-0 (Hydrochloric acid) Role: NUU (Other use, unclassified), USES (Uses) (leaching soln.; manuf. of low wt. resistant porous glass fibers by leaching aluminoborosilicate glass fibers and their applications); 7647-10-1 (Palladium chloride (PdCl2); 16941-12-1 (Hydrogen chloroplatinate (H2PtCl6) Role: PEP (Physical, engineering or chemical process), TEM (Technical or engineered material use), PROC (Process), USES (Uses) (precursors; manuf. of low wt. resistant porous glass fibers by leaching aluminoborosilicate glass fibers and their applications), Designated States R: AT, BE, CH, DE, DK, ES, FR, GB, GR, IT, LI, LU, NL, SE, MC, PT, IE, SI, LT, LV, FI, RO., A1"
+ERROR;84409;1;2000-810512 1163952;;;;;2001;9;"CAN 136:39283, 47-3, Apparatus and Plant Equipment, Patent, written in German., 20011219, 7782-44-7 (Oxygen) Role: RCT (Reactant), RACT (Reactant or reagent) (dehydrogenation agent; tube fixed-bed reactor consisting of fiber-bundle for laminar flow); 115-07-1P (Propene) Role: IMF (Industrial manufacture), PREP (Preparation) (tube fixed-bed reactor consisting of fiber-bundle for laminar flow); 74-98-6 (Propane) Role: RCT (Reactant), RACT (Reactant or reagent) (tube fixed-bed reactor consisting of fiber-bundle for laminar flow), Designated States R: AT, BE, CH, DE, DK, ES, FR, GB, GR, IT, LI, LU, NL, SE, MC, PT, IE, SI, LT, LV, FI, RO., A1"
+ERROR;84658;1;00 810 512.4;;;;;2000;0;
+TO_UPDATE;84748;1;WO2006072441-A2;WO2006072441;WO;A2;2006;2005;0;
+TO_UPDATE;87397;1;WO200193414-A;WO0193414;WO;A;2001;2000;0;
+TO_UPDATE;87398;1;WO9918654-A;WO9918654;WO;A;;1997;1;"FR2769428-A1; WO9918654-A1; EP1020019-A1; EP1020019-B1;  WO9918654-A FR2769428-A1 09 Apr 1999 H02P-006/14 199921 Pages: 27 WO9918654-A1 15 Apr 1999 H02P-006/18 199922 FRN AU9892497-A 27 Apr 1999 H02P-006/18 199936 EP1020019-A1 19 Jul 2000 H02P-006/18 200036 FRN JP2001519640-W 23 Oct 2001 H02P-006/18 200202 Pages: 26 US6326760-B1 04 Dec 2001 H02P-006/16 200203 DE69805641-E 04 Jul 2002 H02P-006/18 200251"
+TO_UPDATE;87399;1;EP688539-A;EP688539;EP;A;;1999;1;"FR2720263-A1; EP688539-A1; EP688539-B1; DE69511630-E Cardoletti L. et Perriard V. ne sont pas nommés sur le brevet EP688539-A !!!!"
+TO_UPDATE;87495;1;FR2703687;FR2703687;FR;;;1994;0;
+TO_UPDATE;87496;1;WO9424088;WO9424088;WO;;;1994;0;
+TO_UPDATE;90833;1;WO2003078299-A1, US2005227428-A1 ;WO03078299;WO;A1;2003;2002;0;
+TO_UPDATE;91050;1;WO2007148240-A2;WO2007148240;WO;A2;2007;2006;1;Application No : 06118544.3-2107
+ERROR;91051;1;06118628.4-2108;;;;;2006;0;
+TO_UPDATE;91052;1;US2008026207-A1;US2008026207;US;A1;2008;2006;1;EP Application No : 06405325.9-1218
+ERROR;94416;1;2003183760;;;;;2003;11;"Can 139:269237, 76-3 FIELD Section Title:Electric Phenomena, Field url:, H01j049-42., 250292000., Application: US, 20030326., 2003-397634, De, 2002-10213652, 20020327 FIELD Citations:Caravatti; US 4924089 A 1990|Senko; US 6573495 B2 2003|Anon; EP 1347486 A1 2003|Anon; GB 854943 A 1958|Anon; GB 1222577 A 1971|Anon; GB 2353632 A 2001|Anon; WO 02078048 A1 2002|Marshall; Mass Spectrometry Reviews 1998, 17, 1|Mclafferty; American Society for Mass Sepctrometry 2001, 12, 245|Tsybin; Rapid Communications In Mass Spectrometry 2001, 15, 1849|Hendrickson; International Journal of Mass Spectrometry and Ion Processes 1995, 141, 161|Budnik; Chemical Physics Letters 2001, 342, 299|Hofstadler; American Chemical Society, 71 , 2067|Colorado; Analytical Chemistry, 68, 4033|Schweikhard; American Society for Mass Spectrometry 1993, 4, 433|Zubarev; American Chemical Society, 3, 563|Little; American Chemical Society, 18, 2809|Tsybin, Y; 2001"
+TO_UPDATE;98416;1;EP2006/050459;EP2006050459;EP;;2006;2006;0;
+TO_UPDATE;98595;1;PCT/CH2005/000494;PCT/CH2005/000494;;;;2005;0;
+TO_UPDATE;98596;1;EP1783128A1;EP1783128;EP;A1;;2005;0;
+ERROR;98640;1;2000071738;;;;;2000;14;"Can 133:361982, 16-2 FIELD Section Title:Fermentation and Bioindustrial Chemistry, 3, Field url:, Ae, ag, al, am, at, at, au, az, ba, bb, bg, br, by, ca, ch, cn, cr, cu, cz, cz, de, de, dk, dk, dm, dz, ee, ee, es, fi, fi, gb, gd, ge, gh, gm, hr, hu, id, il, in, is, jp, ke, kg, kp, kr, kr, kz, lc, lk, lr, ls, lt, lu, lv, ma, md, mg, mk, mn, mw, mx, mz, no, nz, pl, pt, ro, ru, sd, se, sg, si, sk, sk, sl, tj, tm, tr, tt, tz, ua, ug, us, uz, vn, yu, za, zw, am, az, by, kg, kz, md, ru, tj, tm., At, be, ch, cy, de, dk, es, fi, fr, gb, gr, ie, it, lu, mc, nl, pt, se, bf, bj, cf, cg, ci, cm, ga, ml, mr, ne, sn, td, tg., C12p007-56., C12p007-40; c12p007-48; c12p007-60; c12p019-02; c12n015-53; c12n015-81; c12n009-04; c12n001-19; c12n001-19; c12r001-645., Application: WO, 20000519., 2000-us13907, Us, 99-316490, 19990521 FIELD Citations:Univ Chicago; WO 9716528 A 1997|Bianchi, M; WO 9914335 A 1999|Mini Agriculture & Fisheries; EP 0370160 A 1990|Porro, D; BIOTECHNOLOGY PROGRESS 1995, 11, 294|Hansens Lab; WO 9854337 A 1998|Urk van, H; APPLIED AND ENVIRONMENTAL MICROBIOLOGY 1990, 56, 281|Grivell, L; WO 9826079 A 1998|Rhone Poulenc Rorer Sa; WO 9401569 A 1994|Agronomique Inst Nat Rech; WO 9400554 A 1994|Stewart, J; BIOTECHNOLOGY AND GENETIC ENGINEERING REVIEWS 1997, 14, 67|Novonordisk As; WO 0014258 A 2000"
+ERROR;98645;1;6485947;;;;;2002;12;"Can 138:3760, 16-5 FIELD Section Title:Fermentation and Bioindustrial Chemistry, 3, Field url:, C12p007-56., 435139000., Application: US, 20000519., 2000-574873, Us, 99-316490, 19990521 FIELD Citations:Baniel; US 4275234 A 1981|de Louvencourt; US 4806472 A 1989|Hollenberg; US 4859596 A 1989|van Den Berg; US 4943529 A 1990|Baniel; US 5510526 A 1996|Sarhaddar; US 5641406 A 1997|Doquin; US 5712152 A 1998|Wood; US 5783423 A 1998|Fowlkes; US 5789184 A 1998|Ligon; US 5817502 A 1998|Eyal; US 5831122 A 1998|Zhang; US 5843760 A 1998|Badziong; US 5866371 A 1999|Hallborn; US 5866382 A 1999|Fowlkes; US 5876951 A 1999|Cho; US 5882884 A 1999|Anon; EP 0370160 A2 1990|Anon; WO 9300440 1993|Anon; WO 9400554 1994|Anon; WO 9401569 1994|Anon; WO 9716528 1997|Anon; WO 9826079 1998|Anon; WO 9854337 1998|Anon; WO 9914335 1999|Anon; WO 0014258 2000|Porro; Applied and Environmental Microbiology 1999, 65, 4211|Franzblau; Mycopathologia 1983, 82, 185|Passoth; Applied Biochemistry and Biotechnology 1996, 57/58, 201|Porro, D; Biotechnol Prog 1995, 11, 294|Stewart, J; Biotechnology and Genetic Engineering Reviews 1997, 14, 67|Urk, H; Applied and Environmental Microbiology 1990, 56, 281|Anon; TheYeasts, A Taxonomic Study, Fourth Edition 1998, 240|Anon; Yeast Physiology and Biotechnology, Chapter 5, 203|Adachi, E; Journal of Fermentation and Bioengineering 1998, 86, 284|Becker, D; Methods in Enzymology 1991, 194, 182|Bianchi, M; Molecular Microbiology 1996, 19, 27|Billard, P; Gene 1995, 162, 93|Brambilla, L; Advances in Bioprocess Engineering 1994, 417|Cho, J; Applied And Environmental Microbiology 1998, 64, 1350|Danners, H; Applied Biochemistry and Biotechnology 1998, 70-72, 887|Dequin, S; Bio/Technology 1994, 12, 173|Destruelle, M; Yeast 1999, 15, 361|Durrens, P; Current Genetics 1990, 18, 7|Flikweert, M; Yeast 1996, 12, 247|Flikweert, M; Applied And Environmental Microbiology 1997, 3399|Garmyn, D; Applied And Environmental Microb I ology 1995, 61, 266|Gonzalez, F; Yeast 1997, 13, 1399|Gunge, N; Journal of Bacteriology 1981, 145, 382|Gunge, N; European Journal of Epidemiology 1988, 4, 409|Hohmann, S; Mol Gen Genet 1993, 241, 657|Hohmann, S; Journal of Bacteriology 1991, 173, 7963|Hsieh, H; Appl Microbiol Biotechnol 1998, 49, 147|Hsieh, H; Appl Microbiol Biotechnol 1998, 49, 411|Ito, H; Journal of Bacteriology 1983, 153, 163|Kiers, J; Yeast 1998, 14, 459|Lighthelm, M; Appl Microbiol Biotechnol 1988, 29, 67|Morsomme, P; The EMBO Journal 1996, 15, 5513|Seeboth, P; Journal of Bacteriology 1990, 172, 678|Shi, N; Appl Microbiol Biotechnol 1998, 50, 339|Siso, M; FEBS Letters 1996, 387, 7|Subden, R; Canadian Journal of Microbiology 1982, 28, 883|Ullrich, J; Methods in Enzymology Volume XVIII Vitamins and Coenzymes Part A 1970, 109|van Hoek, P; Applied And Environmental Microbiology 1998, 64, 2133|Warnecke, D; The Journal of Biological Chemistry 1999, 274, 13048|Wesolowski-Louvel, M; Nonconventional Yeasts in Biotechnology, A Handbook, Chapter 5 1996, 139|Witte, V; J Basic Microbiol 1989, 29, 707|Zeeman, A; Microbiology 1998, 144, 3437"
+ERROR;98728;1;PCT Int. Appl.  CODEN: PIXXD2  WO  2007004113  A2  20070111  AN 2007:34245  ;;;;;2007;0;
+ERROR;99043;1;US 11/518,292 (Patent pending);;;;;2006;0;
+TO_UPDATE;99790;1;U.S. Patent No. 5,422,742;US5422742;US;;;1995;0;
+TO_UPDATE;99791;1;U.S. Patent No. 5,438,431;US5438431;US;;;1995;0;
+TO_UPDATE;99845;1;U.S. Patent No. 5,737,549;US5737549;US;;;1999;0;
+TO_UPDATE;99869;1;EP 1073257A1;EP1073257;EP;A1;;2001;0;
+TO_UPDATE;99870;1;U.S. Patent No. 5,796,409  ;US5796409;US;;;2001;0;
+TO_UPDATE;99871;1;U.S. Patent No. 5,995,638  ;US5995638;US;;;2001;0;
+TO_UPDATE;99872;1;U.S. Patent No. 6,249,588;US6249588;US;;;2001;0;
+TO_UPDATE;99906;1;U.S. Patent No. 5,768,490;US5768490;US;;;2004;0;
+TO_UPDATE;99907;1;U.S. Patent No. 6,198,545;US6198545;US;;;2004;0;
+TO_UPDATE;99908;1;U.S. Patent No. 6,819,775;US6819775;US;;;2004;0;
+ERROR;99923;1;U.S. Patent No. 7;;;;;2006;0;
+TO_UPDATE;99924;1;U.S. Patent No. 7,054,038;US7054038;US;;;2006;0;
+TO_UPDATE;99925;1;U.S. Patent No. 7,058,202;US7058202;US;;;2006;0;
+TO_UPDATE;101125;1;WO2006047628 (A3);WO2006047628;WO;A3;2006;2006;0;
+TO_UPDATE;101126;1;WO2006066439;WO2006066439;WO;;2006;2006;0;
+TO_UPDATE;101127;1;WO2006102970;WO2006102970;WO;;2006;2006;0;
+TO_UPDATE;104852;1;US 2007/0011111 Al;US20070011111;US;A;2007;2007;0;
+ERROR;105050;1;application number US 11/515,063;;;;;2006;1;Filed on September 5, 2006, as as a regular US patent  application, and assigned Serial No 11/515,063. Published on March 3, 2008, with number US 2008/0059590 A1.
+TO_UPDATE;108821;1;US 2005/0185666 A1;US20050185666;US;A1;2005;2005;0;
+ERROR;109864;1;2006-IB1617;;;;;2006;0;
+ERROR;109918;1;PIXXD2  WO  2007042474  ;;;;;2007;0;
+TO_UPDATE;110887;1;EP 0 742 620 A1;EP0742620;EP;A1;;1995;0;
+ERROR;110888;1;SPCI#X006314,  FR 9505990;;;;;1995;0;
+TO_UPDATE;110971;1;US00568817;US00568817;US;;;1997;0;
+ERROR;111277;1;EP 05001061.0;;;;;2005;0;
+ERROR;111573;1;EP 06 001 889.2, filed 30.01.2006;;;;;2006;0;
+ERROR;111574;1;EP 05 011 604.5, filed 30.05.2005 awarded 6.12.2006;;;;;2006;0;
+ERROR;111820;1;US60/412.315;;;;;2002;0;
+TO_UPDATE;112206;1;WO/2006/125452;WO2006125452;WO;;2006;2006;0;
+ERROR;112281;1;EP 07007600.5;;;;;2007;0;
+ERROR;112514;1;EP 06405326.7;;;;;2006;0;
+ERROR;112592;1;EP 07113253.4;;;;;2007;0;
+ERROR;113848;1;US2007070017220070131;;;;;2007;0;
+ERROR;113849;1;US2007070015420070131;;;;;2007;0;
+ERROR;113850;1;US2007070014020070131;;;;;2007;0;
+ERROR;113851;1;US2007070013920070131;;;;;2007;0;
+TO_UPDATE;113853;1;WO2006EP6935520061206;EP6935520061206;EP;;;2007;0;
+TO_UPDATE;113854;1;WO2007EP06014449;EP06014449;EP;;;2007;0;
+TO_UPDATE;113855;1;WO2006EP0511920060530;EP0511920060530;EP;;;2007;0;
+TO_UPDATE;113914;1;PCT/IB2007/05469;PCT/IB2007/05469;;;;2007;0;
+ERROR;114568;1;EP Appl. ;;;;;2007;0;
+TO_UPDATE;116214;1;US  2007210282  ;US2007210282;US;;2007;2007;0;
+TO_UPDATE;116215;1;EP  1837387;EP1837387;EP;;;2007;0;
+TO_UPDATE;117745;1;EP1872084;EP1872084;EP;;;2008;0;
+TO_UPDATE;117746;1;WO2006111909 (A1);WO2006111909;WO;A1;2006;2008;0;
+TO_UPDATE;117747;1;WO2007085992;WO2007085992;WO;;2007;2007;0;
+TO_UPDATE;117759;1;WO2006100544;WO2006100544;WO;;2006;2006;0;
+TO_UPDATE;117917;1;WO2007029063;WO2007029063;WO;;2007;2007;0;
+TO_UPDATE;118304;1;WO/2008/024890;WO2008024890;WO;;2008;2008;0;
+TO_UPDATE;118533;1;WO200203692-A;WO0203692;WO;A;2002;2002;0;
+TO_UPDATE;121478;1;US2008160580;US2008160580;US;;2008;2008;1;Also published as: WO0018957 / ZA200102420 / US7115400 / TR200100911 SK4292001
+TO_UPDATE;121603;1;PCT/IB2008/051497;PCT/IB2008/051497;;;;2008;0;
+TO_UPDATE;121650;1;US2009118128;US2009118128;US;;2009;2009;1;Also published as: WO2007010251 / WO2007010251 / EP1910559
+TO_UPDATE;121651;1;WO2006064199;WO2006064199;WO;;2006;2007;1;Also published as: EP1828412
+TO_UPDATE;121652;1;US2010041561;US2010041561;US;;2010;2010;1;Also published as: WO2007060456 / EP1957668
+TO_UPDATE;121653;1;US2007042109;US2007042109;US;;2007;2007;1;Also published as: US7704543 / WO2005030695 / EP1692090
+TO_UPDATE;121654;1;EP1634963;EP1634963;EP;;;2006;0;
+TO_UPDATE;124707;1;NO20034592;NO034592;NO;;2003;2003;1;Also published as: WO03068986 / BR0303224 / AU2003226829
+TO_UPDATE;124998;1;WO  2008043815  A1  20080417  CAN 148:482824  AN 2008:475803 ;WO2008043815;WO;A1;2008;2008;0;
+TO_UPDATE;125674;1;WO2005005960;WO2005005960;WO;;2005;2005;1;Other patent linked: US2006286600
+ERROR;125796;1;WO 2008047312 20071017;;;;;2008;0;
+TO_UPDATE;126038;1;US2008177473;US2008177473;US;;2008;2008;1;Applicant Oerlikon Space AG (CH)
+TO_UPDATE;128139;1;WO/2007/045509;WO2007045509;WO;;2007;2007;0;
+TO_UPDATE;128420;1;WO 2008/102292 A2;WO2008102292;WO;A2;2008;2008;0;
+ERROR;128493;1;US Patent Application 61/006,972;;;;;2008;0;
+ERROR;128872;1;EP08164280.3;;;;;2008;0;
+TO_UPDATE;129279;1;WO2007079411-A2;WO2007079411;WO;A2;2007;2007;0;
+ERROR;129286;0;;;;;;2005;11;"CAN 142:330803, 3-1, Biochemical Genetics, Patent, written in German., 20050407, 848779-26-0 Role: BUU (Biological use, unclassified), PRP (Properties), BIOL (Biological study), USES (Uses) (as suicide substrate for restriction methyltransferase; use of microcompartmentation of transcription/translation complexes in emulsions in selection of proteins with novel properties); 10356-76-0D (5-Fluorodeoxycytidine) Role: BUU (Biological use, unclassified), BIOL (Biological study), USES (Uses) (as suicide substrate; use of microcompartmentation of transcription/translation complexes in emulsions in selection of proteins with novel properties); 84177-56-0DP; 85537-81-1DP (DNA methyltransferase MspI); 91448-96-3DP (HhaI methyltransferase); 92228-38-1DP (DNA methyltransferase AluI); 92228-40-5DP (HaeIII methyltransferase); 149719-23-3DP Role: BPN (Biosynthetic preparation), BUU (Biological use, unclassified), BIOL (Biological study), PREP (Preparation), USES (Uses) (use of microcompartmentation of transcription/translation complexes in emulsions in selection of proteins with novel properties); 1338-43-8 (Span 80); 9005-65-6 (Tween 80) Role: BUU (Biological use, unclassified), BIOL (Biological study), USES (Uses) (water-in-oil emulsions contg.; use of microcompartmentation of transcription/translation complexes in emulsions in selection of proteins with novel properties), A1, CH, 2003-1671, 20031001"
+TO_UPDATE;130754;1;US5477905;US5477905;US;;;1989;0;
+TO_UPDATE;131002;1;WO 2008090526;WO2008090526;WO;;2008;2008;0;
+ERROR;131521;0;;;;;;2005;8;"Voet, M; Willsch, R; Ecke, W; Jones, J; Culshaw, B, 17th International Conference on Optical Fibre Sensors, Pts 1 and 2, 17th International Conference on Optical Fibre Sensors, MAY 23-27, 2005, Brugge, BELGIUM, 0277-786X, 0-8194-5855-4, 5855"
+ERROR;134244;1;9611146;;;;;1996;0;
+TO_UPDATE;135888;1;WO9629405;WO9629405;WO;;;1996;1;"Applicant(s): Ligand Pharm Inc [US]; Pasteur Inst. [FR]"
+TO_UPDATE;135890;1;WO2008060400;WO2008060400;WO;;2008;2008;1;Applicant(s): Sirtris Pharm. Inc [US]
+TO_UPDATE;135896;1;WO2005019829;WO2005019829;WO;;2005;2005;1;Applicant(s): Novartis Forschungsstiftung [CH]
+TO_UPDATE;135899;1;WO2006041150;WO2006041150;WO;;2006;2006;1;Applicant(s): Mitsubishi Pharma Corp [Jp]
+TO_UPDATE;135922;1;US2007149466;US2007149466;US;;2007;2007;1;Applicant(S): Sirtris Pharmaceuticals Inc [Us]
+TO_UPDATE;135923;1;US2008031968;US2008031968;US;;2008;2008;1;Applicant(s): Brigham & Womens Hospital [Us]
+TO_UPDATE;135925;1;US2003104975;US2003104975;US;;2003;2003;1;Applicant(s): Auwerx Johan, Chambon Pierre, Picard Frederic
+TO_UPDATE;135926;1;WO9951740;WO9951740;WO;;;1999;1;Applicant(S): Janssen Pharmaceutica Nv [Be], Univ Washington [Us], Martin Genevieve, Nemoto Masami, Deeb Samir Sami, Auwerx Johan
+TO_UPDATE;135929;1;US2002144302;US2002144302;US;;2002;2002;1;Applicant(s): Aventis Pharma S.A.
+TO_UPDATE;135930;1;WO9905161;WO9905161;WO;;;1999;1;Applicant(s): Ligand Pharm Inc [Us], Pasteur Institut [Fr], Briggs Michael R, Saladin Regis S, Auwerx Johan, Fajas Lluis
+TO_UPDATE;135932;1;WO9843081;WO9843081;WO;;;1998;1;Applicant(s): Ligand Pharm Inc [Us], Pasteur Institut [Fr], Lefebvre Anne-Marie, Auwerx Johan, Briggs Michael R
+TO_UPDATE;135933;1;United States Patent 5,951,657;US5951657;US;;;1999;0;
+TO_UPDATE;135934;1;WO9805331;WO9805331;WO;;;1998;1;Applicant(s): Ligand Pharm Inc [Us]
+TO_UPDATE;135936;1;WO9728149;WO9728149;WO;;;1997;1;Applicant(s): Merck & Co Inc [Us], Leibowitz Mark D, Berger Joel P, Moller David E, Auwerx Johan, Berger Gregory D
+TO_UPDATE;135966;1;US 7,522,769;US7522769;US;;;2009;1;assigned to Hewlett-Packard (HP)
+TO_UPDATE;135967;1;US 7,522,768;US7522768;US;;;2009;1;assigned to Hewlett-Packard (HP)
+TO_UPDATE;135968;1;US 7,522,767;US7522767;US;;;2009;1;assigned to Hewlett-Packard (HP)
+TO_UPDATE;135969;1;US 7,466,309;US7466309;US;;;2008;1;assigned to Hewlett-Packard (HP)
+ERROR;138452;0;;;;;;2006;0;
+TO_UPDATE;138902;1;WO 2009013724;WO2009013724;WO;;2009;2009;0;
+TO_UPDATE;138903;1;EP 2019109;EP2019109;EP;;;2009;0;
+TO_UPDATE;139450;1;U.S. 7,547,872;US7547872;US;;;2009;0;
+TO_UPDATE;139451;1;U.S. 7,501,528;US7501528;US;;;2009;0;
+TO_UPDATE;139452;1;U.S. 7,262,402;US7262402;US;;;2007;0;
+ERROR;139654;0;;;;;;2000;0;
+ERROR;139682;0;;;;;;2003;0;
+ERROR;139744;0;;;;;;2006;0;
+ERROR;139809;0;;;;;;;0;
+ERROR;139810;0;;;;;;;0;
+ERROR;139812;0;;;;;;;0;
+ERROR;139813;0;;;;;;;0;
+ERROR;139826;0;;;;;;1999;0;
+ERROR;139830;0;;;;;;1999;0;
+ERROR;139831;0;;;;;;1999;0;
+ERROR;139842;0;;;;;;2000;0;
+ERROR;139867;0;;;;;;2001;0;
+ERROR;139869;0;;;;;;2001;0;
+ERROR;139875;0;;;;;;2002;0;
+ERROR;139893;0;;;;;;2002;1;German patent application
+ERROR;139894;0;;;;;;2002;0;
+TO_UPDATE;142154;1;WO9827972;WO9827972;WO;;;1998;1;Applicant(s): Texas A & M Univ Sys [Us], Miroy G. J., Kelly J. W., Lai Z., Lashuel H. A., Peterson S. A.
+TO_UPDATE;142155;1;WO03053356;WO03053356;WO;;;2003;1;Applicant(s): Picower inst med res [US] 
+TO_UPDATE;142158;1;US2008096909;US2008096909;US;;2008;2008;1;Applicant(s): Cytokine Pharmasciences Inc [US] 
+TO_UPDATE;142474;1;US 7,609,230;US7609230;US;;;2009;1;assigned to Hewlett-Packard (HP)
+TO_UPDATE;142512;1;PCT/IB2009/050489 - V/Réf.: 6.0779 - N/Réf.: P1883PC00 / 13-71;PCT/IB2009/050489 - V/Réf.: 6.0779 - N/Réf.: P1883PC00 / 13-71;;;;2007;0;
+TO_UPDATE;143712;1;DE102008017390-A1;DE102008017390;DE;A1;;2009;0;
+TO_UPDATE;143714;1;WO2009046985-A2;WO2009046985;WO;A2;2009;2009;0;
+TO_UPDATE;143717;1;EP1982645-A1;EP82645;EP;A1;1982;2008;0;
+TO_UPDATE;143719;1;WO2008087613-A2;WO2008087613;WO;A2;2008;2008;0;
+ERROR;143738;1;US61/080,358;;;;;2008;0;
+ERROR;143762;1;US61/296,197;;;;;2010;1;US Provisional Patent Application
+TO_UPDATE;145910;1;WO2011067292-A1;WO2011067292;WO;A1;2011;2009;0;
+TO_UPDATE;146866;1;EP1367406;EP1367406;EP;;;2004;0;
+TO_UPDATE;146867;1;EP1744171;EP1744171;EP;;;2005;0;
+ERROR;147282;1;00335/10;;;;;2010;0;
+TO_UPDATE;147342;1;WO2007057428-A1;WO2007057428;WO;A1;2007;2007;0;
+TO_UPDATE;147343;1;WO2006105985-A1;WO2006105985;WO;A1;2006;2006;0;
+TO_UPDATE;147563;1;US7626386, EP1879039;EP1879039;EP;;;2009;0;
+TO_UPDATE;147564;1;US2010052673;US2010052673;US;;2010;2008;0;
+TO_UPDATE;148235;1;WO2010007580 A1;WO2010007580;WO;A1;2010;2009;0;
+TO_UPDATE;149413;1;PCT/IB2010/052558;PCT/IB2010/052558;;;;2011;0;
+TO_UPDATE;149787;1;WO2010055421-A1;WO2010055421;WO;A1;2010;2010;0;
+TO_UPDATE;149788;1;WO2010014686-A1;WO2010014686;WO;A1;2010;2010;0;
+TO_UPDATE;149789;1;WO2009155968-A1;WO2009155968;WO;A1;2009;2010;0;
+ERROR;150009;1;2010P10758EP;;;;;2010;1;pending
+TO_UPDATE;153200;1;US5506418;US5506418;US;;;1996;0;
+TO_UPDATE;153204;1;FR2693594;FR2693594;FR;;;1992;0;
+TO_UPDATE;153205;1;US6445009;US6445009;US;;;2002;0;
+TO_UPDATE;153206;1;EP1273049;EP1273049;EP;;;2003;1;French patent N°0004683  
+TO_UPDATE;153208;1;FR2810159;FR2810159;FR;;;2001;1;Brevet déposé sous n. EP1290721, US2003136333, JP2003536257 + PCT
+ERROR;154176;0;;;;;;2008;1;Times Cited: 0
+ERROR;154177;0;;;;;;2008;1;Times Cited: 0
+ERROR;154182;0;;;;;;2007;1;Times Cited: 0
+ERROR;154191;0;;;;;;2006;1;Times Cited: 0
+TO_UPDATE;154691;1;US2008280773;US2008280773;US;;2008;2008;0;
+TO_UPDATE;154734;1;EP19990111241;EP990111241;EP;;1999;2005;0;
+ERROR;154994;1;.;;;;;2010;1;Submitted
+ERROR;155481;1;EP 09 090 002.8;;;;;2009;0;
+ERROR;155482;1;DE 10 2008 022 349.2;;;;;2008;0;
+ERROR;158071;0;;;;;;2007;11;"CAN 146:462418, 31-6, Alkaloids, Patent, written in English., 20070426, 200132-54-3 Role: CAT (Catalyst use), USES (Uses) (asym. synthesis of ecteinascidin alkaloids, such as ecteinascidins 583 and 597); 106-95-6; 121-33-5; 488-17-5; 533-31-3 (1,3-Benzodioxol-5-ol); 620-72-4; 645-33-0; 924-44-7; 2799-07-7; 2937-50-0; 17763-80-3; 49757-42-8; 81477-94-3; 102308-32-7; 934969-73-0 Role: RCT (Reactant), RACT (Reactant or reagent) (asym. synthesis of ecteinascidin alkaloids, such as ecteinascidins 583 and 597); 69404-94-0P; 111726-43-3P; 114899-80-8P (Ecteinascidin 770); 184300-08-1P (Ecteinascidin 583); 244126-22-5P; 244126-41-8P; 259220-89-8P; 308359-33-3P; 366020-68-0P; 366020-69-1P; 402469-27-6P; 686776-20-5P; 686776-22-7P; 686776-23-8P; 686776-24-9P; 686776-25-0P; 686776-27-2P; 854022-02-9P; 874758-51-7P; 874758-53-9P; 874758-54-0P; 874758-55-1P; 874758-56-2P; 874758-58-4P; 874758-59-5P; 874758-60-8P; 874758-61-9P; 874758-62-0P; 874758-63-1P; 874758-64-2P; 874758-65-3P; 874758-66-4P; 874758-67-5P; 874758-68-6P; 874758-69-7P; 874758-70-0P; 874758-71-1P; 874758-72-2P; 874758-73-3P; 874758-74-4P; 874758-76-6P; 874758-78-8P; 874758-82-4P; 925451-68-9P; 925451-73-6P; 925451-75-8P; 925451-76-9P; 925451-77-0P; 925451-78-1P; 925451-79-2P; 925451-80-5P; 925451-84-9P; 925451-85-0P; 925451-86-1P; 925451-87-2P; 925451-88-3P; 925451-89-4P; 925451-91-8P; 925451-92-9P; 925451-95-2P; 925451-96-3P; 925451-97-4P; 934969-68-3P; 934969-69-4P; 934969-71-8P; 934969-72-9P; 934969-74-1P Role: RCT (Reactant), SPN (Synthetic preparation), PREP (Preparation), RACT (Reactant or reagent) (asym. synthesis of ecteinascidin alkaloids, such as ecteinascidins 583 and 597); 114899-77-3P (Ecteinascidin 743); 184300-07-0P (Ecteinascidin 597); 934969-70-7P Role: SPN (Synthetic preparation), PREP (Preparation) (asym. synthesis of ecteinascidin alkaloids, such as ecteinascidins 583 and 597), A2, US, 2005-728295, 20051020"
+TO_UPDATE;158086;1;FR 2884249;FR2884249;FR;;;2006;1;"CAN 145:397788, 34-2, Amino Acids, Peptides, and Proteins, Patent, written in French., 20061012, 55-21-0 (Benzamide); 56-45-1 (L-Serine); 67-51-6 (3,5-Dimethylpyrazole); 75-64-9; 95-48-7 (o-Cresol); 98-10-2 (Benzenesulfonamide); 103-49-1 (Dibenzylamine); 105-34-0 (Methyl cyanoacetate); 105-53-3 (Diethyl malonate); 105-56-6 (Ethyl cyanoacetate); 106-40-1 (4-Bromoaniline); 108-59-8 (Dimethyl malonate); 108-68-9 (3,5-Dimethylphenol); 108-95-2 (Phenol); 108-98-5 (Thiophenol); 109-73-9 (n-Butylamine); 109-77-3 (Malononitrile); 109-97-7 (Pyrrole); 110-89-4 (Piperidine); 110-91-8 (Morpholine); 120-72-9 (Indole); 122-39-4 (Diphenylamine); 123-75-1 (Pyrrolidine); 123-90-0 (Thiomorpholine); 142-08-5 (2-Hydroxypyridine); 143-33-9 (Sodium cyanide); 150-76-5 (4-Methoxyphenol); 151-50-8 (Potassium cyanide); 288-13-1 (Pyrazole); 288-32-4 (Imidazole); 288-88-0 (1H-1,2,4-Triazole); 497-25-6 (2-Oxazolidinone); 616-45-5 (2-Pyrrolidinone); 1534-08-3; 2577-48-2; 2577-90-4; 2759-28-6 (N-Benzylpiperazine); 15803-02-8 (1-Methyl-4-bromopyrazole); 35161-71-8 (Methylprop-2-ynylamine); 202478-34-0; 219986-64-8 (3-Trifluoromethyl-5-(p-tolyl)-1H-pyrazole); 630389-88-7 Role: RCT (Reactant), RACT (Reactant or reagent) (prepn. of beta -amino or alpha ,beta -diamino esters derived from serine); 888957-31-1P; 911404-06-3P Role: RCT (Reactant), SPN (Synthetic preparation), PREP (Preparation), RACT (Reactant or reagent) (prepn. of beta -amino or alpha ,beta -diamino esters derived from serine); 888957-42-4P; 888957-43-5P; 911404-03-0P Role: SPN (Synthetic preparation), PREP (Preparation) (prepn. of beta -amino or alpha ,beta -diamino esters derived from serine), A2, FR, 2005-3537, 20050408"
+TO_UPDATE;158322;1;WO2007045686;WO2007045686;WO;;2007;2007;0;
+TO_UPDATE;158352;1;EP1792904;EP1792904;EP;;;2007;0;
+TO_UPDATE;158355;1;FR2865204A1;FR2865204;FR;A1;;2005;0;
+TO_UPDATE;158359;1;WO 9522558;WO9522558;WO;;;1995;0;
+TO_UPDATE;158693;1;U.S. Patent No. 6,203,709;US6203709;US;;;2001;0;
+ERROR;158753;1;09012409.0-2217;;;;;2009;0;
+TO_UPDATE;162370;1;WO2010072011-A1;WO2010072011;WO;A1;2010;2010;0;
+ERROR;162937;0;;;;;;1999;20;"Copyright 2003 ACS, CAPLUS, AN 1999:690990, CAN 131:303402, 63-6, Pharmaceuticals, 1, FIELD URL:, PIXXD2, written in French., Buffers; Disease; Radiation; Solvents (soln. for diagnosing or treating tissue pathologies); Alcohols Role: NUU (Other use, unclassified), USES (Uses) (soln. for diagnosing or treating tissue pathologies); Drug delivery systems (solns.; soln. for diagnosing or treating tissue pathologies), Designated States W: CA, JP, US., Designated States RW: AT, BE, CH, CY, DE, DK, ES, FI, FR, GB, GR, IE, IT, LU, MC, NL, PT, SE., WO, 19990422., 99-CH163, A1, FR, 98-5425, Thomas, P; Phototherapie Dynamique Topique 1996, 15, 407|Chang, S; Journal of Photochemistry and Photobiology B Biology 1997, 38, 114"
+TO_UPDATE;163421;1;US6404192;US6404192;US;;;2002;0;
+TO_UPDATE;163422;1;WO2006074989;WO2006074989;WO;;2006;2006;0;
+TO_UPDATE;163423;1;WO2008145662;WO2008145662;WO;;2008;2008;0;
+TO_UPDATE;163424;1;US20090230955;US20090230955;US;;2009;2009;0;
+TO_UPDATE;163425;1;US20090108838;US20090108838;US;;2009;2009;0;
+TO_UPDATE;163427;1;EP10168375;EP10168375;EP;;;2010;0;
+TO_UPDATE;164328;1;US 2010/0080460 A1;US20100080460;US;A1;2010;2008;0;
+TO_UPDATE;164329;1;US 8315451 B2;US8315451;US;B2;;2008;0;
+TO_UPDATE;164330;1;US 8249323 B2;US8249323;US;B2;;2008;0;
+ERROR;164439;1;08709042.9;;;;;2010;0;
+TO_UPDATE;164683;1;PCT/EP2011/055026 ;PCT/EP2011/055026 ;;;;2011;0;
+TO_UPDATE;165059;1;"US2010130869-A1;DE102008051950-A1";US2010130869;US;A1;2010;2010;0;
+TO_UPDATE;165089;1;"WO2005017598-A1; DE10336080-A1; US2006226374-A1";WO2005017598;WO;A1;2005;2005;0;
+TO_UPDATE;165090;1;WO2010004365-A1;WO2010004365;WO;A1;2010;2010;0;
+TO_UPDATE;165091;1;WO2006111909-A1;WO2006111909;WO;A1;2006;2006;0;
+TO_UPDATE;165092;1;"WO2006111836-A1; EP1874181-A1; US2009118623-A1";EP1874181;EP;A1;;2006;0;
+TO_UPDATE;165093;1;"WO2007085992-A1; US2009128824-A1";WO2007085992;WO;A1;2007;2007;0;
+TO_UPDATE;165094;1;"WO2004104647-A1; DE10323922-A1; EP1625427-A1; JP2007500872-W; EP1625427-B1; DE502004003287-G; US2007285813-A1";EP1625427;EP;A1;;2004;0;
+TO_UPDATE;165095;1;DE19927918-A1;DE927918;DE;A1;1992;2000;0;
+TO_UPDATE;165096;1;"EP1225454-A2; DE10100335-A1; US2002120424-A1; JP2002243414-A; US6741948-B2; EP1225454-A3; JP2010054520-A; JP4500913-B2";EP1225454;EP;A2;;2002;0;
+TO_UPDATE;165097;1;DE10206020-A1;DE10206020;DE;A1;;2003;0;
+TO_UPDATE;165098;1;"WO2003060587-A; WO2003060587-A1; AU2003205981-A1; EP1466204-A1; JP2005515493-W; US2005117172-A1; EP1466204-B1; DE60320369-E; US7385709-B2; JP4256783-B2; DE60320369-T2";EP1466204;EP;A1;;2003;0;
+TO_UPDATE;165099;1;"WO2004057266-A2; DE10260256-A1; AU2003290103-A1; DE10260256-B4; DE10260256-B9; DE10392656-T";WO2004057266;WO;A2;2004;2004;0;
+TO_UPDATE;165100;1;"WO2005029153-A2; DE10343722-A1";WO2005029153;WO;A2;2005;2005;0;
+ERROR;165293;1;US61/256,490;;;;;2009;0;
+ERROR;165295;1;US61/405,123;;;;;2010;0;
+ERROR;165879;1;WO/2010/076;;;;;2009;0;
+ERROR;166413;0;;;;;;2001;1;Times Cited: 0
+ERROR;166414;0;;;;;;2001;1;Times Cited: 0
+TO_UPDATE;167688;1;WO/2009/014779;WO2009014779;WO;;2009;2009;0;
+TO_UPDATE;168110;1;WO2011067297-A1;WO2011067297;WO;A1;2011;2011;0;
+ERROR;169245;1;2010US-12/779547;;;;;2010;0;
+TO_UPDATE;169410;1;WO2006053508-A1;WO2006053508;WO;A1;2006;2006;0;
+ERROR;169834;1;Microsoft;;;;;2011;0;
+ERROR;169835;1;Technicolor;;;;;2011;0;
+ERROR;174018;1;US 61/583,665;;;;;2012;0;
+TO_UPDATE;174461;1;US2009300347;US2009300347;US;;2009;2011;0;
+TO_UPDATE;174462;1;PCT/IB2010/055047;PCT/IB2010/055047;;;;2010;1;Patent application filled the 5 November 2010
+TO_UPDATE;174745;1;WO/2009/125237;WO2009125237;WO;;2009;2009;0;
+TO_UPDATE;174747;1;WO/2005/076032;WO2005076032;WO;;2005;2005;0;
+TO_UPDATE;174748;1;WO/2009/118323;WO2009118323;WO;;2009;2009;0;
+TO_UPDATE;175147;1;US2011289635-A1;US2011289635;US;A1;2011;2011;0;
+TO_UPDATE;175343;1;US 2010/0302562 A1;US20100302562;US;A1;2010;2010;0;
+TO_UPDATE;175352;1;WO2009003673-A2;WO2009003673;WO;A2;2009;2009;0;
+TO_UPDATE;175353;1;WO2008083966-A2;WO2008083966;WO;A2;2008;2008;0;
+TO_UPDATE;176182;1;PCT/IB2009/051716;PCT/IB2009/051716;;;;2009;1;(pending)
+TO_UPDATE;181030;1;WO 2012/107594 A1;WO2012107594;WO;A1;2012;2012;1;WIPO International Patent Application
+TO_UPDATE;181188;1;US8151860;US8151860;US;;;2012;0;
+TO_UPDATE;181451;1;US20100240309;US20100240309;US;;2010;2010;0;
+TO_UPDATE;181453;1;US20100239103;US20100239103;US;;2010;2010;0;
+TO_UPDATE;181455;1;US20100238991;US20100238991;US;;2010;2010;0;
+TO_UPDATE;181456;1;US20120099435;US20120099435;US;;2012;2012;0;
+TO_UPDATE;181457;1;US20100239055;US20100239055;US;;2010;2010;0;
+TO_UPDATE;181458;1;US20110103500;US20110103500;US;;2011;2011;0;
+ERROR;181872;1;2012US-13/654055;;;;;2012;0;
+TO_UPDATE;182772;1;US 2011/0314251 A1;US20110314251;US;A1;2011;2010;0;
+TO_UPDATE;182861;1;WO2012077070;WO2012077070;WO;;2012;2012;1;International Filing Date: 07.12.2011 Publication Date:  14.06.2012
+ERROR;183209;1;EP13151702.1;;;;;2013;0;
+ERROR;183466;1;1258039;;;;;2012;0;
+TO_UPDATE;184005;1;WO/2013/008204;WO2013008204;WO;;2013;2013;0;
+TO_UPDATE;185955;1;EP2131697 B1;EP2131697;EP;B1;;2012;1;assigned to Hewlett-Packard
+TO_UPDATE;186307;1;WO2011121089-A1;WO2011121089;WO;A1;2011;2011;0;
+TO_UPDATE;186751;1;WO2013072401;WO2013072401;WO;;2013;2013;0;
+TO_UPDATE;187043;1;EP 2 290 471 A1;EP2290471;EP;A1;;2009;0;
+TO_UPDATE;187047;1;EP1 914 194 A1;EP1914194;EP;A1;;2006;0;
+TO_UPDATE;187144;1;US2013/0070570A1;US20130070570;US;A1;2013;2011;0;
+TO_UPDATE;187264;1;US8462238;US8462238;US;;;2013;1;assigned to EPFL
+TO_UPDATE;187938;1;WO2013044399;WO2013044399;WO;;2013;2013;0;
+ERROR;188130;1;EP13171364.6;;;;;2013;1;airburr
+TO_UPDATE;188131;1;PCT/EP2013/07322;PCT/EP2013/07322;;;;2014;1;NCCR
+TO_UPDATE;188170;1;WO/2012/022756;WO2012022756;WO;;2012;2012;0;
+TO_UPDATE;188630;1;EP 2449638 B1;EP2449638;EP;B1;;2013;0;
+TO_UPDATE;189922;1;WO/2013/131838;WO2013131838;WO;;2013;2013;0;
+ERROR;189988;1;13181857.7-1809;;;;;2013;0;
+TO_UPDATE;190018;1;WO/2013/084029;WO2013084029;WO;;2013;2013;0;
+ERROR;190026;1;BUR920130108US1;;;;;2013;0;
+TO_UPDATE;191205;1;WO2013093108A1;WO2013093108;WO;A1;2013;2013;0;
+TO_UPDATE;191302;1;WO2013111121-A1;WO2013111121;WO;A1;2013;2013;0;
+TO_UPDATE;195677;1;US8402399 B2;US8402399;US;B2;;2013;0;
+TO_UPDATE;195678;1;US 8327312 B2;US8327312;US;B2;;2012;0;
+TO_UPDATE;196415;1;US20130321923A1;US20130321923;US;A1;2013;2013;1;Application No: 13/888'045. Filed on May 6, 2013. Application type: Utility under 35 USC 111(a).
+TO_UPDATE;197155;1;EP2306230B1;EP2306230;EP;B1;;2011;0;
+TO_UPDATE;197872;1;US20120195862;US20120195862;US;;2012;2010;1;"Also published as: WO2010121122 (A2); WO2010121122 (A3)"
+TO_UPDATE;197874;1;US20120101067;US20120101067;US;;2012;2010;1;"Also published as: US8546382 (B2); US8546382 (X6); WO2010121008 (A2); WO2010121008 (A3)"
+TO_UPDATE;197877;1;WO2007002167;WO2007002167;WO;;2007;2007;1;"Also published as: WO2007002167 (A9); WO2007002167 (A3); WO2007002167 (A8); US2010209396 (A1)"
+TO_UPDATE;198175;1;FR 2996400;FR2996400;FR;;;2014;0;
+TO_UPDATE;198694;1;US20140122882;US20140122882;US;;2014;2014;0;
+ERROR;200548;1;US Provisional Patent Application 61/450,780;;;;;2011;0;
+ERROR;200552;1;US Provisional Patent Application 61/450,048;;;;;2011;0;
+ERROR;200553;1;US Patent Application 2007/0029229       ;;;;;2007;0;
+ERROR;200556;1;US Patent Application 2007/0284284 ;;;;;2007;0;
+ERROR;200557;1;US Patent 11/756,767;;;;;2010;0;
+ERROR;201612;1;14174633.9-1662;;;;;2014;0;
+ERROR;203110;1;1460869;;;;;2014;1;Ecole Polytechnique Fédérale de Lausanne (EPFL), Hôpitaux Universitaires de Genève
+TO_UPDATE;203816;1;EP 2 706 344 A1;EP2706344;EP;A1;;2014;0;
+TO_UPDATE;203821;1;EP1099505;EP1099505;EP;;;2000;0;
+TO_UPDATE;204242;1;WO2013093788 A1;WO2013093788;WO;A1;2013;2013;1;Priority date December 20, 2011
+TO_UPDATE;204243;1;WO2013185938;WO2013185938;WO;;2013;2013;1;Priority date 13.06.2012
+TO_UPDATE;204249;1;WO2012156978;WO2012156978;WO;;2012;2012;1;Priority data: US201161457717P 2011.05.18
+TO_UPDATE;204250;1;WO2002093120;WO02093120;WO;;2002;2002;1;Priority data: GB20010011623 20010511
+TO_UPDATE;204251;1;US5679955;US5679955;US;;;1997;1;Priority data: US19950002806P 19950825
+TO_UPDATE;204252;1;WO8800336;WO8800336;WO;;;1988;1;Priority data: FR19860009704 19860702
+TO_UPDATE;204254;1;FR2710150;FR2710150;FR;;;1995;1;Priority data: FR19930011700 19930917
+TO_UPDATE;204255;1;WO2014177198;WO2014177198;WO;;2014;2014;1;Priority data: WO2013EP59023 20130430
+TO_UPDATE;204700;1;US 2015/0005708 A1;US20150005708;US;A1;2015;2015;0;
+TO_UPDATE;206414;1;EP2626680A1;EP2626680;EP;A1;;2013;0;
+TO_UPDATE;206415;1;US8659762B2;US8659762;US;B2;;2014;0;
+ERROR;207565;1;U.S. Provisional Application No. 61/897,144;;;;;2013;0;
+ERROR;207566;1;U.S. Provisional Application No. 61/901,949;;;;;2013;0;
+ERROR;207567;1;U.S. Provisional Application No. 61/980,541;;;;;2014;0;
+ERROR;209383;0;;;;;;1999;0;
+ERROR;209385;0;;;;;;1999;0;
+ERROR;209397;0;;;;;;2000;0;
+ERROR;209398;0;;;;;;2000;0;
+ERROR;209424;0;;;;;;2002;0;
+ERROR;209432;0;;;;;;2002;0;
+ERROR;209476;0;;;;;;2005;0;
+ERROR;209501;0;;;;;;2007;0;
+TO_UPDATE;210674;1;WO 2015/104692 A2;WO2015104692;WO;A2;2015;2015;0;
+TO_UPDATE;210675;1;WO 2015/104693 A2;WO2015104693;WO;A2;2015;2015;0;
