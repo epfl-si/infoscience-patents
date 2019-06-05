@@ -8,15 +8,33 @@ Fetch EPFL patents from EPO and generate MarcXML from it
 ## Install
 
 - Get python3.7
+    ```
+    sudo apt update
+    sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget libsqlite3-dev
+    curl -O https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tar.xz
+    tar -xf Python-3.7.3.tar.xz
+    cd Python-3.7.3
+    ./configure --enable-optimizations --enable-loadable-sqlite-extensions
+    make -j 4
+    sudo make altinstall
+    ```
+    
     - https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/
 
 - `pipenv install --python 3.7`
 
-## Test
+## Usage
+
+Before running any command, set your environnement variable :
+```
+export EPO_CLIENT_ID=123456
+export EPO_CLIENT_SECRET=123456
+```
+
+
+### Test
 
 - `pipenv run python tests.py --verbose`
-
-## Usage
 
 ### Search
 

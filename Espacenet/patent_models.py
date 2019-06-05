@@ -58,6 +58,21 @@ class PatentClassificationWithDefault(PatentClassification):
                                                                          subgroup)
 
 
+def _convert_to_date(value):
+    result = None
+    
+    if value and isinstance(value, str):
+        # try to convert the date string to a real date
+        try:
+            result = datetime.datetime.strptime(value, "%Y%m%d").date()
+        except ValueError:
+            result = None
+    elif isinstance(value, datetime.date):
+        result = value
+    
+    return result
+
+
 class BasePatent(object):
     """ Represent a patent (pct or accepted), with common property access
         direct_update params allow to directly launch a query from this patent
@@ -104,72 +119,6 @@ class BasePatent(object):
     def date(self, value):
         self._date = value
 
-class PCTPatent(BasePatent):
-    """
-    How do I enter PCT application numbers in Espacenet?
-
-    The format for the PCT (WO) application number in Espacenet is the country code WO followed by the year of filing (four digits), the country code of the country where the application was filed (two characters) and a five-digit serial number, amounting to a total of 13 characters.
-
-    """
-    pct_format_re = r"^PCT/(?P<country>\D{2})(?P<year>\d{2,4})/0?(?P<number>\d{5})"
-    _date = None
-
-    def __init__(self, epodoc, *args, **kwargs):
-        matched = re.match(self.pct_format_re, epodoc)
-
-        if matched:
-            pct_dict = matched.groupdict()
-            country = pct_dict['country']
-            number = pct_dict['number']
-            year = pct_dict['year']
-        else:
-            raise ValueError("""The format for the PCT (WO) application number in Espacenet is the country code WO followed by the year of filing (four digits), the country code of the country where the application was filed (two characters) and a five-digit serial number, amounting to a total of 13 characters.""")
-
-        self.country = country
-        self.number = number
-        if len(year) == 2:
-            if int(year) > 50 and int(year) <= 99:
-                self.date = '19%s' % year
-            else:
-                self.date = '20%s' % year
-        else:
-            self.date = year
-
-        # keep the original format in epodoc
-        self._epodoc = epodoc
-
-        super(PCTPatent, self).__init__(*args, **kwargs)
-
-    def querystring(self):
-        """ To find, for example, PCT application PCT/IB2007/51010, you will have to type in WO2007IB51010.
-         If you are searching for application number PCT/MX2007/000062,
-          you will have to enter WO2007MX00062 (i.e. remove the leading zero). """
-        return "WO%s%s%s" % (self.date, self.country, self.number)
-
-    def __unicode__(self):
-        return "PCT Patent %s" % self.epodoc
-
-    @property
-    def date(self):
-        return self._date
-
-    @date.setter
-    def date(self, value):
-        self._date = value
-
-def _convert_to_date(value):
-    result = None
-    
-    if value and isinstance(value, basestring):
-        # try to convert the date string to a real date
-        try:
-            result = datetime.datetime.strptime(value, "%Y%m%d").date()
-        except ValueError:
-            result = None
-    elif isinstance(value, datetime.date):
-        result = value
-    
-    return result
 
 class Patent(BasePatent):
     """ Represent a patent, for easy query on espacenet """

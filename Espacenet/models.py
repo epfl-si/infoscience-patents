@@ -2,10 +2,8 @@
     (c) All rights reserved. ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE, Switzerland, VPSI, 2017
 """
 
-from .patent_models import Patent, PCTPatent, PatentClassificationWithDefault
+from .patent_models import Patent, PatentClassificationWithDefault
 
-
-ESPACENET_JSON_DATA_SAVE_FOLDER = '/var/www/infoscience.epfl.ch/private/tmp/espacenet'
 
 class EspacenetMixin(object):
     """ Add the Espacenet tools to fill patents data
@@ -223,44 +221,8 @@ class EspacenetMixin(object):
         except KeyError:
             pass        
     
-    def _cache_filepath(self):
-        filename = self.country + self.number
-        file_path = ESPACENET_JSON_DATA_SAVE_FOLDER + '/' + filename + '.json'
-        return file_path
-    
-    def fetch(self):
-        """ load data for a patent from HD if available """
-        # instantiate self.patent_query_class defined in the concrete class
-        patent_query = self.patent_query_class()
-        
-        return patent_query.fetch(self, file_path=self._cache_filepath())
-    
-    def fetch_families(self, use_file_hd=True):
-        """ load data and all linked patents from HD or from Espacenet
-            If use_file_hd, create a file for this family, so next
-            query on it will be done on disk
-         """
-        from .query import EspacenetFamilyPatentQuery
-
-        if use_file_hd:
-            filename = "family_%s%s" % (self.country, self.number)
-            file_path = ESPACENET_JSON_DATA_SAVE_FOLDER + '/' + filename + '.json'
-            return EspacenetFamilyPatentQuery().fetch(self, file_path=file_path)
-        else:
-            return EspacenetFamilyPatentQuery().fetch(self)
-
-class EspacenetPCT(EspacenetMixin, PCTPatent):
-    def __init__(self, *args, **kwargs):
-        EspacenetMixin.__init__(self, *args, **kwargs)
-        PCTPatent.__init__(self, *args, **kwargs)
-        
-        from .query import EspacenetPCTPatentQuery
-        self.patent_query_class = EspacenetPCTPatentQuery
 
 class EspacenetPatent(EspacenetMixin, Patent):
     def __init__(self, *args, **kwargs):
         EspacenetMixin.__init__(self, *args, **kwargs)
         Patent.__init__(self, *args, **kwargs)
-                
-        from .query import EspacenetPatentQuery
-        self.patent_query_class = EspacenetPatentQuery

@@ -7,12 +7,10 @@ name = "pypi"
 
 [dev-packages]
 
+pylint = "*"
 
 
 [packages]
 
-mock = "*"
-requests = "*"
-oauthlib = "*"
-cacheout = "*"
-requests-oauthlib = "*"
+python-epo-ops-client = "*"
+"dogpile.cache" = "*"

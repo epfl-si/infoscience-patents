@@ -17,9 +17,6 @@ def valid_input_date(s):
         raise argparse.ArgumentTypeError(msg)
 
 def main():
-    # load the file
-    #with open(args1) as input_patents_file:
-    #    print(input_patents_file)
     pass
 
 if __name__ == '__main__':
@@ -41,14 +38,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     set_logging_from_args(args)
     
-
-    #TODO: put this somewhere
-    logger.info("Loading the provided MarcXML file")
-    # or
-    logger.info("Loading Infoscience patents")    
-    # TOREMOVE:
-    logger.info("logger info")
-    logger_infoscience.warning("info warning")
-    logger_epo.debug("a debug msg")
-
     main()
