@@ -17,9 +17,9 @@ client_secret = get_secret()["client_secret"]
 
 class TestEspacenetBuilder(unittest.TestCase):
     
-    client = EspacenetBuilderClient(key=client_id, secret=client_secret)
+    client = EspacenetBuilderClient(key=client_id, secret=client_secret, use_cache=True)
 
-    def fftest_should_fetch_family_from_api(self):
+    def test_should_fetch_family_from_api(self):
         
         patents = self.__class__.client.family(  # Retrieve bibliography data
             input = epo_ops.models.Docdb('1000000', 'EP', 'A1'),  # original, docdb, epodoc
@@ -35,16 +35,24 @@ class TestEspacenetBuilder(unittest.TestCase):
         self.assertEqual(patent.number, '1000000')
         self.assertEqual(patent.epodoc, 'EP1000000')
 
-    def test_search_patents(self):
+    def test_search_patents_in_specific_range(self):
         results = self.__class__.client.published_data_search(  # Retrieve bibliography data
             cql = 'pa all "Ecole Polytech* Lausanne" and pd>=2016',
-            constituents = ['biblio']  # optional, list of constituents
+            range_begin=1,
+            range_end=25
             )
-        
+
+        # assert we don't have double entries
+        patents_epodoc_list = [x.epodoc for x in results.patent_families['66532418']]
+        self.assertEqual(
+            len(patents_epodoc_list),
+            len(set(patents_epodoc_list)),
+            "Returned result should not have double entries"
+            )
+
         self.assertGreater(len(results.patent_families), 0)
         self.assertIsInstance(results.patent_families, PatentFamilies)
-        #FIX: set range correctly
-        self.assertGreater(len(results.patent_families), 500)
+        self.assertEqual(len(results.patent_families.patents), 25)
 
 
 class TestNewPatents(unittest.TestCase):

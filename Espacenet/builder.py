@@ -101,31 +101,14 @@ class EspacenetBuilderClient(epo_ops.Client):
 
         return family_patents_list
 
-    def _parse_published_data_search_exchange(self):
-        families_patents = PatentFamilies()
-         
-        for patent_in_family in family_member:
-            if 'exchange-document' not in patent_in_family:
-                # sometimes we don't have an exchange-document
-                continue
-
-            patent = patent_in_family['exchange-document']
-
-            patent_object = self._parse_exchange_document(patent)
-
-            if patent_object:
-                if patent_object.family_id in families_patents:
-                    families_patents[patent_object.family_id].append(patent_object)
-                else:
-                    families_patents[patent_object.family_id] = [patent_object]
-            
-        return families_patents
-
     def published_data_search(self, *args, **kwargs):
         # cql, range_begin=1, range_end=25, constituents=None
         
         logger_epo.info("Searching patents trough EPO API...")
         logger_epo.debug("API search with %s" % kwargs)
+
+        if "range_begin" in kwargs and  "range_end" in kwargs:
+            assert int(kwargs["range_end"]) - int(kwargs["range_begin"]) < 100, "OPS limit is set to 100"
 
         kwargs['constituents'] =  ['biblio']  # we always want biblio
         request = super().published_data_search(*args, **kwargs)
@@ -156,7 +139,12 @@ class EspacenetBuilderClient(epo_ops.Client):
                 patent_object = self._parse_exchange_document(patent_json)
             
                 if patent_object:
-                    patent_families.setdefault(patent_object.family_id, [patent_object]).append(patent_object)
+                    patent_families.setdefault(patent_object.family_id, []).append(patent_object)
+
+            logger_epo.debug("Found {} patents in {} families".format(
+                len(patent_families.patents),
+                len(patent_families)
+            ))
 
             results.patent_families = patent_families
 
