@@ -164,9 +164,12 @@ class EspacenetMixin(object):
             applicants = []
             applicants_exchange = patent_bibliographic['parties']['applicants']['applicant']
 
+            if not isinstance(applicants_exchange, (list, tuple)):
+                applicants_exchange = [applicants_exchange]
+
             for applicant_exchange in applicants_exchange:
                 # keep only original format, at we don't want year and country inside name
-                if '@data-format' in applicant_exchange and  applicant_exchange['@data-format'] == 'original':
+                if '@data-format' in applicant_exchange and applicant_exchange['@data-format'] == 'original':
                     #sequence are here to keep the right order
                     sequence = applicant_exchange['@sequence']
                     name = applicant_exchange['applicant-name']['name']['$']
