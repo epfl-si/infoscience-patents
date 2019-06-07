@@ -233,13 +233,20 @@ class EspacenetBuilderClient(epo_ops.Client):
         final_results.range_begin = range_begin
         final_results.range_end = range_end
         final_results.total_count = total_fetched
+
+        logger_epo.debug("Search result : Found {} patents inside {} uniq families".format(
+                len(final_results.patent_families.patents),
+                len(final_results.patent_families),
+        ))
+
         return final_results
 
     def search(self, value, range_begin=None, range_end=None):
         """ Entry method that decide if auto_range is needed """
         if range_begin and range_end:
-            return self.published_data_search_with_range(value,
-            range_begin,
-            range_end)
+            return self.published_data_search_with_range(
+                cql = value,
+                range_begin = range_begin,
+                range_end = range_end)
         else:
-            return self.published_data_search(value)
+            return self.published_data_search(cql = value)
