@@ -155,6 +155,7 @@ class EspacenetMixin(object):
                     #sequence are here to keep the right order
                     sequence = inventor_exchange['@sequence']
                     name = inventor_exchange['inventor-name']['name']['$']
+                    name = name.title().rstrip(',')
                     inventors.append((sequence, name))
 
             self.inventors = inventors

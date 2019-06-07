@@ -78,13 +78,21 @@ class EspacenetBuilderClient(epo_ops.Client):
         return families_patents
 
     def family(self, *args, **kwargs):
-        # reference_type, input, endpoint=None, constituents=None):
+        r"""
+        Do a search inside a specific range
+        :Keyword Arguments:
+            * *input* (``epo_ops.models``) --
+        """
 
         logger_epo.info("Getting patents trough EPO API...")
         logger_epo.debug("API fetching with %s" % kwargs)
 
         # only published patents
         kwargs['reference_type'] = 'publication'  # publication, application, priority
+        # we need biblio info
+        kwargs['endpoint'] = 'biblio'
+        kwargs['constituents'] = []
+
         request = super().family(*args, **kwargs)
         json_fetched = request.content
 

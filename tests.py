@@ -15,16 +15,56 @@ import epo_ops
 client_id = get_secret()["client_id"]
 client_secret = get_secret()["client_secret"]
 
+
+#TO_DECIDE: move this in code has import filter
+def is_epfl(patent):
+    """ check if the patent has any link with the epfl """
+    valid_applicants = ['ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (EPFL)',
+                        'ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE',
+                        'ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE,',
+                        'ECOLE POLYTECHNIC FEDERAL DE LAUSANNE (EPFL)',
+                        'ECOLE POLYTECHNIQUE FED DE LAUSANNE(EPFL)']
+
+    # specials case for inventors
+    valid_inventors = ['Manson, Jan-Anders, E',
+                       'Shokrollahi Mohammad Amin']
+
+    if hasattr(patent, 'applicants'):
+        for pos, applicant in patent.applicants:  # @UnusedVariable
+            if applicant in valid_applicants or 'EPFL' in applicant:
+                return True
+
+    if hasattr(patent, 'inventors'):
+        for pos, inventor in patent.inventors:  # @UnusedVariable
+            inventor_name = inventor.title().rstrip(',')
+
+            if inventor_name in valid_inventors:
+                return True
+
+            try:
+                Name.objects.get(name=inventor_name)
+                return True
+            except Name.DoesNotExist:
+                # can't find his name, maybe it's a format problem
+                # dont try a different format if we have already a comma
+                if ',' not in inventor_name:
+                    inventor_name = inventor_name.replace(' ', ', ')
+                    try:
+                        Name.objects.get(name=inventor_name)
+                        return True
+                    except Name.DoesNotExist:
+                        pass
+
+    return False
+
+
 class TestEspacenetBuilder(unittest.TestCase):
 
     client = EspacenetBuilderClient(key=client_id, secret=client_secret, use_cache=True)
 
-    def test_should_fetch_family_from_api(self):
-
+    def test_should_fetch_family_from_patent(self):
         patents = self.__class__.client.family(  # Retrieve bibliography data
             input = epo_ops.models.Docdb('1000000', 'EP', 'A1'),  # original, docdb, epodoc
-            endpoint = 'biblio',  # optional, defaults to biblio in case of published_data
-            constituents = []  # optional, list of constituents
             )
 
         self.assertGreater(len(patents), 0)
@@ -34,6 +74,9 @@ class TestEspacenetBuilder(unittest.TestCase):
         self.assertIsInstance(patent, EspacenetPatent)
         self.assertEqual(patent.number, '1000000')
         self.assertEqual(patent.epodoc, 'EP1000000')
+        self.assertNotEqual(patent.abstract_en, '')
+        self.assertGreater(len(patent.inventors), 0)
+        self.assertNotEqual(patent.inventors[0], '')
 
     def test_search_patents_specific_range(self):
         range_begin = 1
@@ -56,9 +99,10 @@ class TestEspacenetBuilder(unittest.TestCase):
         self.assertIsInstance(results.patent_families, PatentFamilies)
         self.assertEqual(len(results.patent_families.patents), range_end)
 
-    def test_search_patents_without_range(self):
-        """ as EPO has a hard limit of 100 results, test the auto-range provided by
-            our implementation
+    def test_patents_search(self):
+        """
+        as EPO has a hard limit of 100 results, this test
+        verify that the auto-range is doing his job
         """
         results = self.__class__.client.search(
             value = 'pa all "Ecole Polytech* Lausanne" and pd=2014'
@@ -71,6 +115,7 @@ class TestEspacenetBuilder(unittest.TestCase):
             len(set(patents_epodoc_list)),
             "Returned result should not have double entries"
             )
+
         # be sure this search has more results than the range limit
         self.assertGreater(results.total_count, 100)
         self.assertGreater(len(results.patent_families.patents), 100)
