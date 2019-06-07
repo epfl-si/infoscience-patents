@@ -35,11 +35,13 @@ class TestEspacenetBuilder(unittest.TestCase):
         self.assertEqual(patent.number, '1000000')
         self.assertEqual(patent.epodoc, 'EP1000000')
 
-    def test_search_patents_in_specific_range(self):
-        results = self.__class__.client.published_data_search(  # Retrieve bibliography data
+    def test_search_patents_specific_range(self):
+        range_begin = 1
+        range_end = 12
+        results = self.__class__.client.published_data_search_with_range(
             cql = 'pa all "Ecole Polytech* Lausanne" and pd>=2016',
-            range_begin=1,
-            range_end=25
+            range_begin = range_begin,
+            range_end = range_end
             )
 
         # assert we don't have double entries
@@ -52,7 +54,29 @@ class TestEspacenetBuilder(unittest.TestCase):
 
         self.assertGreater(len(results.patent_families), 0)
         self.assertIsInstance(results.patent_families, PatentFamilies)
-        self.assertEqual(len(results.patent_families.patents), 25)
+        self.assertEqual(len(results.patent_families.patents), range_end)
+
+    def test_search_patents_without_range(self):
+        """ as EPO has a hard limit of 100 results, test the auto-range provided by
+            our implementation
+        """
+        results = self.__class__.client.published_data_search(
+            cql = 'pa all "Ecole Polytech* Lausanne" and pd=2014'
+            )
+
+        # assert we don't have double entries
+        patents_epodoc_list = [x.epodoc for x in results.patent_families['66532418']]
+        self.assertEqual(
+            len(patents_epodoc_list),
+            len(set(patents_epodoc_list)),
+            "Returned result should not have double entries"
+            )
+        # be sure this search has more results than the range limit
+        self.assertGreater(results.total_count, 100)
+        self.assertGreater(len(results.patent_families.patents), 100)
+
+        self.assertIsInstance(results.patent_families, PatentFamilies)
+        self.assertEqual(len(results.patent_families.patents), results.total_count)
 
 
 class TestNewPatents(unittest.TestCase):

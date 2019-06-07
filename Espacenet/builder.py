@@ -16,13 +16,17 @@ logger_epo = logging.getLogger('EPO')
 class EspacenetSearchResult:
     patent_families = PatentFamilies()
 
-    def __init__(self, json_fetched):
-        biblio_search = json_fetched['ops:biblio-search']
+    def __init__(self, json_fetched=None):
+        if json_fetched:
+            biblio_search = json_fetched['ops:biblio-search']
 
-        self.initial_search = biblio_search['ops:query']['$']
-        self.total_count = biblio_search['@total-result-count']
-        self.range_begin = biblio_search['ops:range']['@begin']
-        self.range_end = biblio_search['ops:range']['@end']
+            self.initial_search = biblio_search['ops:query']['$']
+            self.total_count = int(biblio_search['@total-result-count'])
+            self.range_begin = int(biblio_search['ops:range']['@begin'])
+            self.range_end = int(biblio_search['ops:range']['@end'])
+        else:
+            # allow empty instanciation
+            self.total_count = None
 
 
 class EspacenetBuilderClient(epo_ops.Client):
@@ -36,7 +40,10 @@ class EspacenetBuilderClient(epo_ops.Client):
         ]
 
         if use_cache:
+            logger_epo.debug("Cache middleware is enabled")
             kwargs['middlewares'].append(epo_ops.middlewares.Dogpile())
+        else:
+            logger_epo.debug("Cache middleware is disabled")
 
         super().__init__(*args, **kwargs)
 
@@ -101,16 +108,9 @@ class EspacenetBuilderClient(epo_ops.Client):
 
         return family_patents_list
 
-    def published_data_search(self, *args, **kwargs):
-        # cql, range_begin=1, range_end=25, constituents=None
+    def _fetch_search_in_range(self, *args, **kwargs):
+        kwargs['constituents'] = ['biblio']  # we always want biblio
         
-        logger_epo.info("Searching patents trough EPO API...")
-        logger_epo.debug("API search with %s" % kwargs)
-
-        if "range_begin" in kwargs and  "range_end" in kwargs:
-            assert int(kwargs["range_end"]) - int(kwargs["range_begin"]) < 100, "OPS limit is set to 100"
-
-        kwargs['constituents'] =  ['biblio']  # we always want biblio
         request = super().published_data_search(*args, **kwargs)
         json_fetched = request.content
 
@@ -149,3 +149,81 @@ class EspacenetBuilderClient(epo_ops.Client):
             results.patent_families = patent_families
 
         return results
+
+    def published_data_search_with_range(self, *args, **kwargs):
+        r"""
+        Do a search inside a specific range
+        :Keyword Arguments:
+            * *cql* (``str``) --
+                search value
+            * *range_begin* (``int``) --
+            * *range_end* (``int``) --
+        """
+        return self._fetch_search_in_range(*args, **kwargs)
+
+    def published_data_search(self, *args, **kwargs):
+        r"""
+        Unlimited search that make multiple requests until
+        all patents have been fetched. Limit is still 10'000 though
+
+        :Keyword Arguments:
+            * *cql* (``str``) --
+                search value
+        """
+        final_results = EspacenetSearchResult()
+        total_fetched = 0
+        espacenet_range_limit = 10000
+        range_iteration_count = 100
+
+        range_begin = 1
+        range_end = 100
+
+        logger_epo.info("Searching patents trough EPO API...")
+        logger_epo.debug("API search with %s" % kwargs)
+
+        while True:
+            if range_begin > espacenet_range_limit:
+                break
+
+            # set kwargs for _fetch_search_in_range
+            kwargs["range_begin"] = range_begin
+            kwargs["range_end"] = range_end
+
+            result_patents = self._fetch_search_in_range(*args, **kwargs)
+
+            # build one result
+            for key, value in result_patents.patent_families.items():
+                if final_results.patent_families.get(key):
+                    final_results.patent_families[key].extend(value)
+                else:
+                    final_results.patent_families[key] = value
+
+            # need more ?
+            total_fetched += result_patents.range_end - result_patents.range_begin + 1
+
+            logger_epo.debug("Done an iteration of fetch {}/{}".format(
+                total_fetched,
+                result_patents.total_count,
+            ))
+
+            if result_patents.total_count > espacenet_range_limit:
+                    raise ValueError("Espacenet has a limit of 10000 "
+                                    "elements. Build a specific query ")
+
+            if result_patents.total_count == 0 or \
+                total_fetched >= result_patents.total_count:
+                break
+
+            # prepare next iteration
+            range_begin += range_iteration_count
+            range_end += range_iteration_count
+            # don't allow over 10000
+            range_end = min(range_end, espacenet_range_limit)
+            if range_end > result_patents.total_count:
+                range_end = result_patents.total_count
+
+        # set final results good values
+        final_results.range_begin = range_begin
+        final_results.range_end = range_end
+        final_results.total_count = total_fetched
+        return final_results
