@@ -110,7 +110,7 @@ class EspacenetBuilderClient(epo_ops.Client):
 
     def _fetch_search_in_range(self, *args, **kwargs):
         kwargs['constituents'] = ['biblio']  # we always want biblio
-
+        logger_epo.debug("Doing an API search with {}".format(kwargs))
         request = super().published_data_search(*args, **kwargs)
         json_fetched = request.content
 
@@ -179,7 +179,6 @@ class EspacenetBuilderClient(epo_ops.Client):
         range_end = 100
 
         logger_epo.info("Searching patents trough EPO API...")
-        logger_epo.debug("API search with %s" % kwargs)
 
         while True:
             if range_begin > espacenet_range_limit:
@@ -231,8 +230,8 @@ class EspacenetBuilderClient(epo_ops.Client):
     def search(self, value, range_begin=None, range_end=None):
         """ Entry method that decide if auto_range is needed """
         if range_begin and range_end:
-            self.published_data_search_with_range(value,
+            return self.published_data_search_with_range(value,
             range_begin,
             range_end)
         else:
-            self.published_data_search(value)
+            return self.published_data_search(value)
