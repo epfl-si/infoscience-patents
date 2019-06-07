@@ -17,7 +17,7 @@ client_secret = get_secret()["client_secret"]
 
 
 #TO_DECIDE: move this in code has import filter
-def is_epfl(patent):
+def is_patent_from_epfl(patent):
     """ check if the patent has any link with the epfl """
     valid_applicants = ['ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (EPFL)',
                         'ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE',
@@ -25,35 +25,11 @@ def is_epfl(patent):
                         'ECOLE POLYTECHNIC FEDERAL DE LAUSANNE (EPFL)',
                         'ECOLE POLYTECHNIQUE FED DE LAUSANNE(EPFL)']
 
-    # specials case for inventors
-    valid_inventors = ['Manson, Jan-Anders, E',
-                       'Shokrollahi Mohammad Amin']
-
     if hasattr(patent, 'applicants'):
         for pos, applicant in patent.applicants:  # @UnusedVariable
-            if applicant in valid_applicants or 'EPFL' in applicant:
+            if applicant in valid_applicants or 'EPFL' in applicant or \
+                'POLYTECHNIQUE FÉDÉRALE DE LAUSANNE':
                 return True
-
-    if hasattr(patent, 'inventors'):
-        for pos, inventor in patent.inventors:  # @UnusedVariable
-            inventor_name = inventor.title().rstrip(',')
-
-            if inventor_name in valid_inventors:
-                return True
-
-            try:
-                Name.objects.get(name=inventor_name)
-                return True
-            except Name.DoesNotExist:
-                # can't find his name, maybe it's a format problem
-                # dont try a different format if we have already a comma
-                if ',' not in inventor_name:
-                    inventor_name = inventor_name.replace(' ', ', ')
-                    try:
-                        Name.objects.get(name=inventor_name)
-                        return True
-                    except Name.DoesNotExist:
-                        pass
 
     return False
 
@@ -122,6 +98,23 @@ class TestEspacenetBuilder(unittest.TestCase):
 
         self.assertIsInstance(results.patent_families, PatentFamilies)
         self.assertEqual(len(results.patent_families.patents), results.total_count)
+
+        # we only want patents from epfl
+        for family_id, patents in results.patent_families.items():
+            for patent in patents:
+                if not is_patent_from_epfl(patent):
+                    # assert at least one patent of the family is epfl
+                    has_one_epfl = False
+                    for o_patent in results.patent_families[family_id]:
+                        if is_patent_from_epfl(o_patent):
+                            has_one_epfl = True
+                            break
+
+                    self.assertFalse(has_one_epfl,
+                     "This family has nothing to do with EPFL {}. Patent sample : {}".format(
+                         family_id,
+                         o_patent
+                         ))
 
 
 class TestNewPatents(unittest.TestCase):
