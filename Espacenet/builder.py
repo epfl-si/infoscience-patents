@@ -51,15 +51,15 @@ class EspacenetBuilderClient(epo_ops.Client):
         """ from an exchange_document, verify it's valid and sent it to patent builder """
         if '@status' in exchange_document and exchange_document['@status'] == 'not found':
             return None
-        
+
         return EspacenetPatent(exchange_document = exchange_document)
 
     def _parse_family_member(self, family_member):
         """ when we ask for bibliographical data (on a search or in a specific patent number)
-        trough the use of endpoint or constituent, Espacenet return an exchange_document 
+        trough the use of endpoint or constituent, Espacenet return an exchange_document
         """
         families_patents = PatentFamilies()
-         
+
         for patent_in_family in family_member:
             if 'exchange-document' not in patent_in_family:
                 # sometimes we don't have an exchange-document
@@ -74,12 +74,12 @@ class EspacenetBuilderClient(epo_ops.Client):
                     families_patents[patent_object.family_id].append(patent_object)
                 else:
                     families_patents[patent_object.family_id] = [patent_object]
-            
+
         return families_patents
 
     def family(self, *args, **kwargs):
         # reference_type, input, endpoint=None, constituents=None):
-        
+
         logger_epo.info("Getting patents trough EPO API...")
         logger_epo.debug("API fetching with %s" % kwargs)
 
@@ -98,7 +98,7 @@ class EspacenetBuilderClient(epo_ops.Client):
         except KeyError:
             # this should not happens
             raise
-        
+
         if not json_fetched:
             return PatentFamilies()
 
@@ -110,7 +110,7 @@ class EspacenetBuilderClient(epo_ops.Client):
 
     def _fetch_search_in_range(self, *args, **kwargs):
         kwargs['constituents'] = ['biblio']  # we always want biblio
-        
+
         request = super().published_data_search(*args, **kwargs)
         json_fetched = request.content
 
@@ -124,7 +124,7 @@ class EspacenetBuilderClient(epo_ops.Client):
         except KeyError:
             # this should not happens
             raise
-        
+
         results = EspacenetSearchResult(json_fetched)
 
         if results.total_count == 0:
@@ -137,7 +137,7 @@ class EspacenetBuilderClient(epo_ops.Client):
             for exchange_document in search_result_json:
                 patent_json = exchange_document['exchange-document']
                 patent_object = self._parse_exchange_document(patent_json)
-            
+
                 if patent_object:
                     patent_families.setdefault(patent_object.family_id, []).append(patent_object)
 
@@ -227,3 +227,12 @@ class EspacenetBuilderClient(epo_ops.Client):
         final_results.range_end = range_end
         final_results.total_count = total_fetched
         return final_results
+
+    def search(self, value, range_begin=None, range_end=None):
+        """ Entry method that decide if auto_range is needed """
+        if range_begin and range_end:
+            self.published_data_search_with_range(value,
+            range_begin,
+            range_end)
+        else:
+            self.published_data_search(value)

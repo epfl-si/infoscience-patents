@@ -16,11 +16,11 @@ client_id = get_secret()["client_id"]
 client_secret = get_secret()["client_secret"]
 
 class TestEspacenetBuilder(unittest.TestCase):
-    
+
     client = EspacenetBuilderClient(key=client_id, secret=client_secret, use_cache=True)
 
     def test_should_fetch_family_from_api(self):
-        
+
         patents = self.__class__.client.family(  # Retrieve bibliography data
             input = epo_ops.models.Docdb('1000000', 'EP', 'A1'),  # original, docdb, epodoc
             endpoint = 'biblio',  # optional, defaults to biblio in case of published_data
@@ -38,8 +38,8 @@ class TestEspacenetBuilder(unittest.TestCase):
     def test_search_patents_specific_range(self):
         range_begin = 1
         range_end = 12
-        results = self.__class__.client.published_data_search_with_range(
-            cql = 'pa all "Ecole Polytech* Lausanne" and pd>=2016',
+        results = self.__class__.client.search(
+            value = 'pa all "Ecole Polytech* Lausanne" and pd>=2016',
             range_begin = range_begin,
             range_end = range_end
             )
@@ -60,8 +60,8 @@ class TestEspacenetBuilder(unittest.TestCase):
         """ as EPO has a hard limit of 100 results, test the auto-range provided by
             our implementation
         """
-        results = self.__class__.client.published_data_search(
-            cql = 'pa all "Ecole Polytech* Lausanne" and pd=2014'
+        results = self.__class__.client.search(
+            value = 'pa all "Ecole Polytech* Lausanne" and pd=2014'
             )
 
         # assert we don't have double entries
