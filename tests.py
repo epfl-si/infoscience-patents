@@ -16,7 +16,7 @@ client_id = get_secret()["client_id"]
 client_secret = get_secret()["client_secret"]
 
 
-#TO_DECIDE: move this in code has import filter
+#TO_DECIDE: move this in code has import filter or not?
 def is_patent_from_epfl(patent):
     """ check if the patent has any link with the epfl """
     valid_applicants = ['ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE (EPFL)',
@@ -115,6 +115,16 @@ class TestEspacenetBuilder(unittest.TestCase):
                          family_id,
                          o_patent
                          ))
+
+
+class TestLoadingInfosciencExport(unittest.TestCase):
+
+    def test_should_create_patents_from_export:
+
+        # open file
+        # for every record, create the corresponding patent (family)
+        # ...
+
 
 
 class TestNewPatents(unittest.TestCase):

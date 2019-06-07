@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+<record>
+  <controlfield tag="001">265180</controlfield>
+  <controlfield tag="005">20190527113250.0</controlfield>
+  <datafield tag="013" ind1=" " ind2=" ">
+    <subfield code="a">WO2018092029</subfield>
+    <subfield code="b">A1</subfield>
+  </datafield>
+  <datafield tag="037" ind1=" " ind2=" ">
+    <subfield code="a">PATENT</subfield>
+  </datafield>
+  <datafield tag="245" ind1=" " ind2=" ">
+    <subfield code="a">PHOTOPOLYMERIZABLE BONE FILLER MATERIAL</subfield>
+  </datafield>
+  <datafield tag="260" ind1=" " ind2=" ">
+    <subfield code="c">2019-04</subfield>
+  </datafield>
+  <datafield tag="269" ind1=" " ind2=" ">
+    <subfield code="a">2019-04</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">67</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Patents</subfield>
+  </datafield>
+  <datafield tag="500" ind1=" " ind2=" ">
+    <subfield code="a">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</subfield>
+  </datafield>
+  <datafield tag="520" ind1=" " ind2=" ">
+    <subfield code="a">A photopolymerizable bone filler material comprising a fluid polymeric material, a photoinitiator and a plurality of solid, polymeric optical fibers is disclosed, wherein said optical fibers are used for both illumination and reinforcement of the entire photopolymerized structure. In one embodiment, a mixture of PMMA and MMA is used as the fluid polymeric material. In one embodiment, the photoinitiator belongs to the bisacylphosphine oxide (BAPO) family, providing a complete, quick and reliable polymerization of a PMMA/MMA liquid bone cement upon application of a light of suitable wavelength. Contrary to other photoinitiators and chemically-similar compounds used in an experimental setting, the BAPO photoinitiator permits to obtain a polymerized bone cement which is mechanically robust and suitable for in vivo applications. Methods for using the developed fluid bone filler are also herein disclosed.</subfield>
+  </datafield>
+  <datafield tag="542" ind1=" " ind2=" ">
+    <subfield code="f">CC BY</subfield>
+  </datafield>
+  <datafield tag="653" ind1="1" ind2=" ">
+    <subfield code="a">dolor</subfield>
+  </datafield>
+  <datafield tag="653" ind1="1" ind2=" ">
+    <subfield code="a">voluptate</subfield>
+  </datafield>
+  <datafield tag="653" ind1="1" ind2=" ">
+    <subfield code="a">laborum</subfield>
+  </datafield>
+  <datafield tag="700" ind1=" " ind2=" ">
+    <subfield code="0">263734</subfield>
+    <subfield code="a">Bianchi, Alessandra</subfield>
+  </datafield>
+  <datafield tag="710" ind1=" " ind2=" ">
+    <subfield code="a">Google Inc.</subfield>
+  </datafield>
+  <datafield tag="720" ind1=" " ind2="5">
+    <subfield code="a">EPFL</subfield>
+    <subfield code="e">"app."</subfield>
+  </datafield>
+  <datafield tag="720" ind1=" " ind2="5">
+    <subfield code="a">Google Inc.</subfield>
+    <subfield code="e">"app."</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="s">83516</subfield>
+    <subfield code="u">http://infoscience.epfl.ch/record/265180/files/Submitted.pdf</subfield>
+  </datafield>
+  <datafield tag="856" ind1="0" ind2=" ">
+    <subfield code="f">alessandra.bianchi@epfl.ch</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="1">
+    <subfield code="y">inventor's page</subfield>
+    <subfield code="u">https://people.epfl.ch/alessandra.bianchi?lang=en</subfield>
+  </datafield>
+  <datafield tag="909" ind1="C" ind2="0">
+    <subfield code="0">252778</subfield>
+    <subfield code="m">manon.velasco@epfl.ch</subfield>
+    <subfield code="p">PLACEBOLAB</subfield>
+    <subfield code="x">S20732</subfield>
+    <subfield code="z">Velasco, Manon</subfield>
+  </datafield>
+  <datafield tag="960" ind1=" " ind2=" ">
+    <subfield code="a">alessandra.bianchi@epfl.ch</subfield>
+  </datafield>
+  <datafield tag="961" ind1=" " ind2=" ">
+    <subfield code="a">fantin.reichler@epfl.ch</subfield>
+  </datafield>
+  <datafield tag="973" ind1=" " ind2=" ">
+    <subfield code="a">EPFL</subfield>
+  </datafield>
+  <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="a">PATENT</subfield>
+  </datafield>
+  <datafield tag="981" ind1=" " ind2=" ">
+    <subfield code="a">overwrite</subfield>
+  </datafield>
+</record>
+</collection>
