@@ -13,6 +13,15 @@ logger_infoscience = logging.getLogger('INFOSCIENCE')
 logger_epo = logging.getLogger('EPO')
 
 
+# utils to pretty print
+def pp_json(json_thing, sort=True, indents=4):
+    if type(json_thing) is str:
+        print(json.dumps(json.loads(json_thing), sort_keys=sort, indent=indents))
+    else:
+        print(json.dumps(json_thing, sort_keys=sort, indent=indents))
+    return None
+
+
 class EspacenetSearchResult:
     patent_families = PatentFamilies()
 
@@ -53,6 +62,47 @@ class EspacenetBuilderClient(epo_ops.Client):
             return None
 
         return EspacenetPatent(exchange_document = exchange_document)
+
+    def _parse_patent(self, exchange_documents_json):
+        exchange_document = exchange_documents_json['exchange-documents']['exchange-document']
+        return self._parse_exchange_document(exchange_document)
+
+    def patent(self, *args, **kwargs):
+        r"""
+        Retrieve a specific patent
+        :Keyword Arguments:
+            * *input* (``epo_ops.models``) --
+        """
+        logger_epo.info("Getting patents trough EPO API...")
+        logger_epo.debug("API fetching with %s" % kwargs)
+
+        # only published patents
+        kwargs['reference_type'] = 'publication'  # publication, application, priority
+        # we need biblio info
+        kwargs['endpoint'] = 'biblio'
+        kwargs['constituents'] = []
+
+        request = super().published_data(*args, **kwargs)
+        json_fetched = request.content
+
+        try:
+            json_fetched = json.loads(json_fetched)
+        except ValueError as e:
+            raise ValueError("Value error for : %s" % request.content) from e
+
+        try:
+            json_fetched = json_fetched['ops:world-patent-data']
+        except KeyError:
+            # this should not happens
+            raise
+
+        if not json_fetched:
+            return PatentFamilies()
+
+        logger_epo.debug("Crawling returned json for this patent")
+        patent = self._parse_patent(json_fetched)
+
+        return patent
 
     def _parse_family_member(self, family_member):
         """ when we ask for bibliographical data (on a search or in a specific patent number)
@@ -110,9 +160,8 @@ class EspacenetBuilderClient(epo_ops.Client):
         if not json_fetched:
             return PatentFamilies()
 
+        logger_epo.info("Loading published data as patent families")
         family_patents_list = self._parse_family_member(json_fetched['ops:patent-family']['ops:family-member'])
-
-        logger_epo.info("Loading published data from API")
 
         return family_patents_list
 

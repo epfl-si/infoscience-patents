@@ -15,6 +15,9 @@ import epo_ops
 client_id = get_secret()["client_id"]
 client_secret = get_secret()["client_secret"]
 
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
 
 #TO_DECIDE: move this in code has import filter or not?
 def is_patent_from_epfl(patent):
@@ -38,15 +41,27 @@ class TestEspacenetBuilder(unittest.TestCase):
 
     client = EspacenetBuilderClient(key=client_id, secret=client_secret, use_cache=True)
 
-    def test_should_fetch_family_from_patent(self):
-        patents = self.__class__.client.family(  # Retrieve bibliography data
+    def test_should_fetch_a_patent(self):
+        patent = self.__class__.client.patent(  # Retrieve bibliography data
             input = epo_ops.models.Docdb('1000000', 'EP', 'A1'),  # original, docdb, epodoc
             )
 
-        self.assertGreater(len(patents), 0)
-        self.assertIsInstance(patents, PatentFamilies)
+        self.assertIsInstance(patent, EspacenetPatent)
+        self.assertEqual(patent.number, '1000000')
+        self.assertEqual(patent.epodoc, 'EP1000000')
+        self.assertNotEqual(patent.abstract_en, '')
+        self.assertGreater(len(patent.inventors), 0)
+        self.assertNotEqual(patent.inventors[0], '')
 
-        patent = patents['19768124'][0]
+    def test_should_fetch_family_from_patent(self):
+        patents_families = self.__class__.client.family(  # Retrieve bibliography data
+            input = epo_ops.models.Docdb('1000000', 'EP', 'A1'),  # original, docdb, epodoc
+            )
+
+        self.assertGreater(len(patents_families), 0)
+        self.assertIsInstance(patents_families, PatentFamilies)
+
+        patent = patents_families['19768124'][0]
         self.assertIsInstance(patent, EspacenetPatent)
         self.assertEqual(patent.number, '1000000')
         self.assertEqual(patent.epodoc, 'EP1000000')
@@ -117,14 +132,25 @@ class TestEspacenetBuilder(unittest.TestCase):
                          ))
 
 
-class TestLoadingInfosciencExport(unittest.TestCase):
+class TestPatentToMarc(unittest.TestCase):
 
-    def test_should_create_patents_from_export:
+    def test_should_have_a_well_defined_marc_patent(self):
+        # create patent
+        # to-marc
+        # check same as file
+        pass
+
+
+class TestLoadingInfosciencExport(unittest.TestCase):
+    patent_sample_xml_path = os.path.join(__location__, "fixtures", "infoscience_patent_sample_marc.xml")
+
+    def test_should_create_patents_from_infoscience_export(self):
+        with open(self.__class__.patent_sample_xml_path) as patent_xml:
+            pass
 
         # open file
         # for every record, create the corresponding patent (family)
         # ...
-
 
 
 class TestNewPatents(unittest.TestCase):
