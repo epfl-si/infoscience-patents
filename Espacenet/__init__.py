@@ -3,3 +3,4 @@
 """
 
 from .models import EspacenetPatent
+from .marc import MarcPatentFamilies

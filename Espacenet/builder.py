@@ -4,8 +4,9 @@ import logging, json
 
 import epo_ops
 
-from .models import EspacenetPatent
 from .patent_models import PatentFamilies
+from .marc import MarcPatentFamilies as PatentFamilies
+from .marc import MarcEspacenetPatent as EspacenetPatent
 
 
 logger = logging.getLogger('main')
@@ -73,7 +74,7 @@ class EspacenetBuilderClient(epo_ops.Client):
         :Keyword Arguments:
             * *input* (``epo_ops.models``) --
         """
-        logger_epo.info("Getting patents trough EPO API...")
+        logger_epo.debug("Getting a specific patent trough EPO API...")
         logger_epo.debug("API fetching with %s" % kwargs)
 
         # only published patents
@@ -99,8 +100,9 @@ class EspacenetBuilderClient(epo_ops.Client):
         if not json_fetched:
             return PatentFamilies()
 
-        logger_epo.debug("Crawling returned json for this patent")
+        logger_epo.debug("Parsing a returned json...")
         patent = self._parse_patent(json_fetched)
+        logger_epo.debug("Patent found and returning")
 
         return patent
 

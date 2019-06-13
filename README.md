@@ -4,7 +4,6 @@
 
 Fetch EPFL patents from EPO and generate MarcXML from it
 
-
 ## Install
 
 - Get python3.7
@@ -18,7 +17,7 @@ Fetch EPFL patents from EPO and generate MarcXML from it
     make -j 4
     sudo make altinstall
     ```
-    
+
     - https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/
 
 - `pipenv install --python 3.7`
@@ -59,7 +58,14 @@ This is the default behavior.
 
 ### Loading from a file (TO_DECIDE)
 
-you can provide your own MarcXML file instead loading the data on Infoscience
+you can provide your own MarcXML file instead loading the data on Infoscience.
 
 Example :
-`pipenv run python sync.py --infoscience_patents ./infoscience_patents.xml`
+
+- get the lastest infoscience export of patents
+    - `wget "https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A%27PATENT%27" -O infoscience_patents_export.xml --header="Content-Type: text/xml"`
+
+- import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
+    - `pipenv run python sync.py --infoscience_patents ./infoscience_patents.xml`
+
+- use the produced files found in ./output

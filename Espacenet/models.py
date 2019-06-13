@@ -131,8 +131,12 @@ class EspacenetMixin(object):
                 try:
                     if invention_title['@lang'] == 'fr':
                         self.invention_title_fr = invention_title['$']
+                        self.invention_title_fr = self.invention_title_fr.lower()
+                        self.invention_title_fr = self.invention_title_fr.capitalize()
                     elif invention_title['@lang'] == 'en':
                         self.invention_title_en = invention_title['$']
+                        self.invention_title_en = self.invention_title_en.lower()
+                        self.invention_title_en = self.invention_title_en.capitalize()
                 except KeyError:
                     pass
         except KeyError:

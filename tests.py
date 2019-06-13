@@ -1,13 +1,15 @@
 import os
+import re
 import unittest
 import argparse
+import xml.etree.ElementTree as ET
 
 from log_utils import add_logging_argument, set_logging_from_args
 
 from Espacenet.builder import EspacenetBuilderClient
 from Espacenet.epo_secrets import get_secret
 from Espacenet.models import EspacenetPatent
-from Espacenet.patent_models import PatentFamilies
+from Espacenet.marc import MarcPatentFamilies as PatentFamilies
 
 import epo_ops
 
@@ -133,12 +135,37 @@ class TestEspacenetBuilder(unittest.TestCase):
 
 
 class TestPatentToMarc(unittest.TestCase):
+    patent_sample_xml_path = os.path.join(__location__, "fixtures", "infoscience_patent_sample_marc.xml")
 
     def test_should_have_a_well_defined_marc_patent(self):
-        # create patent
-        # to-marc
-        # check same as file
-        pass
+        client = EspacenetBuilderClient(key=client_id, secret=client_secret, use_cache=True)
+
+        # search a patent
+        patent_family = client.family(  # Retrieve bibliography data
+            input = epo_ops.models.Epodoc('EP2936195')
+            )
+
+        # get the marc transformation
+        marc_collection_dumped = patent_family.to_marc()
+
+        # check the result look like the reference file
+        with open(self.__class__.patent_sample_xml_path) as patent_xml:
+            reference_root = ET.parse(patent_xml)
+            result_root = marc_collection_dumped
+
+            control_fields = reference_root.findall(".//controlfield")
+            subfields = reference_root.findall(".//subfield")
+            result_control_fields = result_root.findall(".//controlfield")
+            result_subfields = result_root.findall(".//subfield")
+
+            try:
+                self.assertNotEqual(len(list(result_control_fields)), 0)
+                self.assertNotEqual(len(result_subfields), 0)
+                self.assertEqual(len(result_control_fields), len(control_fields))
+                self.assertEqual(len(result_subfields), len(subfields))
+            except AssertionError as e:
+                print(self.patent_sample_xml_path)
+                raise AssertionError("XML from patent is bad : %s" % patent_family.to_marc_string(True)) from e
 
 
 class TestLoadingInfosciencExport(unittest.TestCase):

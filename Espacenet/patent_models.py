@@ -6,42 +6,43 @@ import collections
 import datetime
 import re
 
+
 class PatentFamilies(collections.defaultdict):
     """ family_id as key, patents as values
     """
     def __init__(self, *args, **kwargs):
         collections.defaultdict.__init__(self, list)
-        
+
     def __repr__(self):
         families = []
-        
+
         for fam_id, patents in self.items():
             inside_patents = []
             for patent in patents:
                 inside_patents.append(str(patent))
-            
+
             families.append("Family %s : [%s]" % (fam_id, ", ".join(inside_patents)))
-            
+
         return "default list dict : %s" % " ".join(families)
-    
+
     @property
     def patents(self):
         return [patent for patents_list in self.values() for patent in patents_list]
-    
+
 PatentClassification = collections.namedtuple("PatentClassification",
-                                              """sequence 
-                                                 class_nr 
-                                                 classification_scheme 
-                                                 classification_value 
-                                                 main_group 
-                                                 section 
-                                                 subclass 
+                                              """sequence
+                                                 class_nr
+                                                 classification_scheme
+                                                 classification_value
+                                                 main_group
+                                                 section
+                                                 subclass
                                                  subgroup""")
 
 class PatentClassificationWithDefault(PatentClassification):
-    def __new__(cls, sequence = '', 
-                     class_nr = '', 
-                     classification_scheme = '', 
+    def __new__(cls, sequence = '',
+                     class_nr = '',
+                     classification_scheme = '',
                      classification_value = '',
                      main_group = '',
                      section = '',
@@ -49,18 +50,18 @@ class PatentClassificationWithDefault(PatentClassification):
                      subgroup = ''):
         # add default values, make it not mandatory
         return super(PatentClassificationWithDefault, cls).__new__(cls, sequence,
-                                                                         class_nr, 
-                                                                         classification_scheme, 
-                                                                         classification_value, 
-                                                                         main_group, 
-                                                                         section, 
-                                                                         subclass, 
+                                                                         class_nr,
+                                                                         classification_scheme,
+                                                                         classification_value,
+                                                                         main_group,
+                                                                         section,
+                                                                         subclass,
                                                                          subgroup)
 
 
 def _convert_to_date(value):
     result = None
-    
+
     if value and isinstance(value, str):
         # try to convert the date string to a real date
         try:
@@ -69,7 +70,7 @@ def _convert_to_date(value):
             result = None
     elif isinstance(value, datetime.date):
         result = value
-    
+
     return result
 
 
@@ -124,7 +125,7 @@ class Patent(BasePatent):
     """ Represent a patent, for easy query on espacenet """
     _date = None
     _application_date = None
-    
+
     patent_regex = r"^(?P<country>\D{2})(?P<number>\d{1,})[\s|-]?(?P<kind>\w\d)?"
 
     def __init__(self, epodoc = '', country = '', number = '', kind=None, date=None, **kwargs):
@@ -144,25 +145,25 @@ class Patent(BasePatent):
                 kind = patent_dict['kind']
             else:
                 raise AttributeError("Epodoc format not valid: %s" % epodoc)
-        
+
         if number and not country:
             raise AttributeError
 
         if country and not number:
             raise AttributeError
-        
+
         if not hasattr(self, 'number') or (not(self.number) and number):
             self.number = number
-        
+
         if not hasattr(self, 'country') or (not(self.country) and country):
             self.country = country
-        
+
         if not hasattr(self, 'kind') or (not(self.kind) and kind):
             self.kind = kind
-        
+
         if not hasattr(self, 'date') or (not(self.date) and date):
             self.date = date
-    
+
     def __unicode__(self):
         if self.kind:
             output = "Patent %s%s-%s" % (self.country, self.number, self.kind)
@@ -182,7 +183,7 @@ class Patent(BasePatent):
     @date.setter
     def date(self, value):
         self._date = _convert_to_date(value)
-    
+
     @property
     def application_date(self):
         return self._application_date
