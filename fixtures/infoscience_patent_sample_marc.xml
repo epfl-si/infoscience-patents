@@ -1,10 +1,6 @@
 <collection>
 	<record>
 		<controlfield tag="005">20190613102813.0</controlfield>
-		<datafield ind1=" " ind2=" " tag="024">
-			<subfield code="a">50975639</subfield>
-			<subfield code="2">EPO Family ID</subfield>
-		</datafield>
 		<datafield ind1=" " ind2=" " tag="013">
 			<subfield code="a">EP2936195</subfield>
 			<subfield code="b">A1</subfield>
@@ -46,6 +42,10 @@
 			<subfield code="b">A1</subfield>
 			<subfield code="c">WO</subfield>
 			<subfield code="d">20140626</subfield>
+		</datafield>
+		<datafield ind1=" " ind2=" " tag="024">
+			<subfield code="a">50975639</subfield>
+			<subfield code="2">EPO Family ID</subfield>
 		</datafield>
 		<datafield ind1=" " ind2=" " tag="245">
 			<subfield code="a">A method and a system for determining the geometry and/or the localisation of an object</subfield>

@@ -164,8 +164,11 @@ class TestPatentToMarc(unittest.TestCase):
                 self.assertEqual(len(result_control_fields), len(control_fields))
                 self.assertEqual(len(result_subfields), len(subfields))
             except AssertionError as e:
-                print(self.patent_sample_xml_path)
                 raise AssertionError("XML from patent is bad : %s" % patent_family.to_marc_string(True)) from e
+
+            # namespace check
+            self.assertTrue('<collection xmlns="http://www.loc.gov/MARC21/slim">' in
+                    patent_family.to_marc_string(True), "Missing namespace in xml result")
 
 
 class TestLoadingInfosciencExport(unittest.TestCase):

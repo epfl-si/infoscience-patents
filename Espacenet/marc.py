@@ -27,6 +27,19 @@ def _subfield(parent, code):
     return subfield
 
 
+#NOT_USED, as sample at the moment
+class MarcCollection:
+    def __init__(self):
+        self.marcxml_collection = ET.Element('collection', attrib={'xmlns':"http://www.loc.gov/MARC21/slim"})
+
+    def write(self, path):
+        tree = ET.ElementTree(self.marcxml_collection)
+        tree.write("path",
+           xml_declaration=True,encoding='utf-8',
+           method="xml",
+           default_namespace='http://www.loc.gov/MARC21/slim')
+
+
 class MarcPatentFamilies(PatentFamilies):
     """
     Add converter to marc for a family
@@ -58,8 +71,7 @@ class MarcPatentFamilies(PatentFamilies):
         return oldest_date
 
     def to_marc(self):
-        marcxml_collection = ET.Element('collection')
-        ET.register_namespace('', "http://www.loc.gov/MARC21/slim")
+        marcxml_collection = ET.Element('collection', attrib={'xmlns':"http://www.loc.gov/MARC21/slim"})
 
         patent_for_data = self.patents[0]
 
@@ -68,16 +80,16 @@ class MarcPatentFamilies(PatentFamilies):
         controlfield_005 = _controlfield(record, '005')
         controlfield_005.text = datetime.now().strftime('%Y%m%d%H%M%S.0')
 
+        # patents info
+        for patent in self.patents:
+            patent.to_marc(record)
+
         # title
         datafield_024 = _datafield(record, '024')
         subfield_024__a = _subfield(datafield_024, 'a')
         subfield_024__a.text = patent_for_data.family_id
         subfield_024__2 = _subfield(datafield_024, '2')
         subfield_024__2.text = "EPO Family ID"
-
-        # patents info
-        for patent in self.patents:
-            patent.to_marc(record)
 
         # title
         datafield_245 = _datafield(record, '245')
@@ -134,7 +146,7 @@ class MarcPatentFamilies(PatentFamilies):
         return marcxml_collection
 
     def to_marc_string(self, pretty_print=False):
-        to_marc_string = ET.tostring(self.to_marc(), encoding="unicode")
+        to_marc_string = ET.tostring(self.to_marc(), encoding='unicode')
 
         if not pretty_print:
             return to_marc_string
