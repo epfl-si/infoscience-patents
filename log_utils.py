@@ -1,6 +1,13 @@
 import logging
 import sys
 
+"""
+Use it like this :
+logger = logging.getLogger('main')
+logger_infoscience = logging.getLogger('INFOSCIENCE')
+logger_epo = logging.getLogger('EPO')
+"""
+
 
 def add_logging_argument(parser):
     parser.add_argument(
