@@ -10,6 +10,7 @@ from Espacenet.builder import EspacenetBuilderClient
 from Espacenet.epo_secrets import get_secret
 from Espacenet.models import EspacenetPatent
 from Espacenet.marc import MarcPatentFamilies as PatentFamilies
+from Espacenet.importer import load_infoscience_export
 
 import epo_ops
 
@@ -172,15 +173,39 @@ class TestPatentToMarc(unittest.TestCase):
 
 
 class TestLoadingInfosciencExport(unittest.TestCase):
-    patent_sample_xml_path = os.path.join(__location__, "fixtures", "infoscience_patent_sample_marc.xml")
+    patent_sample_xml_path = os.path.join(__location__, "infoscience_patents_export.xml")
 
     def test_should_create_patents_from_infoscience_export(self):
+        print(self.__class__.patent_sample_xml_path)
         with open(self.__class__.patent_sample_xml_path) as patent_xml:
-            pass
+            patent_families, no_family_id_records = load_infoscience_export(patent_xml)
+
+        self.assertIsInstance(patent_families, PatentFamilies)
+        self.assertGreater(len(patent_families), 0)
+        self.assertGreater(len(patent_families.patents), 0)
+        self.assertIn("34115775", patent_families.keys())
+        self.assertTrue(patent_families["34115775"][0].epodoc)
+
+        self.assertIsInstance(no_family_id_records, list)
+        self.assertGreater(len(no_family_id_records), 0)
 
         # open file
         # for every record, create the corresponding patent (family)
+        # then we build a big PatentFamilies with all data
+        # then we modify the inputted file "in memory"
+        # at the end we generate a new file from it
         # ...
+
+        # sample of copy
+        #    if tind_author != epfl_author:
+        #        logger.debug("Author will be updated, from %s to %s" % (
+        #            tind_author, epfl_author))
+        #
+        #        # update record in a new instance, as we will move it to a new file
+        #        to_update_record = copy.deepcopy(record)
+        #
+        #        updated_record = update_marc_record(to_update_record, epfl_author)
+        #        create_update_collection.append(updated_record)
 
 
 class TestNewPatents(unittest.TestCase):
