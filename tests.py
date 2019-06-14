@@ -176,7 +176,6 @@ class TestLoadingInfosciencExport(unittest.TestCase):
     patent_sample_xml_path = os.path.join(__location__, "infoscience_patents_export.xml")
 
     def test_should_create_patents_from_infoscience_export(self):
-        print(self.__class__.patent_sample_xml_path)
         with open(self.__class__.patent_sample_xml_path) as patent_xml:
             patent_families, no_family_id_records = load_infoscience_export(patent_xml)
 
