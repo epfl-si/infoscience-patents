@@ -61,6 +61,9 @@ class EspacenetMixin(object):
                 # if we have only one value
                 abstracts = [abstracts]
 
+            self.abstract_en = ''
+            self.abstract_fr = ''
+
             for abstract_dict in abstracts:
                 abstract_text = ''
                 if isinstance(abstract_dict['p'], (list, tuple)):
@@ -75,12 +78,8 @@ class EspacenetMixin(object):
 
                 if abstract_dict['@lang'] == 'en':
                     self.abstract_en = abstract_text
-                else:
-                    self.abstract_en = ''
                 if abstract_dict['@lang'] == 'fr':
                     self.abstract_fr = abstract_text
-                else:
-                    self.abstract_fr = ''
         except KeyError:
             self.abstract_fr = ''
             self.abstract_en = ''
