@@ -1,4 +1,5 @@
-<collection>
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
 	<record>
 		<controlfield tag="005">20190613102813.0</controlfield>
 		<datafield ind1=" " ind2=" " tag="013">
@@ -60,7 +61,7 @@
 			<subfield code="a">Patents</subfield>
 		</datafield>
 		<datafield ind1=" " ind2=" " tag="520">
-			<subfield code="a"/>
+			<subfield code="a">The present invention concerns a method for calibrating an array of receivers (ri), each receiver being configured for receiving a signal transmitted by at least one transmitter (si), and echoes of the transmitted signal as reflected by one or more reflective surfaces (w), said method comprising the following steps: sorting said echoes, by assigning each echo to a reflective surface or to a combination of reflective surfaces (w) calibrating said array of receivers (ri) based on said sorting.</subfield>
 		</datafield>
 		<datafield ind1=" " ind2=" " tag="700">
 			<subfield code="a">Dokmanic, Ivan</subfield>

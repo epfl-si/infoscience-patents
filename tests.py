@@ -2,21 +2,26 @@ import os
 import re
 import unittest
 import argparse
+import tempfile
 import xml.etree.ElementTree as ET
 
 from log_utils import add_logging_argument, set_logging_from_args
 
-from Espacenet.builder import EspacenetBuilderClient
-from Espacenet.epo_secrets import get_secret
-from Espacenet.models import EspacenetPatent
-from Espacenet.marc import MarcPatentFamilies as PatentFamilies
-from Espacenet.importer import load_infoscience_export
-
 import epo_ops
 
+from Espacenet.builder import EspacenetBuilderClient
+from Espacenet.models import EspacenetPatent
+from Espacenet.marc import MarcPatentFamilies as PatentFamilies, MarcRecord, MarcCollection
+from Espacenet.crawler import crawl_infoscience_export
+from Espacenet.marc_xml_utils import \
+    filter_out_namespace, \
+    _get_controlfield_element, \
+    _get_controlfield_value, \
+    _get_datafield_element, \
+    _get_subfield_element, \
+    _get_datafield_values, \
+    _get_multifield_values
 
-client_id = get_secret()["client_id"]
-client_secret = get_secret()["client_secret"]
 
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
@@ -42,7 +47,7 @@ def is_patent_from_epfl(patent):
 
 class TestEspacenetBuilder(unittest.TestCase):
 
-    client = EspacenetBuilderClient(key=client_id, secret=client_secret, use_cache=True)
+    client = EspacenetBuilderClient(use_cache=True)
 
     def test_should_fetch_a_patent(self):
         patent = self.__class__.client.patent(  # Retrieve bibliography data
@@ -138,8 +143,17 @@ class TestEspacenetBuilder(unittest.TestCase):
 class TestPatentToMarc(unittest.TestCase):
     patent_sample_xml_path = os.path.join(__location__, "fixtures", "infoscience_patent_sample_marc.xml")
 
+    def test_allow_to_write_marc_change(self):
+        r = MarcRecord()
+        self.assertTrue(r.marc_record)
+        self.assertNotEqual(r.marc_record, "")
+        self.assertFalse(r.family_id)
+        r.family_id = "121212"
+        self.assertEqual(r.family_id, "121212")
+
+
     def test_should_have_a_well_defined_marc_patent(self):
-        client = EspacenetBuilderClient(key=client_id, secret=client_secret, use_cache=True)
+        client = EspacenetBuilderClient(use_cache=True)
 
         # search a patent
         patent_family = client.family(  # Retrieve bibliography data
@@ -147,15 +161,19 @@ class TestPatentToMarc(unittest.TestCase):
             )
 
         # get the marc transformation
-        marc_collection_dumped = patent_family.to_marc()
+        #marcxml_collection = ET.Element('collection', attrib={'xmlns':"http://www.loc.gov/MARC21/slim"})
+        marcxml_collection = MarcCollection()
+
+        marcxml_collection.append(MarcRecord(patent_family=patent_family).marc_record)
+        #marc_collection_dumped = MarcRecord(patent_family=patent_family).marc_record #.to_marc(marcxml_collection)
 
         # check the result look like the reference file
         with open(self.__class__.patent_sample_xml_path) as patent_xml:
             reference_root = ET.parse(patent_xml)
-            result_root = marc_collection_dumped
+            result_root = marcxml_collection
 
-            control_fields = reference_root.findall(".//controlfield")
-            subfields = reference_root.findall(".//subfield")
+            control_fields = reference_root.findall(".//{http://www.loc.gov/MARC21/slim}controlfield")
+            subfields = reference_root.findall(".//{http://www.loc.gov/MARC21/slim}subfield")
             result_control_fields = result_root.findall(".//controlfield")
             result_subfields = result_root.findall(".//subfield")
 
@@ -165,28 +183,90 @@ class TestPatentToMarc(unittest.TestCase):
                 self.assertEqual(len(result_control_fields), len(control_fields))
                 self.assertEqual(len(result_subfields), len(subfields))
             except AssertionError as e:
-                raise AssertionError("XML from patent is bad : %s" % patent_family.to_marc_string(True)) from e
+                raise AssertionError("XML from patent is bad : %s" % marcxml_collection.tostring(True)) from e
 
-            # namespace check
-            self.assertTrue('<collection xmlns="http://www.loc.gov/MARC21/slim">' in
-                    patent_family.to_marc_string(True), "Missing namespace in xml result")
+        # Check when we write that the namespace is correct
+        tmp_file = tempfile.NamedTemporaryFile(mode='w', delete=False)
+        marcxml_collection.write(tmp_file.name)
+        tmp_file.close()
+
+        with open(tmp_file.name) as tmp_file_readed:
+            tmp_file_readed.seek(0)
+            read_it = tmp_file_readed.read()
+
+            self.assertTrue('<collection xmlns="http://www.loc.gov/MARC21/slim">' in read_it,
+                "Missing namespace in xml result %s" % read_it)
 
 
 class TestLoadingInfosciencExport(unittest.TestCase):
     patent_sample_xml_path = os.path.join(__location__, "infoscience_patents_export.xml")
+    # a sample that need to be updated
+    patent_incomplete_sample_xml_path = os.path.join(__location__, "fixtures", "infoscience_incomplete_patent_sample_marc.xml")
 
-    def test_should_create_patents_from_infoscience_export(self):
-        with open(self.__class__.patent_sample_xml_path) as patent_xml:
-            patent_families, no_family_id_records = load_infoscience_export(patent_xml)
+    # what I removed from the original
+    """
+            <datafield tag="013" ind1=" " ind2=" ">
+                <subfield code="a">WO9629715</subfield>
+                <subfield code="c">A1</subfield>
+                <subfield code="b">WO</subfield>
+                <subfield code="d">19960926</subfield>
+            </datafield>
+            <datafield tag="024" ind1="7" ind2="0">
+                <subfield code="a">4196246</subfield>
+                <subfield code="2">EPO Family ID</subfield>
+            </datafield>
+    """
 
-        self.assertIsInstance(patent_families, PatentFamilies)
-        self.assertGreater(len(patent_families), 0)
-        self.assertGreater(len(patent_families.patents), 0)
-        self.assertIn("34115775", patent_families.keys())
-        self.assertTrue(patent_families["34115775"][0].epodoc)
+    def test_should_update_existing_patents(self):
+        with open(self.__class__.patent_incomplete_sample_xml_path) as patent_xml:
+            # load before update, to check the fixture is not complete
+            patent_xml = filter_out_namespace(patent_xml.read())
+            collection = ET.fromstring(patent_xml)
+            original_records = collection.findall(".//record")
+            original_record = original_records[0]
+            original_patents_datafield = _get_multifield_values(original_record, '013')
+            original_patents_epodocs = list(map(lambda d: d.get('a'), original_patents_datafield))
+            self.assertEqual(len(original_patents_epodocs), 2)
 
-        self.assertIsInstance(no_family_id_records, list)
-        self.assertGreater(len(no_family_id_records), 0)
+        with open(self.__class__.patent_incomplete_sample_xml_path) as patent_xml:
+            new_xml_collection, update_xml_collection = crawl_infoscience_export(patent_xml)
+
+        self.assertTrue(update_xml_collection)
+
+        records = update_xml_collection.findall(".//record")
+
+        self.assertEqual(len(records), 1)
+
+        record = records[0]
+
+        record_id = _get_controlfield_value(record, '001')
+        self.assertEqual(record_id, "229047")
+
+        # initially has 2 patents, we want more at the end
+        patents_datafield = _get_multifield_values(record, '013')
+        patents_epodocs = list(map(lambda d: d.get('a'), patents_datafield))
+        self.assertGreater(len(patents_epodocs), 2, "patents_epodocs  : %s" % patents_epodocs)
+
+        ## test rules about updates
+        # should be ordered by date
+        patents_date = list(map(lambda d: d.get('d'), patents_datafield))
+        self.assertEqual(patents_date, sorted(patents_date, reverse=True))
+        # should the manually added
+
+        # initially we have no family id
+        self.assertGreater(len(_get_controlfield_value(record, "005")), 0)
+
+        # check that the missing fields we see here are present now
+        # check other field are kept in place
+        try:
+            self.assertGreater(len(_get_controlfield_value(record, "005")), 0)
+            self.assertGreater(len(_get_datafield_values(record, "024", "7", "0")), 0)
+            self.assertGreater(len(_get_datafield_values(record, "037")), 0)
+            self.assertGreater(len(_get_datafield_values(record, "973")), 0)
+            self.assertGreater(len(_get_datafield_values(record, "980")), 0)
+            self.assertEqual(len(_get_datafield_values(record, "012")), 0)  # counter-test
+        except AttributeError as e:  # problem that the attribute don't exist
+            raise AssertionError("Updating the patents has removed some information") from e
 
         # open file
         # for every record, create the corresponding patent (family)

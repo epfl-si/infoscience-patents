@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+	<record>
+		<controlfield tag="001">229047</controlfield>
+		<controlfield tag="005">20180913064357.0</controlfield>
+		<datafield tag="013" ind1=" " ind2=" ">
+			<subfield code="a">DE19680102</subfield>
+			<subfield code="c">B4</subfield>
+			<subfield code="b">DE</subfield>
+			<subfield code="d">20070412</subfield>
+		</datafield>
+		<datafield tag="013" ind1=" " ind2=" ">
+			<subfield code="a">CH693476</subfield>
+			<subfield code="c">A5</subfield>
+			<subfield code="b">CH</subfield>
+			<subfield code="d">20030815</subfield>
+		</datafield>
+		<datafield tag="024" ind1="7" ind2="0">
+			<subfield code="a">5.0019</subfield>
+			<subfield code="2">TTO</subfield>
+		</datafield>
+		<datafield tag="037" ind1=" " ind2=" ">
+			<subfield code="a">PATENT</subfield>
+		</datafield>
+		<datafield tag="245" ind1=" " ind2=" ">
+			<subfield code="a">Method of manufacturing a module of photoelectrochemical cells with long-term stability</subfield>
+		</datafield>
+		<datafield tag="260" ind1=" " ind2=" ">
+			<subfield code="c">2007</subfield>
+		</datafield>
+		<datafield tag="269" ind1=" " ind2=" ">
+			<subfield code="a">2007</subfield>
+		</datafield>
+		<datafield tag="336" ind1=" " ind2=" ">
+			<subfield code="a">Patents</subfield>
+		</datafield>
+		<datafield tag="700" ind1=" " ind2=" ">
+			<subfield code="a">Hinsch, Andreas</subfield>
+		</datafield>
+		<datafield tag="700" ind1=" " ind2=" ">
+			<subfield code="a">Wolf, Marcus</subfield>
+		</datafield>
+		<datafield tag="909" ind1="C" ind2="0">
+			<subfield code="p">TTO</subfield>
+			<subfield code="0">252085</subfield>
+			<subfield code="x">U10021</subfield>
+		</datafield>
+		<datafield tag="909" ind1="C" ind2="0">
+			<subfield code="p">LPI</subfield>
+			<subfield code="0">252060</subfield>
+			<subfield code="x">U10101</subfield>
+		</datafield>
+		<datafield tag="909" ind1="C" ind2="O">
+			<subfield code="o">oai:infoscience.tind.io:229047</subfield>
+			<subfield code="p">SB</subfield>
+		</datafield>
+		<datafield tag="917" ind1="Z" ind2="8">
+			<subfield code="x">148230</subfield>
+		</datafield>
+		<datafield tag="917" ind1="Z" ind2="8">
+			<subfield code="x">105528</subfield>
+		</datafield>
+		<datafield tag="937" ind1=" " ind2=" ">
+			<subfield code="a">EPFL-PATENT-229047</subfield>
+		</datafield>
+		<datafield tag="973" ind1=" " ind2=" ">
+			<subfield code="a">EPFL</subfield>
+		</datafield>
+		<datafield tag="980" ind1=" " ind2=" ">
+			<subfield code="a">PATENT</subfield>
+		</datafield>
+	</record>
+</collection>

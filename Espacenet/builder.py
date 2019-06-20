@@ -7,10 +7,8 @@ import epo_ops
 from .patent_models import PatentFamilies
 from .marc import MarcPatentFamilies as PatentFamilies
 from .marc import MarcEspacenetPatent as EspacenetPatent
+from .epo_secrets import get_secret
 
-
-logger = logging.getLogger('main')
-logger_infoscience = logging.getLogger('INFOSCIENCE')
 logger_epo = logging.getLogger('EPO')
 
 
@@ -44,6 +42,10 @@ class EspacenetBuilderClient(epo_ops.Client):
        Force Json format as return
     """
     def __init__(self, use_cache=True, *args, **kwargs):
+        if not "key" in kwargs and not "secret" in kwargs:
+            kwargs['key'] = get_secret()["client_id"]
+            kwargs['secret'] = get_secret()["client_secret"]
+
         kwargs['accept_type'] = 'json'
         kwargs['middlewares'] = [
             epo_ops.middlewares.Throttler(),

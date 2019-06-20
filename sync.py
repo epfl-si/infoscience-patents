@@ -1,7 +1,9 @@
 import argparse
 import datetime
 import logging
-
+import os
+import time
+from datetime import datetime
 import xml.etree.ElementTree as ET
 
 from log_utils import add_logging_argument, set_logging_from_args
@@ -51,3 +53,19 @@ if __name__ == '__main__':
     set_logging_from_args(args)
 
     main()
+
+    #SOON:
+    try:
+        BASE_DIR = os.path.join(__location__, '..')
+        os.mkdir('./output')
+    except FileExistsError:
+        pass
+
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+
+    new_xml_path=""
+    update_xml_path = os.path.join(
+        BASE_DIR,
+        "output",
+        "patents-update-%s.xml" % timestamp
+        )
