@@ -68,6 +68,11 @@ class EspacenetBuilderClient(epo_ops.Client):
 
     def _parse_patent(self, exchange_documents_json):
         exchange_document = exchange_documents_json['exchange-documents']['exchange-document']
+        # look like we can have a list of exchange-document,
+        # it may mean that we have the same number but with a different kind
+        # keep only the first
+        if isinstance(exchange_document, (tuple, list)):
+            exchange_document = exchange_document[0]
         return self._parse_exchange_document(exchange_document)
 
     def patent(self, *args, **kwargs):
@@ -76,8 +81,7 @@ class EspacenetBuilderClient(epo_ops.Client):
         :Keyword Arguments:
             * *input* (``epo_ops.models``) --
         """
-        logger_epo.debug("Getting a specific patent trough EPO API...")
-        logger_epo.debug("API fetching with %s" % kwargs)
+        logger_epo.debug("Patent fetching API with patent %s ..." % kwargs['input'].number)
 
         # only published patents
         kwargs['reference_type'] = 'publication'  # publication, application, priority
@@ -103,7 +107,9 @@ class EspacenetBuilderClient(epo_ops.Client):
             return PatentFamilies()
 
         logger_epo.debug("Parsing a returned json...")
+
         patent = self._parse_patent(json_fetched)
+
         logger_epo.debug("Patent found and returning")
 
         return patent
@@ -114,13 +120,16 @@ class EspacenetBuilderClient(epo_ops.Client):
         """
         families_patents = PatentFamilies()
 
+        if not isinstance(family_member, (list, tuple)):
+            # only one exchange-document, make it like a multiple
+            family_member = [family_member]
+
         for patent_in_family in family_member:
             if 'exchange-document' not in patent_in_family:
                 # sometimes we don't have an exchange-document
                 continue
 
             patent = patent_in_family['exchange-document']
-
             patent_object = self._parse_exchange_document(patent)
 
             if patent_object:
@@ -138,8 +147,7 @@ class EspacenetBuilderClient(epo_ops.Client):
             * *input* (``epo_ops.models``) --
         """
 
-        logger_epo.info("Getting patents trough EPO API...")
-        logger_epo.debug("API fetching with %s" % kwargs)
+        logger_epo.debug("Family fetching API with patent %s ..." % kwargs['input'].number)
 
         # only published patents
         kwargs['reference_type'] = 'publication'  # publication, application, priority

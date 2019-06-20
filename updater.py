@@ -26,72 +26,78 @@ def update_infoscience_export(xml_file):
     Load patents inside the xml provided
     and an updated version of it (aka added new patent to existing ones)
     """
-    logger_infoscience.info("Loading provided xml file")
+    logger_infoscience.info("Loading provided xml file for an update...")
     client = EspacenetBuilderClient(use_cache=True)
 
     xml_file = filter_out_namespace(xml_file.read())
     provided_collection = ET.fromstring(xml_file)
 
     update_collection = MarcCollection()
+    records = provided_collection.findall('record')
+    logger_infoscience.info("Provided xml file as %s records, starting the update..." % len(records))
 
-    for record in provided_collection:
+    for record in records:
+        has_been_updated = False
         marc_record = MarcRecord(record=record)
 
+        logger_infoscience.info("Parsing record %s, family id %s" % (marc_record.record_id, marc_record.family_id))
+
         # is it good to go ?
-        if len(marc_record.patents) == 0:
-            logger_infoscience.debug("Skipping record %s has no patents in it" % marc_record.record_id)
+        if not marc_record.record_id:
+            logger_infoscience.info("Skipping record %s, the record has no id" % marc_record.record_id)
             continue
 
-        logger_infoscience.debug("Itering record %s" % marc_record.record_id)
+        if len(marc_record.patents) == 0:
+            logger_infoscience.info("Skipping record %s, no patents have been found in it" % marc_record.record_id)
+            continue
 
-        family_id = marc_record.family_id
+        # get the best epodoc to do queries or abort
+        epodoc_for_query = marc_record.epodoc_for_query
+        if not epodoc_for_query:
+            logger_infoscience.info("Skipping record %s, patents in it are not well formated" % marc_record.record_id)
+            continue
 
-        # is it good to go ?
-        if not family_id:
-            # then try to get the family_id then look for patents
-            logger_epo.debug(
-                "Fetching family id for recid %s" % marc_record.record_id
+        # check family
+        if not marc_record.family_id:
+            # try to get the family_id before going to update
+            logger_infoscience.info("Missing family id for this record, parsing one...")
+
+            try:
+                patent = client.patent(
+                    input = epo_ops.models.Epodoc(epodoc_for_query),
                 )
+            except:
+                print(ET.dump(marc_record.marc_record))
 
-            patent = client.patent(  # Retrieve bibliography data
-                input = epo_ops.models.Epodoc(marc_record.patents[0].epodoc),  # original, docdb, epodoc
-            )
 
-            family_id = patent.family_id
-            marc_record.family_id = family_id
-            logger_epo.debug(
-                "Fetched family id %s" % family_id
-            )
-            assert marc_record.family_id != None
+            marc_record.family_id = patent.family_id
+            has_been_updated = True
 
-        # fetch to see if we have new patents or patents to update for this family
-        logger_infoscience.debug(
-            "Fetching the family_id %s to see if it need to update data" % marc_record.family_id
+            logger_infoscience.debug(
+                "Fetched family id %s" % marc_record.family_id
             )
 
         patents_families = client.family(
-            input = epo_ops.models.Epodoc(marc_record.patents[0].epodoc)
+            input = epo_ops.models.Epodoc(epodoc_for_query)
         )
 
         # comparing the length should do the trick, the epodoc don't change everytimes
         if len(patents_families.patents) != len(marc_record.patents):
             # we have a different number of patents, update the marc record
-            logger_infoscience.debug("This patent family {} has {} in infoscience and {} in espacenet, doing the update...".format(
-                family_id,
-                marc_record.patents,
-                patents_families.patents
-            ))
+            logger_infoscience.info("The record need an patent update, doing the update...")
 
             marc_record.update_patents_from_espacenet(patents_families)
 
             assert(len(marc_record.patents) != 0)
+            has_been_updated = True
 
             logger_infoscience.debug("Updated this record to : %s" % marc_record.patents)
+        else:
+            logger_infoscience.info("This record does not need an update")
 
+        if has_been_updated:
             # save record to the update collection
             update_collection.append(marc_record.marc_record)
-        else:
-            logger_infoscience("The patent does not need an update")
 
-    logger.info("Successfully parsed and updated an infoscience export")
+    logger.info("End of parsing and updating the provided infoscience export")
     return update_collection

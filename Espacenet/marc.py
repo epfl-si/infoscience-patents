@@ -2,6 +2,7 @@ from datetime import datetime
 import xml.etree.ElementTree as ET
 import xml.dom.minidom
 import logging
+import re
 
 from Espacenet.models import EspacenetPatent
 
@@ -25,6 +26,7 @@ from .marc_xml_utils import \
 logger_infoscience = logging.getLogger('INFOSCIENCE')
 logger_epo = logging.getLogger('EPO')
 
+patent_regex = r"^(?P<country>\D{2})(?P<number>\d{1,})[\s|-]?(?P<kind>\w\d)?"
 
 class MarcCollection(ET.Element):
     def __init__(self):
@@ -138,7 +140,7 @@ class MarcRecord:
     @property
     def update_at(self):
         try:
-            _get_controlfield_value(self.marc_record, '005')
+            return _get_controlfield_value(self.marc_record, '005')
         except AttributeError:
             pass
 
@@ -150,7 +152,7 @@ class MarcRecord:
     @property
     def record_id(self):
         try:
-            _get_controlfield_value(self.marc_record, '001')
+            return _get_controlfield_value(self.marc_record, '001')
         except AttributeError:
             pass
 
@@ -177,6 +179,14 @@ class MarcRecord:
         subfield_024__a.text = value
         subfield_024__2 = _subfield(datafield_024, '2')
         subfield_024__2.text = "EPO Family ID"
+
+    @property
+    def epodoc_for_query(self):
+        # find the best epodoc trough the list of patents
+        for patent in self.patents:
+            matched = re.match(patent_regex, patent.epodoc)
+            if matched:
+                return patent.epodoc
 
     @property
     def patents(self):
@@ -274,6 +284,7 @@ class MarcRecord:
         tto_id.append(_get_datafield_values(self.marc_record, '909', 'C', '0').get('p'))
         tto_id.append(_get_datafield_values(self.marc_record, '909', 'C', '0').get('0'))
         tto_id.append(_get_datafield_values(self.marc_record, '909', 'C', '0').get('x'))
+        return tto_id
 
     @tto_id.setter
     def tto_id(self, value):

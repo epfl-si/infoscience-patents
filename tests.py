@@ -63,16 +63,34 @@ class TestEspacenetBuilder(unittest.TestCase):
 
     def test_should_fetch_family_from_patent(self):
         patents_families = self.__class__.client.family(  # Retrieve bibliography data
-            input = epo_ops.models.Docdb('1000000', 'EP', 'A1'),  # original, docdb, epodoc
+            input = epo_ops.models.Epodoc('EP1000000'),  # original, docdb, epodoc
             )
 
         self.assertGreater(len(patents_families), 0)
         self.assertIsInstance(patents_families, PatentFamilies)
-
+        self.assertIn('19768124', patents_families.keys(), "Unable to find the awaited family id")
         patent = patents_families['19768124'][0]
         self.assertIsInstance(patent, EspacenetPatent)
         self.assertEqual(patent.number, '1000000')
         self.assertEqual(patent.epodoc, 'EP1000000')
+        self.assertNotEqual(patent.abstract_en, '')
+        self.assertGreater(len(patent.inventors), 0)
+        self.assertNotEqual(patent.inventors[0], '')
+
+    def test_should_fetch_family_from_patent2(self):
+        client = EspacenetBuilderClient(use_cache=True)
+        patents_families = client.family(  # Retrieve bibliography data
+            input = epo_ops.models.Epodoc('WO2017102593'),  # original, docdb, epodoc
+            )
+
+        self.assertGreater(len(patents_families), 0)
+        self.assertIsInstance(patents_families, PatentFamilies)
+        self.assertIn('57629569', patents_families.keys(), "Unable to find the awaited family id")
+
+        patent = patents_families['57629569'][0]
+        self.assertIsInstance(patent, EspacenetPatent)
+        self.assertEqual(patent.number, '2017102593')
+        self.assertEqual(patent.epodoc, 'WO2017102593')
         self.assertNotEqual(patent.abstract_en, '')
         self.assertGreater(len(patent.inventors), 0)
         self.assertNotEqual(patent.inventors[0], '')
@@ -199,9 +217,12 @@ class TestPatentToMarc(unittest.TestCase):
 
 
 class TestLoadingInfosciencExport(unittest.TestCase):
+    # a sample that is used as reference
     patent_sample_xml_path = os.path.join(__location__, "infoscience_patents_export.xml")
     # a sample that need to be updated
     patent_incomplete_sample_xml_path = os.path.join(__location__, "fixtures", "infoscience_incomplete_patent_sample_marc.xml")
+    # a big samples full of need to update data
+    patents_like_export_path = os.path.join(__location__, "fixtures", "infoscience_patents_10_from_2016_export.xml")
 
     # what I removed from the original
     """
@@ -230,15 +251,12 @@ class TestLoadingInfosciencExport(unittest.TestCase):
 
         with open(self.__class__.patent_incomplete_sample_xml_path) as patent_xml:
             updated_xml_collection = update_infoscience_export(patent_xml)
-
         self.assertTrue(updated_xml_collection)
 
         records = updated_xml_collection.findall(".//record")
-
         self.assertEqual(len(records), 1)
 
         record = records[0]
-
         record_id = _get_controlfield_value(record, '001')
         self.assertEqual(record_id, "229047")
 
@@ -268,23 +286,10 @@ class TestLoadingInfosciencExport(unittest.TestCase):
         except AttributeError as e:  # problem that the attribute don't exist
             raise AssertionError("Updating the patents has removed some information") from e
 
-        # open file
-        # for every record, create the corresponding patent (family)
-        # then we build a big PatentFamilies with all data
-        # then we modify the inputted file "in memory"
-        # at the end we generate a new file from it
-        # ...
-
-        # sample of copy
-        #    if tind_author != epfl_author:
-        #        logger.debug("Author will be updated, from %s to %s" % (
-        #            tind_author, epfl_author))
-        #
-        #        # update record in a new instance, as we will move it to a new file
-        #        to_update_record = copy.deepcopy(record)
-        #
-        #        updated_record = update_marc_record(to_update_record, epfl_author)
-        #        create_update_collection.append(updated_record)
+    def test_should_update_a_big_export(self):
+        with open(self.__class__.patents_like_export_path) as full_infoscience_export_xml:
+            updated_xml_collection = update_infoscience_export(full_infoscience_export_xml)
+        self.assertTrue(updated_xml_collection)
 
 
 class TestNewPatents(unittest.TestCase):
