@@ -12,7 +12,7 @@ import epo_ops
 from Espacenet.builder import EspacenetBuilderClient
 from Espacenet.models import EspacenetPatent
 from Espacenet.marc import MarcPatentFamilies as PatentFamilies, MarcRecord, MarcCollection
-from Espacenet.crawler import crawl_infoscience_export
+from updater import update_infoscience_export
 from Espacenet.marc_xml_utils import \
     filter_out_namespace, \
     _get_controlfield_element, \
@@ -229,11 +229,11 @@ class TestLoadingInfosciencExport(unittest.TestCase):
             self.assertEqual(len(original_patents_epodocs), 2)
 
         with open(self.__class__.patent_incomplete_sample_xml_path) as patent_xml:
-            new_xml_collection, update_xml_collection = crawl_infoscience_export(patent_xml)
+            updated_xml_collection = update_infoscience_export(patent_xml)
 
-        self.assertTrue(update_xml_collection)
+        self.assertTrue(updated_xml_collection)
 
-        records = update_xml_collection.findall(".//record")
+        records = updated_xml_collection.findall(".//record")
 
         self.assertEqual(len(records), 1)
 

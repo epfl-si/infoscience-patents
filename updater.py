@@ -3,10 +3,10 @@ import xml.etree.ElementTree as ET
 
 import epo_ops
 
-from .marc import MarcPatentFamilies as PatentFamilies, MarcRecord, MarcCollection
-from .patent_models import Patent
-from .builder import EspacenetBuilderClient
-from .marc_xml_utils import \
+from Espacenet.marc import MarcPatentFamilies as PatentFamilies, MarcRecord, MarcCollection
+from Espacenet.patent_models import Patent
+from Espacenet.builder import EspacenetBuilderClient
+from Espacenet.marc_xml_utils import \
     filter_out_namespace, \
     _get_controlfield_element, \
     _get_controlfield_value, \
@@ -21,23 +21,20 @@ logger_infoscience = logging.getLogger('INFOSCIENCE')
 logger_epo = logging.getLogger('EPO')
 
 
-def crawl_infoscience_export(xml_file):
+def update_infoscience_export(xml_file):
     """
     Load patents inside the xml provided
-    and return two ET.Element Collections :
-    one with the new patents and one with the updates
+    and an updated version of it (aka added new patent to existing ones)
     """
     logger_infoscience.info("Loading provided xml file")
     client = EspacenetBuilderClient(use_cache=True)
 
-    #ET.register_namespace('', "http://www.loc.gov/MARC21/slim")
     xml_file = filter_out_namespace(xml_file.read())
-    collection = ET.fromstring(xml_file)
+    provided_collection = ET.fromstring(xml_file)
 
-    new_collection = MarcCollection()
     update_collection = MarcCollection()
 
-    for record in collection:
+    for record in provided_collection:
         marc_record = MarcRecord(record=record)
 
         # is it good to go ?
@@ -93,16 +90,8 @@ def crawl_infoscience_export(xml_file):
 
             # save record to the update collection
             update_collection.append(marc_record.marc_record)
-
         else:
             logger_infoscience("The patent does not need an update")
 
-    new_xml_string = ""
-    #new_xml_string = ET.tostring(collection,
-    #    encoding='unicode'
-    #    )
-
-
-    logger.info("Successfully parsed and updated infoscience export")
-
-    return new_xml_string, update_collection
+    logger.info("Successfully parsed and updated an infoscience export")
+    return update_collection
