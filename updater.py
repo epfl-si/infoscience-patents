@@ -99,5 +99,5 @@ def update_infoscience_export(xml_file):
             # save record to the update collection
             update_collection.append(marc_record.marc_record)
 
-    logger.info("End of parsing and updating the provided infoscience export")
+    logger.info("End of parsing, %s records will be updated from this batch" % len(update_collection.findall("record")))
     return update_collection

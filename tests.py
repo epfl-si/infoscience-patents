@@ -287,9 +287,23 @@ class TestLoadingInfosciencExport(unittest.TestCase):
             raise AssertionError("Updating the patents has removed some information") from e
 
     def test_should_update_a_big_export(self):
+        with open(self.__class__.patents_like_export_path) as patent_xml:
+            # load before update, to check the fixture is not complete
+            patent_xml = filter_out_namespace(patent_xml.read())
+            collection = ET.fromstring(patent_xml)
+            original_records = collection.findall(".//record")
+            self.assertGreater(len(original_records), 1)
+
         with open(self.__class__.patents_like_export_path) as full_infoscience_export_xml:
             updated_xml_collection = update_infoscience_export(full_infoscience_export_xml)
+
         self.assertTrue(updated_xml_collection)
+
+        # we should have some records that need update
+        records = updated_xml_collection.findall(".//record")
+        self.assertGreater(len(records), 1)
+        self.assertNotEqual(len(original_records), len(records), "Update result have more records to update than export provided")
+        self.assertGreater(len(original_records), len(records), "Update result have more records to update than export provided")
 
 
 class TestNewPatents(unittest.TestCase):
