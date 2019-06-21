@@ -146,6 +146,8 @@ class MarcRecord:
 
     @update_at.setter
     def update_at(self, value):
+        timestamp_field = self.marc_record.find('controlfield[@tag="005"]')
+        self.marc_record.remove(timestamp_field)
         controlfield_005 = _controlfield(self.marc_record, '005')
         controlfield_005.text = datetime.now().strftime('%Y%m%d%H%M%S.0')
 
@@ -164,7 +166,7 @@ class MarcRecord:
     def family_id(self):
         # EPO family id
         record_family_id = None
-        sources_data = _get_multifield_values(self.marc_record, '024')
+        sources_data = _get_multifield_values(self.marc_record, '024', '7', '0')
 
         for source in sources_data:
             if source.get("2") == 'EPO Family ID':
@@ -174,7 +176,7 @@ class MarcRecord:
 
     @family_id.setter
     def family_id(self, value):
-        datafield_024 = _datafield(self.marc_record, '024')
+        datafield_024 = _datafield(self.marc_record, '024', '7', '0')
         subfield_024__a = _subfield(datafield_024, 'a')
         subfield_024__a.text = value
         subfield_024__2 = _subfield(datafield_024, '2')
