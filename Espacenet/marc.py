@@ -183,10 +183,23 @@ class MarcRecord:
     @property
     def epodoc_for_query(self):
         # find the best epodoc trough the list of patents
+        epodoc_for_query = ""
         for patent in self.patents:
-            matched = re.match(patent_regex, patent.epodoc)
+
+            # we may have a 'WO2016075599 A1', so try
+            epodoc_with_space = patent.epodoc.split(' ')
+            if len(epodoc_with_space) > 1:
+                epodoc_for_query = epodoc_with_space[0]
+            else:
+                epodoc_for_query = patent.epodoc
+
+            matched = re.match(patent_regex, epodoc_for_query)
             if matched:
-                return patent.epodoc
+                # can be a good one, check for special chars
+                if "'" in epodoc_for_query:
+                    continue
+
+                return epodoc_for_query
 
     @property
     def patents(self):

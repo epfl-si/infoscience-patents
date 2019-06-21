@@ -222,7 +222,7 @@ class TestLoadingInfosciencExport(unittest.TestCase):
     # a sample that need to be updated
     patent_incomplete_sample_xml_path = os.path.join(__location__, "fixtures", "infoscience_incomplete_patent_sample_marc.xml")
     # a big samples full of need to update data
-    patents_like_export_path = os.path.join(__location__, "fixtures", "infoscience_patents_10_from_2016_export.xml")
+    one_big_year_of_patent_xml_path = os.path.join(__location__, "fixtures", "infoscience_patents_140_from_2016_export.xml")
 
     # what I removed from the original
     """
@@ -287,14 +287,14 @@ class TestLoadingInfosciencExport(unittest.TestCase):
             raise AssertionError("Updating the patents has removed some information") from e
 
     def test_should_update_a_big_export(self):
-        with open(self.__class__.patents_like_export_path) as patent_xml:
+        with open(self.__class__.one_big_year_of_patent_xml_path) as patent_xml:
             # load before update, to check the fixture is not complete
             patent_xml = filter_out_namespace(patent_xml.read())
             collection = ET.fromstring(patent_xml)
             original_records = collection.findall(".//record")
             self.assertGreater(len(original_records), 1)
 
-        with open(self.__class__.patents_like_export_path) as full_infoscience_export_xml:
+        with open(self.__class__.one_big_year_of_patent_xml_path) as full_infoscience_export_xml:
             updated_xml_collection = update_infoscience_export(full_infoscience_export_xml)
 
         self.assertTrue(updated_xml_collection)
@@ -304,6 +304,10 @@ class TestLoadingInfosciencExport(unittest.TestCase):
         self.assertGreater(len(records), 1)
         self.assertNotEqual(len(original_records), len(records), "Update result have more records to update than export provided")
         self.assertGreater(len(original_records), len(records), "Update result have more records to update than export provided")
+
+    def test_should_set_as_new_collection_new_patents(self):
+        # fetch all results for a specific year, and assert the incoming infoscience export is set to the good year
+        pass
 
 
 class TestNewPatents(unittest.TestCase):

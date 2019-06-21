@@ -2,6 +2,7 @@ import logging
 import xml.etree.ElementTree as ET
 
 import epo_ops
+from requests.exceptions import HTTPError
 
 from Espacenet.marc import MarcPatentFamilies as PatentFamilies, MarcRecord, MarcCollection
 from Espacenet.patent_models import Patent
@@ -36,11 +37,21 @@ def update_infoscience_export(xml_file):
     records = provided_collection.findall('record')
     logger_infoscience.info("Provided xml file as %s records, starting the update..." % len(records))
 
-    for record in records:
-        has_been_updated = False
+    # some counters for logs
+    patent_updated = 0
+    family_updated = 0
+
+    for i, record in enumerate(records):
+        has_been_patent_updated = False
+        has_been_family_updated = False
         marc_record = MarcRecord(record=record)
 
-        logger_infoscience.info("Parsing record %s, family id %s" % (marc_record.record_id, marc_record.family_id))
+        logger_infoscience.info("Parsing %s/%s record %s, family id %s" % (
+            i,
+            len(records),
+            marc_record.record_id,
+            marc_record.family_id)
+            )
 
         # is it good to go ?
         if not marc_record.record_id:
@@ -66,20 +77,23 @@ def update_infoscience_export(xml_file):
                 patent = client.patent(
                     input = epo_ops.models.Epodoc(epodoc_for_query),
                 )
-            except:
-                print(ET.dump(marc_record.marc_record))
-
+            except HTTPError as e:
+                logger_epo.warning("Skipping this record, it crash Espacenet: %s, error was %s" % (epodoc_for_query, e))
+                continue
 
             marc_record.family_id = patent.family_id
-            has_been_updated = True
+            has_been_family_updated = True
+            family_updated += 1
 
-            logger_infoscience.debug(
-                "Fetched family id %s" % marc_record.family_id
+            logger_infoscience.debug("Fetched family id %s" % marc_record.family_id)
+
+        try:
+            patents_families = client.family(
+                input = epo_ops.models.Epodoc(epodoc_for_query)
             )
-
-        patents_families = client.family(
-            input = epo_ops.models.Epodoc(epodoc_for_query)
-        )
+        except HTTPError as e:
+            logger_epo.warning("Skipping this record, it crash Espacenet: %s, error was %s" % (epodoc_for_query, e))
+            continue
 
         # comparing the length should do the trick, the epodoc don't change everytimes
         if len(patents_families.patents) != len(marc_record.patents):
@@ -89,15 +103,17 @@ def update_infoscience_export(xml_file):
             marc_record.update_patents_from_espacenet(patents_families)
 
             assert(len(marc_record.patents) != 0)
-            has_been_updated = True
+            has_been_patent_updated = True
+            patent_updated += 1
 
             logger_infoscience.debug("Updated this record to : %s" % marc_record.patents)
         else:
             logger_infoscience.info("This record does not need an update")
 
-        if has_been_updated:
+        if has_been_patent_updated or has_been_family_updated:
             # save record to the update collection
             update_collection.append(marc_record.marc_record)
 
     logger.info("End of parsing, %s records will be updated from this batch" % len(update_collection.findall("record")))
+    logger.info("%s were missing their family_id, and/or %s for their patent list" % (family_updated, patent_updated))
     return update_collection
