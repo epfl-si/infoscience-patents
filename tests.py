@@ -11,8 +11,8 @@ import epo_ops
 
 from Espacenet.builder import EspacenetBuilderClient
 from Espacenet.models import EspacenetPatent
-from Espacenet.marc import MarcPatentFamilies as PatentFamilies, MarcRecord, MarcCollection
-from updater import update_infoscience_export
+from Espacenet.patent_models import PatentFamilies
+from Espacenet.marc import MarcRecord, MarcCollection, MarcRecordBuilder
 from Espacenet.marc_xml_utils import \
     filter_out_namespace, \
     _get_controlfield_element, \
@@ -22,6 +22,7 @@ from Espacenet.marc_xml_utils import \
     _get_datafield_values, \
     _get_multifield_values
 
+from updater import update_infoscience_export
 
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
@@ -162,19 +163,18 @@ class TestPatentToMarc(unittest.TestCase):
     patent_sample_xml_path = os.path.join(__location__, "fixtures", "infoscience_patent_sample_marc.xml")
 
     def test_allow_to_write_marc_change(self):
-        r = MarcRecord()
-        self.assertTrue(r.marc_record)
+        r = MarcRecordBuilder().get_empty_record()
+        self.assertIsInstance(r.marc_record, ET.Element)
         self.assertNotEqual(r.marc_record, "")
         self.assertFalse(r.family_id)
         r.family_id = "121212"
         self.assertEqual(r.family_id, "121212")
 
-
     def test_should_have_a_well_defined_marc_patent(self):
         client = EspacenetBuilderClient(use_cache=True)
 
         # search a patent
-        patent_family = client.family(  # Retrieve bibliography data
+        patents_family = client.family(  # Retrieve bibliography data
             input = epo_ops.models.Epodoc('EP2936195')
             )
 
@@ -182,7 +182,9 @@ class TestPatentToMarc(unittest.TestCase):
         #marcxml_collection = ET.Element('collection', attrib={'xmlns':"http://www.loc.gov/MARC21/slim"})
         marcxml_collection = MarcCollection()
 
-        marcxml_collection.append(MarcRecord(patent_family=patent_family).marc_record)
+        new_record = MarcRecordBuilder().from_epo_patents(family_id="50975639", patents=patents_family.patents)
+
+        marcxml_collection.append(new_record.marc_record)
         #marc_collection_dumped = MarcRecord(patent_family=patent_family).marc_record #.to_marc(marcxml_collection)
 
         # check the result look like the reference file
@@ -288,7 +290,7 @@ class TestLoadingInfosciencExport(unittest.TestCase):
 
     def test_should_update_a_big_export(self):
         with open(self.__class__.one_big_year_of_patent_xml_path) as patent_xml:
-            # load before update, to check the fixture is not complete
+            # load before update, to check the fixture is complete
             patent_xml = filter_out_namespace(patent_xml.read())
             collection = ET.fromstring(patent_xml)
             original_records = collection.findall(".//record")
@@ -313,9 +315,25 @@ class TestLoadingInfosciencExport(unittest.TestCase):
         # only one timestamp pls
         self.assertEqual(len(record.findall('controlfield[@tag="005"]')), 1)
 
-    def test_should_set_as_new_collection_new_patents(self):
+    def test_should_set_as_new_collection_of_new_patents(self):
         # fetch all results for a specific year, and assert the incoming infoscience export is set to the good year
-        pass
+        with open(self.__class__.one_big_year_of_patent_xml_path) as patent_xml:
+            # load before update, to check the fixture is complete
+            patent_xml = filter_out_namespace(patent_xml.read())
+            collection = ET.fromstring(patent_xml)
+            original_records = collection.findall(".//record")
+            self.assertGreater(len(original_records), 1)
+            year_of_ref = original_records[0].find('datafield[@tag="260"]/subfield[@code="c"]').text
+
+            for record in original_records:
+                # we want only one year
+                self.assertEqual(
+                    record.find('datafield[@tag="260"]/subfield[@code="c"]').text,
+                    year_of_ref,
+                    "Only one year for fetching new patents"
+                    )
+
+
 
 
 class TestNewPatents(unittest.TestCase):

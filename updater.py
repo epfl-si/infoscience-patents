@@ -9,7 +9,8 @@ from requests.exceptions import HTTPError
 
 from log_utils import add_logging_argument, set_logging_from_args
 
-from Espacenet.marc import MarcPatentFamilies as PatentFamilies, MarcRecord, MarcCollection
+from Espacenet.patent_models import PatentFamilies
+from Espacenet.marc import MarcRecordBuilder, MarcCollection
 from Espacenet.patent_models import Patent
 from Espacenet.builder import EspacenetBuilderClient
 from Espacenet.marc_xml_utils import \
@@ -52,7 +53,7 @@ def update_infoscience_export(xml_file):
     for i, record in enumerate(records):
         has_been_patent_updated = False
         has_been_family_updated = False
-        marc_record = MarcRecord(record=record)
+        marc_record = MarcRecordBuilder().from_infoscience_record(record=record)
 
         logger_infoscience.info("Parsing %s/%s record %s, family id %s" % (
             i,
@@ -116,7 +117,7 @@ def update_infoscience_export(xml_file):
             # we have a different number of patents, update the marc record
             logger_infoscience.info("The record need an patent update, doing the update...")
 
-            marc_record.update_patents_from_espacenet(patents_families)
+            marc_record.update_patents_from_espacenet(patents_families.patents)
 
             assert(len(marc_record.patents) != 0)
             has_been_patent_updated = True
@@ -145,7 +146,7 @@ if __name__ == '__main__':
     parser.add_argument("-f",
                         "--infoscience_patents",
                         help="The infoscience file of patents, in a MarcXML format",
-                        required=False,
+                        required=True,
                         type=argparse.FileType('r'))
 
     parser = add_logging_argument(parser)

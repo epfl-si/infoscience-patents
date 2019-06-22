@@ -5,7 +5,6 @@ import logging, json
 import epo_ops
 
 from .patent_models import PatentFamilies
-from .marc import MarcPatentFamilies as PatentFamilies
 from .marc import MarcEspacenetPatent as EspacenetPatent
 from .epo_secrets import get_secret
 

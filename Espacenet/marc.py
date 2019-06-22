@@ -82,54 +82,80 @@ class MarcPatent:
         return super(MarcPatent, self).__repr__() + ' ' + self.__unicode__()
 
 
+class MarcRecordBuilder:
+    def get_empty_record(self):
+        m_record = MarcRecord()
+        m_record.marc_record = ET.Element('record')
+        return m_record
+
+    def from_infoscience_record(self, record):
+        m_record = MarcRecord()
+        # init from a marc record
+        logger_infoscience.debug("Creating a patent from a existing xml data")
+        assert isinstance(record, ET.Element)
+        m_record.marc_record = record
+        return m_record
+
+    def from_epo_patents(self, family_id, patents):
+        logger_infoscience.debug("Creating a new patent from a family from Espacenet")
+        m_record = MarcRecord()
+
+        m_record.marc_record = ET.Element('record')
+        # we are in a new record mode, so build essential information, in same order as infoscience
+        m_record.update_at = True  # use setter default values
+        m_record.tto_id = True  # use setter default values
+        m_record.content_type = True  # use setter default values
+        m_record.epfl_id = True  # use setter default values
+        m_record.doctype = True  # use setter default values
+        m_record.sort_record_content()
+
+        m_record.family_id = family_id
+        patent_for_data = patents[0]  # the first should be the good
+
+        m_record.title = patent_for_data.invention_title_en
+        m_record.publication_date = self.oldest_date(patents)
+        m_record.abstract = self.best_abstract(patents)
+        m_record.authors = [author[1] for author in patent_for_data.inventors]
+
+        m_record.update_patents_from_espacenet(patents)
+
+        # sort only if this a new one from patent_family
+        m_record.sort_record_content()
+
+        return m_record
+
+    def best_abstract(self, patents):
+        """
+        try to find at least an abstract in all patents
+        """
+        for patent in patents:
+            if patent.abstract_en != "":
+                return patent.abstract_en
+        return ""
+
+    def oldest_date(self, patents):
+        """
+        try to find the oldest date
+        """
+        oldest_date = None
+        for patent in patents:
+            if patent.date:
+                if oldest_date:
+                    if patent.date < oldest_date:
+                        oldest_date = patent.date
+                else:
+                    oldest_date = patent.date
+
+        return oldest_date
+
+
 class MarcRecord:
     """
     Represent a record, same as an entry is espacenet with a family id
-    You can use the property to get MarcXml direct values
     The marc_record attribute has always the nicest marc xml counterpart
-    Can be instanciated from an infoscience record or a from a espacenet record
-    Warning, this class fetch what it need, you may not have all the data for a subfield
-    Example = authors name are loaded (700__a), but not their sciper.
-    So update data with this fact in mind (stay conservative on change, "touch only what need to be")
+    and this class offers properties to access them
+    Use the MarcRecordBuilder instead of initiating it by yourself
     """
-    def __init__(self, record=None, patent_family=None):
-        """
-        We can create this class from an infoscience Marc record
-        """
-        self.has_changed = True  # assert we create it only when we change something
-
-        if record:
-            assert isinstance(record, ET.Element)
-            self.marc_record = record
-        else:
-            # build the marc record as element
-            self.marc_record = ET.Element('record')
-
-            # we are in a new record mode, so build essential information, in same order as infoscience
-            self.update_at = True  # use setter default values
-            self.tto_id = True  # use setter default values
-            self.content_type = True  # use setter default values
-            self.epfl_id = True  # use setter default values
-            self.doctype = True  # use setter default values
-            self.sort_record_content()
-
-        if patent_family:  # we are building/updating this record from a patent_family
-            logger_infoscience.debug("Creating a patent from a family from Espacenet")
-            patent_for_data = patent_family.patents[0]  # the first should be the good
-
-            if not self.family_id:
-                self.family_id = patent_for_data.family_id
-
-            self.title = patent_for_data.invention_title_en
-            self.publication_date = patent_family.oldest_date
-            self.abstract = patent_family.best_abstract
-            self.authors = [author[1] for author in patent_for_data.inventors]
-
-            self.update_patents_from_espacenet(patent_family)
-            # sort again
-            if not record:
-                # sort only if this a new one from patent_family
-                self.sort_record_content()
 
     def sort_record_content(self):
         """
@@ -336,7 +362,7 @@ class MarcRecord:
         subfield_980__a = _subfield(datafield_980, 'a')
         subfield_980__a.text = "PATENT"
 
-    def update_patents_from_espacenet(self, espacenet_patents_family):
+    def update_patents_from_espacenet(self, espacenet_patents):
         """
         -* Updating patents *-
 
@@ -346,8 +372,8 @@ class MarcRecord:
         Cela peut donner par exemple :
         [Brevet1_Espacenet, Brevet2_Manuel_Espacenet, Brevet3_Espacenet, Brevet4_Manuel_Espacenet, Brevet5_Manuel]
         """
+        # patents that are already in are from infoscience
         infoscience_patents = self.patents
-        espacenet_patents = espacenet_patents_family.patents
         final_patent_list = []
 
         # Desc sorting espacenet entry
@@ -372,41 +398,6 @@ class MarcRecord:
             return to_marc_string
         else:
             return xml.dom.minidom.parseString(to_marc_string).toprettyxml()
-
-
-class MarcPatentFamilies(PatentFamilies):
-    """
-    Add converter to Marc
-    """
-    ##############
-    # To Marc
-    ##############
-
-    @property
-    def best_abstract(self):
-        """
-        try to find at least an abstract in all patents
-        """
-        for patent in self.patents:
-            if patent.abstract_en != "":
-                return patent.abstract_en
-        return ""
-
-    @property
-    def oldest_date(self):
-        """
-        try to find the oldest date
-        """
-        oldest_date = None
-        for patent in self.patents:
-            if patent.date:
-                if oldest_date:
-                    if patent.date < oldest_date:
-                        oldest_date = patent.date
-                else:
-                    oldest_date = patent.date
-
-        return oldest_date
 
 
 class MarcEspacenetPatent(EspacenetPatent):
