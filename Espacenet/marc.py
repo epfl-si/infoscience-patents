@@ -38,16 +38,16 @@ class MarcCollection(ET.Element):
         if not pretty_print:
             return to_marc_string
         else:
-            return xml.dom.minidom.parseString(to_marc_string).toprettyxml()
+            # fix to pretty print without all the blank lines
+            reparsed = xml.dom.minidom.parseString(to_marc_string)
+            return '\n'.join([line for line in reparsed.toprettyxml(indent=' '*2).split('\n') if line.strip()])
 
     def write(self, path):
         # add namespace before write
         self.set('xmlns', "http://www.loc.gov/MARC21/slim")
-        tree = ET.ElementTree(self)
-        tree.write(path,
-           xml_declaration=True,
-           encoding='utf-8',
-           method="xml")
+
+        with open(path, 'w') as f:
+            f.write(self.tostring(True))
 
 
 class MarcPatent:
@@ -92,7 +92,7 @@ class MarcRecord:
     Example = authors name are loaded (700__a), but not their sciper.
     So update data with this fact in mind (stay conservative on change, "touch only what need to be")
     """
-    def __init__(self, record="", patent_family=None):
+    def __init__(self, record=None, patent_family=None):
         """
         We can create this class from an infoscience Marc record
         """
@@ -146,10 +146,14 @@ class MarcRecord:
 
     @update_at.setter
     def update_at(self, value):
-        timestamp_field = self.marc_record.find('controlfield[@tag="005"]')
-        self.marc_record.remove(timestamp_field)
-        controlfield_005 = _controlfield(self.marc_record, '005')
-        controlfield_005.text = datetime.now().strftime('%Y%m%d%H%M%S.0')
+        timestamp_field = self.update_at
+        new_timestamp = datetime.now().strftime('%Y%m%d%H%M%S.0')
+
+        if timestamp_field:
+            _get_controlfield_element(self.marc_record, '005').text = new_timestamp
+        else:
+            controlfield_005 = _controlfield(self.marc_record, '005')
+            controlfield_005.text = new_timestamp
 
     @property
     def record_id(self):

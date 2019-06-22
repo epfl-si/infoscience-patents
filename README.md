@@ -1,8 +1,12 @@
 # infoscience-patents (WIP)
 
-## How it works
+## What it is
 
-Fetch EPFL patents from EPO and generate MarcXML from it
+This project consist of two process:
+
+- Update the provided record from Infoscience with latest patents
+- Fetch for new patents that does not exist in Infoscience
+
 
 ## Install
 
@@ -20,7 +24,8 @@ Fetch EPFL patents from EPO and generate MarcXML from it
 
     - https://linuxize.com/post/how-to-install-python-3-7-on-debian-9/
 
-- `pipenv install --python 3.7`
+- Install the needed library
+    - `pipenv install --python 3.7`
 
 ## Usage
 
@@ -30,10 +35,25 @@ export EPO_CLIENT_ID=123456
 export EPO_CLIENT_SECRET=123456
 ```
 
-
-### Test
+ ### Test
 
 - `pipenv run python tests.py --verbose`
+
+### Updating Infoscience patent from a XML export
+
+You have to provide the MarcXML file from Infoscience to get an update.
+Warning, as the limit of record per request is 1000 and there is 1'305 patents at thhis day, it is better to do in year range.
+
+Example for the year 2016 :
+
+- get the lastest infoscience export of patents for the 2016 year
+    - `wget "https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'+and+year%3A2016" -O infoscience_patents_2016_export.xml --header="Content-Type: text/xml"`
+
+- import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
+    - `pipenv run python updater.py --infoscience_patents ./infoscience_patents_2016_export.xml`
+
+- download the produced files found in ./output to the infoscience bibedit. This is the records that need to be updated
+
 
 ### Search
 
@@ -51,21 +71,5 @@ Fetch patents from Infoscience and EPO trough the provided dates (start_date and
 - `pipenv run python sync.py --startdate 2019-01-01`
 - `pipenv run python sync.py --startdate 2019-01-01 --enddate 2019-01-02 --infoscience_patents ./infoscience_patents.xml --verbose --debug`
 
-### Loading from infoscience.epfl.ch (TO_DECIDE)
 
-This is the default behavior.
-`pipenv run python sync.py`
 
-### Loading from a file (TO_DECIDE)
-
-you can provide your own MarcXML file instead loading the data on Infoscience.
-
-Example :
-
-- get the lastest infoscience export of patents
-    - `wget "https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A%27PATENT%27" -O infoscience_patents_export.xml --header="Content-Type: text/xml"`
-
-- import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
-    - `pipenv run python sync.py --infoscience_patents ./infoscience_patents.xml`
-
-- use the produced files found in ./output

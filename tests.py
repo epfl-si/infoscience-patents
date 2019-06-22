@@ -305,6 +305,14 @@ class TestLoadingInfosciencExport(unittest.TestCase):
         self.assertNotEqual(len(original_records), len(records), "Update result have more records to update than export provided")
         self.assertGreater(len(original_records), len(records), "Update result have more records to update than export provided")
 
+        # do some check on update
+        record = records[0]
+
+        # only one ID pls
+        self.assertEqual(len(record.findall('datafield[@tag="024"]/subfield[@code="2"][.="EPO Family ID"]')), 1)
+        # only one timestamp pls
+        self.assertEqual(len(record.findall('controlfield[@tag="005"]')), 1)
+
     def test_should_set_as_new_collection_new_patents(self):
         # fetch all results for a specific year, and assert the incoming infoscience export is set to the good year
         pass

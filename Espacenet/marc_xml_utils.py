@@ -39,7 +39,7 @@ def _get_datafield_values(record, tag, ind1=' ', ind2=' '):
 def _get_multifield_values(record, tag, ind1=' ', ind2=' '):
     result = []
 
-    for datafield in record.findall('datafield'):
+    for datafield in record.iter('datafield'):
         if datafield.attrib.get('tag') == tag and datafield.attrib.get('ind1') == ind1 and datafield.attrib.get('ind2') == ind2:
             r = {}
             result.append(r)
