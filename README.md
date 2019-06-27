@@ -2,11 +2,12 @@
 
 ## What it is
 
-This project consist of two process:
+This project consist of two processes:
 
 - Update the provided record from Infoscience with latest patents
 - Fetch for new patents that does not exist in Infoscience
 
+For additional information about patents and design choice, take a look at the TO_KNOW_FR.md documentation.
 
 ## Install
 
@@ -54,7 +55,7 @@ Example for the year 2016 :
     -  or, to get the maximum of information, add --debug and --info
         - `pipenv run python updater.py --infoscience_patents ./infoscience_patents_2016_export.xml --debug --verbose`
 
-- download the produced files found in ./output into the Infoscience bibedit. This is the records that need to be updated
+- download the produced files found in ./output into the Infoscience bibedit.
 
 ### Fetching for new patents
 
