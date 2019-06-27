@@ -56,7 +56,7 @@ def update_infoscience_export(xml_file):
         marc_record = MarcRecordBuilder().from_infoscience_record(record=record)
 
         logger_infoscience.info("Parsing %s/%s record %s, family id %s" % (
-            i,
+            i+1,
             len(records),
             marc_record.record_id,
             marc_record.family_id)
