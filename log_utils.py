@@ -1,5 +1,7 @@
 import logging
 import sys
+import os
+import time
 
 """
 Use it like this :
@@ -8,6 +10,8 @@ logger_infoscience = logging.getLogger('INFOSCIENCE')
 logger_epo = logging.getLogger('EPO')
 """
 
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 def add_logging_argument(parser):
     parser.add_argument(
@@ -56,11 +60,30 @@ def set_logging_from_args(args):
     h2.setLevel(logging.WARNING)
     h2.setFormatter(default_formatter)
 
+    try:
+        BASE_DIR = __location__
+        os.mkdir('./output')
+    except FileExistsError:
+        pass
+
+    log_path = os.path.join(
+        BASE_DIR,
+        "output",
+        "%s.log" % time.strftime("%Y%m%d-%H%M%S")
+        )
+
+    h3_file = logging.FileHandler(log_path)
+    h3_file.setLevel(logging.DEBUG)
+    h3_file.setFormatter(default_formatter)
+
     logger.addHandler(h1)
     logger.addHandler(h2)
+    logger.addHandler(h3_file)
 
     logger_infoscience.addHandler(h1)
     logger_infoscience.addHandler(h2)
+    logger_infoscience.addHandler(h3_file)
 
     logger_epo.addHandler(h1)
     logger_epo.addHandler(h2)
+    logger_epo.addHandler(h3_file)
