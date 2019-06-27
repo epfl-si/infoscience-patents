@@ -56,7 +56,6 @@ Example for the year 2016 :
 
 - download the produced files found in ./output into the Infoscience bibedit. This is the records that need to be updated
 
-
 ### Fetching for new patents
 
 Before fetching new patents for a specific year, you should launch an update for the year you are trying to fetch, as the updater add the family ID to the patents, and family ID are the reference used for the fetch.
@@ -70,22 +69,3 @@ Before fetching new patents for a specific year, you should launch an update for
         - `pipenv run python fetch_new.py --infoscience_patents ./infoscience_patents_2016_export.xml --year 2016 --debug --verbose`
 
 - download the produced files found in ./output into the Infoscience bibedit. This is the new records that need to be added to Infoscience
-
-### Search
-
-Fetch patents from EPO
-
-- `pipenv run python search.py --help`
-- `pipenv run python search.py fluid`
-- `pipenv run python search.py A text to search --verbose --debug`
-
-### Synchronize
-
-Fetch patents from Infoscience and EPO trough the provided dates (start_date and end_date arguments), then build a new MarcXML from it
-
-- `pipenv run python sync.py --help`
-- `pipenv run python sync.py --startdate 2019-01-01`
-- `pipenv run python sync.py --startdate 2019-01-01 --enddate 2019-01-02 --infoscience_patents ./infoscience_patents.xml --verbose --debug`
-
-
-
