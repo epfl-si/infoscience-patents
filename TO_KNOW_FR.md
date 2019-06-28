@@ -5,6 +5,8 @@ Les données proviennent de [l'Office Européen des Brevets ("EPO")](https://www
 Afin de respecter les règles de la [charte d'utilisation équitable d'EPO](https://www.epo.org/service-support/ordering/fair-use_fr.html), les données récupéré au travers de ce programme sont mises en cache deux semaines.
 
 L'anglais est la langue de chargement, même si le texte (titre ou abstract) en français existe.
+Si l'anglais n'existe pas, le français est utilisé.
+Tous les autres titres d'une langue différente se retrouve dans le champs note.
 
 Lorsque l'on charge une famille de brevet, la date de publication (260__c) est l'année du brevet le plus ancien.
 
