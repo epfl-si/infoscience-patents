@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 import time
 import os
 
-from log_utils import add_logging_argument, set_logging_from_args
+from log_utils import set_logging_configuration
 
 from Espacenet.builder import EspacenetBuilderClient
 
@@ -109,7 +109,6 @@ if __name__ == '__main__':
                         required=True,
                         type=int)
 
-    parser = add_logging_argument(parser)
 
     # create the place where we add the results
     try:
@@ -119,7 +118,7 @@ if __name__ == '__main__':
         pass
 
     args = parser.parse_args()
-    set_logging_from_args(args)
+    set_logging_configuration()
 
     # set the name of the file
     new_xml_path = os.path.join(

@@ -5,7 +5,7 @@ import argparse
 import tempfile
 import xml.etree.ElementTree as ET
 
-from log_utils import add_logging_argument, set_logging_from_args
+from log_utils import set_logging_configuration
 
 import epo_ops
 
@@ -337,7 +337,5 @@ class TestLoadingInfosciencExport(unittest.TestCase):
 if __name__ == '__main__':
     # force debug logging
     parser = argparse.ArgumentParser()
-    parser = add_logging_argument(parser)
-    args = parser.parse_args(['--debug'])
-    set_logging_from_args(args)
+    set_logging_configuration()
     unittest.main()

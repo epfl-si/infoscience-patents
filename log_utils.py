@@ -13,44 +13,29 @@ logger_epo = logging.getLogger('EPO')
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
-def add_logging_argument(parser):
-    parser.add_argument(
-        '-d', '--debug',
-        help="Print debugging info into logs",
-        action="store_const", dest="loglevel", const=logging.DEBUG,
-        default=logging.WARNING,
-    )
-
-    parser.add_argument(
-        '-v', '--verbose',
-        help="Print standard information on the process",
-        action="store_const", dest="loglevel", const=logging.INFO,
-    )
-
-    return parser
-
 
 class InfoFilter(logging.Filter):
     def filter(self, rec):
         return rec.levelno in (logging.DEBUG, logging.INFO)
 
 
-def set_logging_from_args(args):
+def set_logging_configuration():
     """
     Use --verbose and/or --debug from arguments to fix level of logging
     """
     # https://stackoverflow.com/questions/16061641/python-logging-split-between-stdout-and-stderr/16066513#16066513
 
     default_formatter = logging.Formatter('%(asctime)s - %(levelname)s:%(name)s: %(message)s')
+    loglevel = logging.DEBUG
 
     logger = logging.getLogger('main')
-    logger.setLevel(args.loglevel)
+    logger.setLevel(loglevel)
 
     logger_infoscience = logging.getLogger('INFOSCIENCE')
-    logger_infoscience.setLevel(args.loglevel)
+    logger_infoscience.setLevel(loglevel)
 
     logger_epo = logging.getLogger('EPO')
-    logger_epo.setLevel(args.loglevel)
+    logger_epo.setLevel(loglevel)
 
     h1 = logging.StreamHandler(sys.stdout)
     h1.setLevel(logging.DEBUG)

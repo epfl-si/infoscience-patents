@@ -7,7 +7,7 @@ import os
 import epo_ops
 from requests.exceptions import HTTPError
 
-from log_utils import add_logging_argument, set_logging_from_args
+from log_utils import set_logging_configuration
 
 from Espacenet.patent_models import PatentFamilies
 from Espacenet.marc import MarcRecordBuilder, MarcCollection
@@ -149,8 +149,6 @@ if __name__ == '__main__':
                         required=True,
                         type=argparse.FileType('r'))
 
-    parser = add_logging_argument(parser)
-
     # create the place where we add the results
     try:
         BASE_DIR = __location__
@@ -165,7 +163,7 @@ if __name__ == '__main__':
         "patents-update-%s.xml" % time.strftime("%Y%m%d-%H%M%S")
         )
     args = parser.parse_args()
-    set_logging_from_args(args)
+    set_logging_configuration()
 
     updated_xml_collection = update_infoscience_export(args.infoscience_patents)
 
