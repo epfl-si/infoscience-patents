@@ -112,7 +112,7 @@ class MarcRecordBuilder:
         m_record.family_id = family_id
         patent_for_data = patents[0]  # the first should be the good
 
-        m_record.title = patent_for_data.invention_title_en
+        self.set_titles(m_record, patents)
         m_record.publication_date = self.oldest_date(patents)
         m_record.abstract = self.best_abstract(patents)
         m_record.authors = [author[1] for author in patent_for_data.inventors]
@@ -124,14 +124,60 @@ class MarcRecordBuilder:
 
         return m_record
 
+    def set_titles(self, m_record, patents):
+        """
+        try to find at least an english title in all patents,
+        otherwise a french one, and fullfile notes
+        """
+        best_title = ""
+        code_use_for_title = []
+
+        for patent in patents:
+            for title, code in patent.invention_titles:
+                if code == 'en':
+                    best_title = title
+                    code_use_for_title.append("en")
+
+        if not best_title:  # nothing found in english ? try in french
+            for patent in patents:
+                for title, code in patent.invention_titles:
+                    if code == 'fr':
+                        best_title = title
+                        code_use_for_title.append("fr")
+
+        if best_title:
+            m_record.title = best_title
+
+        final_note_text = ""
+
+        for patent in patents:
+            for title, code in patent.invention_titles:
+                if code not in code_use_for_title:
+                    final_note_text += "\n\t(" + code + ")" + " " + title
+                    code_use_for_title.append(code)
+
+        if final_note_text:
+            final_note_text = "Alternative title(s) :" + final_note_text
+            m_record.add_a_note(final_note_text)
+
     def best_abstract(self, patents):
         """
-        try to find at least an abstract in all patents
+        try to find at least an english abstract in all patents,
+        otherwise a french version
         """
+        best_abstract = ""
+
         for patent in patents:
             if patent.abstract_en != "":
-                return patent.abstract_en
-        return ""
+                best_abstract =  patent.abstract_en
+
+        if best_abstract:
+            return best_abstract
+        else:
+            # no english title, try in french
+            for patent in patents:
+                if patent.abstract_fr != "":
+                    best_abstract =  patent.abstract_fr
 
     def oldest_date(self, patents):
         """
@@ -312,6 +358,21 @@ class MarcRecord:
         datafield_269 = _datafield(self.marc_record, '269')
         subfield_269__a = _subfield(datafield_269, 'a')
         subfield_269__a.text = value.strftime('%Y')
+
+    @property
+    def note(self):
+        notes_datafields = _get_multifield_values(self.marc_record, '500')
+        notes = []
+
+        for field in notes_datafields:
+            notes.append(field.get('a'))
+
+        return notes
+
+    def add_a_note(self, value):
+        datafield_500 = _datafield(self.marc_record, '500')
+        subfield_500__a = _subfield(datafield_500, 'a')
+        subfield_500__a.text = value
 
     @property
     def content_type(self):

@@ -1,0 +1,1851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Search-Engine-Total-Number-Of-Results: 140 -->
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+    <record>
+        <controlfield tag="001">228170</controlfield>
+        <controlfield tag="005">20190507143832.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2016322101</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20161103</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US9412940</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">B2</subfield>
+            <subfield code="d">20160809</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2015200363</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20150716</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2014020478</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A3</subfield>
+            <subfield code="d">20140515</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2014020478</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A2</subfield>
+            <subfield code="d">20140206</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">49223828</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1217</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Resistive Switching Element and Use Thereof</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">A bipolar resistive switching device including an electrically conductive bottom electrode, a stack of transition metal oxides layers, a number of transition metal oxide layers being equal or greater than 2, the stack including: at least one MOx layer, at least one oxygen gettering layer NOy, wherein the resistive switching device further includes an electrically conductive top electrode.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">242417</subfield>
+            <subfield code="a">Sacchetto, Davide</subfield>
+            <subfield code="g">181895</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Bobba, Shashi Kanth</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Gaillardon, Pierre-emmanuel Julien Marc</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Leblebici, Yusuf</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">De Micheli, Giovanni</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Demirci, Tugba</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228170</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228991</controlfield>
+        <controlfield tag="005">20180913064356.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP2582289</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">B1</subfield>
+            <subfield code="d">20160907</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2013303873</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20131114</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP2582289</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20130424</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2011157714</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20111222</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">44357950</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1182</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Pdms-based stretchable multi-electrode and chemotrode array for epidural and subdural neuronal recording, electrical stimulation and drug delivery</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Vörös, Janos</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">245952</subfield>
+            <subfield code="a">Courtine, Gregoire</subfield>
+            <subfield code="g">220184</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Larmagnac, Alexandre</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">246287</subfield>
+            <subfield code="a">Musienko, Pavel</subfield>
+            <subfield code="g">226399</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252410</subfield>
+            <subfield code="p">UPCOURTINE</subfield>
+            <subfield code="x">U12556</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228991</subfield>
+            <subfield code="p">SV</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">278787</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228991</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228165</controlfield>
+        <controlfield tag="005">20181221101922.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2016376694</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20161229</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2015079286</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20150604</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">50002796</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1319</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Method and Apparatus for Coating Nanoparticulate Films on Complex Substrates</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">Active films and processes for depositing the same onto a complex 3D shape substrates and implants are provided. The process comprises the following steps: inserting into a process chamber a sputtering target, including at least two chemical elements and a complex shape 3D substrate on a substrate holder, providing a gas to be ionized into the process chamber with a controlled pressure; applying a voltage in pulse between the sputtering target and the complex shape 3D substrate; and generating a magnetic field at the surface of the sputtering target inside the process chamber as required for HIPIMS.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Kiwi, Juan</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">247403</subfield>
+            <subfield code="a">Rtimi, Sami</subfield>
+            <subfield code="g">216848</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Pulgarin, César</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252422</subfield>
+            <subfield code="p">GPAO</subfield>
+            <subfield code="x">U12575</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228165</subfield>
+            <subfield code="p">SB</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">216848</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228165</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">215031</controlfield>
+        <controlfield tag="005">20190317000352.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US9411417</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">B2</subfield>
+            <subfield code="d">20160809</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2016004303</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160107</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">55016983</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">EYE GAZE TRACKING SYSTEM AND METHOD</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="300" ind1=" " ind2=" ">
+            <subfield code="a">15</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">An eye gaze tracking system is disclosed. The system includes a gaze data acquisition system including a plurality of light sources and a plurality of image sensors. The plurality of light sources are arranged to emit light to a head of the user, and the plurality of image sensors are configured to receive the light. In an embodiment, the system further includes a gaze tracking module including an ocular feature extraction module, a point of regard (POR) calculation module and a POR averaging module. The ocular feature extraction module is configured to process the gaze data and to extract ocular features, and is configured to determine a confidence value associated with an accuracy of the parameters. The POR calculation module is configured to determine a POR from the ocular features. The POR averaging module is configured to determine an average POR.</subfield>
+        </datafield>
+        <datafield tag="653" ind1="1" ind2=" ">
+            <subfield code="a">eye tracking</subfield>
+        </datafield>
+        <datafield tag="653" ind1="1" ind2=" ">
+            <subfield code="a">gaze estimation</subfield>
+        </datafield>
+        <datafield tag="653" ind1="1" ind2=" ">
+            <subfield code="a">multi-camera</subfield>
+        </datafield>
+        <datafield tag="653" ind1="1" ind2=" ">
+            <subfield code="a">adaptive fusion</subfield>
+        </datafield>
+        <datafield tag="653" ind1="1" ind2=" ">
+            <subfield code="a">weighting</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">246687</subfield>
+            <subfield code="a">Arar, Nuri Murat</subfield>
+            <subfield code="g">222228</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">240323</subfield>
+            <subfield code="a">Thiran, Jean-Philippe</subfield>
+            <subfield code="g">115534</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Theytaz, Olivier</subfield>
+        </datafield>
+        <datafield tag="856" ind1="4" ind2=" ">
+            <subfield code="u">https://www.google.ch/patents/US9411417</subfield>
+            <subfield code="z">URL</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252394</subfield>
+            <subfield code="p">LTS5</subfield>
+            <subfield code="x">U10954</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:215031</subfield>
+            <subfield code="p">STI</subfield>
+            <subfield code="q">GLOBAL_SET</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">222228</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">222228</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-215031</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228161</controlfield>
+        <controlfield tag="005">20180913064326.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2017274218</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20170928</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP3190986</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20170719</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2016038515</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160317</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">54292837</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1003</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Device for photoactivation and reaction monitoring</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">The present invention relates to a device to photocure and/or photoactivate a photosensitive material. The device comprises several subsystems to transmit light towards an area of interest where a photosensitive material is applied as well as to collect light reflected by the applied photosensitive material. Reflected light is analyzed by an optical detector to monitor the photocuring and/or photoactivation process. Further means to inject or otherwise apply a photosensitive material can be combined in the same device. Methods for applying a fluent polymerizable material to a target site and for effecting polymerization of the fluent light- sensitive material in situ are also disclosed.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">246096</subfield>
+            <subfield code="a">Schmocker, Andreas</subfield>
+            <subfield code="g">166150</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Moser, Christophe</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">240508</subfield>
+            <subfield code="a">Pioletti, Dominique</subfield>
+            <subfield code="g">103117</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Bourban, Pierre-etienne</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252108</subfield>
+            <subfield code="p">LBO</subfield>
+            <subfield code="x">U10299</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252108</subfield>
+            <subfield code="p">LBO</subfield>
+            <subfield code="x">U10299</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228161</subfield>
+            <subfield code="p">STI</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">105657</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228161</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228087</controlfield>
+        <controlfield tag="005">20180913064325.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2017243728</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20170824</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP3207556</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20170823</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2016059037</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160421</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">GB2531336</subfield>
+            <subfield code="b">GB</subfield>
+            <subfield code="c">A</subfield>
+            <subfield code="d">20160420</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">52013136</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1412</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Method and apparatus for the analysis of molecules using mass spectrometry and optical spectroscopy</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">A method of analyzing molecules enabling chemical, structural and isomeric or conformational identification of the molecules, particularly in a stream from a chromatographic separation, comprising: generating ions from a sample of molecules to be analyzed; cooling the generated ions below ambient temperature; fragmenting at least some of the cooled ions by irradiating the ions with light at a plurality of different wavelengths (λ) within one or more predetermined spectral intervals;-recording a fragment mass spectrum of the fragmented ions comprising a detected signal (I) versus m/z over a predetermined range of m/z values for each of the plurality of different wavelengths (λ), thereby recording a two dimensional dependency of the detected signal (I) on m/z and irradiation wavelength (λ); and determining from the recorded two dimensional dependency an identity of at least one of the generated ions and/or relative abundances of different generated ions and thereby determining an identity of at least of one of the molecules and/or relative abundances of different molecules in the sample. Apparatus for performing the method is also provided.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Makarov, Alexander</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">242817</subfield>
+            <subfield code="a">Boyarkine, Oleg</subfield>
+            <subfield code="g">104570</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">246389</subfield>
+            <subfield code="a">Kopysov, Vladimir</subfield>
+            <subfield code="g">221741</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252096</subfield>
+            <subfield code="p">LCPM</subfield>
+            <subfield code="x">U10106</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228087</subfield>
+            <subfield code="p">SB</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">106239</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228087</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228101</controlfield>
+        <controlfield tag="005">20180913064325.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2016158204</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160609</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2015000800</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20150108</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP2821072</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20150107</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">48698959</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1182</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Pharmacological stimulation to facilitate and restore standing and walking functions in spinal cord motor disorders</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">The invention relates to the selective targeting of specific α2 adrenergic receptor subtypes for facilitating and also restoring standing and walking in a subject affected by spinal cord disorders, in particular spinal cord injury. In particular, the improvement of locomotion by targeting specific receptor subtypes can be achieved by stimulation of the α2c receptor subtype using an α2c specific agonist or by blocking the α2a receptor subtype using α2a antagonists. A combination of an α2c agonist and an α2a antagonist is also provided for a synergistic effect. Alternatively, a large α2 agonist can be used in combination with an α2a antagonist to achieve specific stimulation of the α2c receptor. Pharmaceutical compositions, kit-of-parts and therapeutic systems comprising said agonists/antagonists as active agents are objects of the present invention. A robotic interface and epidural electric stimulation can also be used in combination with the compositions of the invention for restoring voluntary control of locomotion.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">245952</subfield>
+            <subfield code="a">Courtine, Gregoire</subfield>
+            <subfield code="g">220184</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">246176</subfield>
+            <subfield code="a">Barraud, Quentin</subfield>
+            <subfield code="g">224044</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">246287</subfield>
+            <subfield code="a">Musienko, Pavel</subfield>
+            <subfield code="g">226399</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252410</subfield>
+            <subfield code="p">UPCOURTINE</subfield>
+            <subfield code="x">U12556</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228101</subfield>
+            <subfield code="p">SV</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">278787</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228101</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228096</controlfield>
+        <controlfield tag="005">20180913064325.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2017325719</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20171116</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2017326018</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20171116</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP3241586</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20171108</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">AU2013269175</subfield>
+            <subfield code="b">AU</subfield>
+            <subfield code="c">B2</subfield>
+            <subfield code="d">20170420</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP2854939</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">B1</subfield>
+            <subfield code="d">20170419</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">HK1207326</subfield>
+            <subfield code="b">HK</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160129</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2015190200</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20150709</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP2854939</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20150408</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">CN104363955</subfield>
+            <subfield code="b">CN</subfield>
+            <subfield code="c">A</subfield>
+            <subfield code="d">20150218</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">AU2013269175</subfield>
+            <subfield code="b">AU</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20141211</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">CA2874101</subfield>
+            <subfield code="b">CA</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20131205</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2013179230</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20131205</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">48783307</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1182</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Apparatus and method for restoring voluntary control of locomotion in neuromotor impairments</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">245952</subfield>
+            <subfield code="a">Courtine, Gregoire</subfield>
+            <subfield code="g">220184</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">246201</subfield>
+            <subfield code="a">Micera, Silvestro</subfield>
+            <subfield code="g">218366</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Von Zitzewitz, Joachim</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252419</subfield>
+            <subfield code="p">TNE</subfield>
+            <subfield code="x">U12522</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252410</subfield>
+            <subfield code="p">UPCOURTINE</subfield>
+            <subfield code="x">U12556</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228096</subfield>
+            <subfield code="p">SV</subfield>
+            <subfield code="p">STI</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">278787</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228096</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228103</controlfield>
+        <controlfield tag="005">20180913064325.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2016289848</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20161006</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">57015145</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1483</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Device and System Having Water Microelectrolyzer Cells and Method of Using the Same</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">A device having a water vapor microelectrolyzer cell including microstructured parallel electrodes where the water splitting reactions can take place, the microstructured electrodes being covered by a thin layer of solid-state ion conducting material to allow for the conduction of protons during the device operation, while permitting the diffusion of water from the vapor phase into the electrodes, as well as the diffusion of evolved oxygen and hydrogen gases from the electrodes into the vapor phase environment above the ion-conductor film.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Moser, Christophe</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">244715</subfield>
+            <subfield code="a">Psaltis, Demetri</subfield>
+            <subfield code="g">174684</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">247492</subfield>
+            <subfield code="a">Modestino, Miguel Antonio</subfield>
+            <subfield code="g">239591</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Hosseini, Hashemi Seyyed Mohammad</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252333</subfield>
+            <subfield code="p">LO</subfield>
+            <subfield code="x">U11723</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228103</subfield>
+            <subfield code="p">STI</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">282856</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228103</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228091</controlfield>
+        <controlfield tag="005">20180913064325.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2016142925</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160915</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP3067693</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160914</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">52648930</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">56879951</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1351</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Nanopore forming method and uses thereof</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">Method for making nanopores in thin layers or monolayers of transition metal dichalcogenides comprising the steps of provinding a suspended transistion metal dichalcogenide layer (1) in an electrolyte (2), applying a transmembrane voltage (V) high enough to lead to the breakdown of the layer (1), monitoring the ionic current (Ii) and reducing the transmembrane voltage (V) when the ionic current (Ii) has reached a predefined cut-off value (Ip).</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">247179</subfield>
+            <subfield code="a">Feng, Jiandong</subfield>
+            <subfield code="g">231481</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">247149</subfield>
+            <subfield code="a">Liu, Ke</subfield>
+            <subfield code="g">232022</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">240208</subfield>
+            <subfield code="a">Radenovic, Aleksandra</subfield>
+            <subfield code="g">161458</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Astier, Yann</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252069</subfield>
+            <subfield code="p">LBEN</subfield>
+            <subfield code="x">U11842</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228091</subfield>
+            <subfield code="p">STI</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">161458</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228091</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228127</controlfield>
+        <controlfield tag="005">20180913064326.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US9703381</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">B2</subfield>
+            <subfield code="d">20170711</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2016238040</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160818</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">56622343</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1466</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Multimodal Haptic Device, System, and Method of Using the Same</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">A multimodal haptic device operating as a closed-loop system, the device including a pipeline configured to allow a closed-loop flow of a fluid medium, a manifold operatively connected to the pipeline, the manifold having a pump and a valve to control and regulate a flow of the fluid medium along the pipeline, and a display unit operatively connected to the pipeline, the display unit having a tactile display and a valve operatively connected to the tactile display for regulating an efflux of the fluid medium from the tactile display into the pipeline.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Gallo, Simon</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">242149</subfield>
+            <subfield code="a">Rognini, Giulio</subfield>
+            <subfield code="g">188041</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Bützer, Tobias Lukas</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252016</subfield>
+            <subfield code="p">LSRO</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228127</subfield>
+            <subfield code="p">STI</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">114980</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228127</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">221229</controlfield>
+        <controlfield tag="005">20190507143829.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO 2016038501 A2 20160317.</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Perovskite devices, especially photodetectors, and their fabrication, operation, and devices using them</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">Devices for room temp. reverse-bias operation photodetection comprising a planar first electrode; a second electrode above the first electrode; and an active region sandwiched between the first and second electrode are described in which the active region consists of a light-absorbing perovskite in contact with 1 of the electrodes and 1 of a hole-transporting material; a surface-increasing scaffold structure; a porous under-layer; a surface-increasing scaffold structure and a porous under-layer; a hole-transporting material and a surface-increasing scaffold structure; a hole-transporting mater...</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">244223</subfield>
+            <subfield code="a">Moehl, Thomas</subfield>
+            <subfield code="g">196687</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Nazeeruddin, Md. Khaja</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Graetzel, Michael</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Im, Jeong-Hyeok</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Park, Nam-Gyu</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Domanski, Konrad</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252519</subfield>
+            <subfield code="p">GMF</subfield>
+            <subfield code="x">U12965</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:221229</subfield>
+            <subfield code="p">SB</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">105958</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-221229</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228084</controlfield>
+        <controlfield tag="005">20180913064325.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2016327770</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20161110</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">57221844</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1500</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Bending Compensating Device, System and Method for Optical Waveguides</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">A bending compensation device for a waveguide, including a direction changing device configured to maintain a constant bending angle to the waveguide, a distal end of the waveguide having a first orientation, and the proximal end of the waveguide having a second orientation, and a motion device connected to the direction changing device, the motion device configured to move the direction changing device upon a movement of the waveguide.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Loterie, Damien</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">248724</subfield>
+            <subfield code="a">Walpen, Sebastien</subfield>
+            <subfield code="g">249495</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Morales Delgado, Edgar Emilio</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Moser, Christophe</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">244715</subfield>
+            <subfield code="a">Psaltis, Demetri</subfield>
+            <subfield code="g">174684</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252333</subfield>
+            <subfield code="p">LO</subfield>
+            <subfield code="x">U11723</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228084</subfield>
+            <subfield code="p">STI</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">282856</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228084</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">224676</controlfield>
+        <controlfield tag="005">20180913064126.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US9660721</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">B2</subfield>
+            <subfield code="d">20170523</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">US2016011044</subfield>
+            <subfield code="b">US</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160114</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">55067366</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Optical detector and amplifier for rf-detection</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">An optical detector for detecting radio frequency (RF) signals, the optical detector comprising a light source and a photodetector, and an electrical circuit comprising a position dependent capacitor and a bias voltage source adapted for providing a bias voltage for biasing the position dependent capacitor, the position dependent capacitor comprising an electrode and a membrane being displaceable in reaction to RF signals incident on the membrane, the membrane being metallized, has a thickness of less than 1 μm and a quality factor, Qm, of at least 20,000, and the distance between the membrane and the electrode being less than 10 μm.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Polzik, Eugene Simon</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Schliesser, Albert</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Schmid, Silvan</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Sorensen, Anders Sondberg</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Taylor, Jacob M</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Usami, Koji</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Bagci, Tolga</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Simonsen, Anders</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">240380</subfield>
+            <subfield code="a">Villanueva, Guillermo</subfield>
+            <subfield code="g">176631</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Zeuthen, Emil</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Appel, Juergen</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252546</subfield>
+            <subfield code="p">NEMS</subfield>
+            <subfield code="x">U12739</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:224676</subfield>
+            <subfield code="p">STI</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">176631</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">176631</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-224676</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">OTHER</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228151</controlfield>
+        <controlfield tag="005">20190507143832.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2016185440</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20161124</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">56464247</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1492</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Device and method for injection, photoactivation and solidifaction of liquid embolic material in the vascular system or other organic cavities</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">The present invention concerns an organic cavity injection device including an injection cannula for injecting a photo-activatable substance inside an organic cavity; at least one element or a plurality of elements configured to control the removal of a resident substance from the organic cavity and simultaneously prevent removal of the non-activated photo-activatable substance from the organic cavity; and an optical waveguide for providing electromagnetic radiation inside the organic cavity to the photo-activatable substance to photoactive the photo- activatable substance inside the organic cavity.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">246096</subfield>
+            <subfield code="a">Schmocker, Andreas</subfield>
+            <subfield code="g">166150</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Moser, Christophe</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Mosimann, Pascal</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228151</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228140</controlfield>
+        <controlfield tag="005">20180317092335.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2016142824</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160915</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">55697247</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1472</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Medical detector and antidiffusion grid for medical imaging device</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">The invention relates to a medical detector. The medical detector is characterised in that it comprises an antidiffusion grid secured to the detector and in that it comprises an antidiffusion grid mounted on the detector such that it can move between an active position allowing the reduction of radiation received by the detector and a storage position allowing the grid to be stored when it is not in use.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Guillemin, Maïka</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Schönenberger, Klaus</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Gabella, Thomas</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228140</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228138</controlfield>
+        <controlfield tag="005">20180913064326.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">AU2016248031</subfield>
+            <subfield code="b">AU</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20171116</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2016166729</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20161020</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">56072364</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1302</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Devices, systems and methods for dispensing and analysing particles</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">The present invention relates to a pipette tip comprising a thin holed membrane at its distal end, which is designed to be adapted with a system comprising at least an impedance analyser and a fluidic actuator to perform the dispensing and analysis of particles comprised within a conductive medium by exploiting the Coulter counter principle. The pipette tip can comprise attached or floating electrodes at its internal or external side for creating an electrical circuit. Also disclosed therein is a dispensing and analysis system, methods of using thereof and pipette tip's manufacturing methods.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Bonzon, David Vincent</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Muller, Georges Henri</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Renaud, Philippe</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">240648</subfield>
+            <subfield code="a">Barrandon, Yann</subfield>
+            <subfield code="g">149977</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">243270</subfield>
+            <subfield code="a">Bureau, Jean-baptiste</subfield>
+            <subfield code="g">178161</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Béguin, Steve</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252303</subfield>
+            <subfield code="p">UPKIN</subfield>
+            <subfield code="x">U11741</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252303</subfield>
+            <subfield code="p">UPKIN</subfield>
+            <subfield code="x">U11741</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228138</subfield>
+            <subfield code="p">SV</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">196465</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228138</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228074</controlfield>
+        <controlfield tag="005">20180317092334.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP3237597</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20171101</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">CA2972057</subfield>
+            <subfield code="b">CA</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160630</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2016103002</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160630</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">52424070</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1425</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Devices for high-throughput aggregation and manipulation of mammalian cells</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">The invention concerns a device (1) for aggregating cells comprising at least one cavity (2), wherein said cavity comprises a plurality of microwells (3) for receiving at least one cell, wherein each said well comprises a vertical sidewall and a curved bottom.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Höhnel, Sylke</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Brandenberg, Nathalie</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">244264</subfield>
+            <subfield code="a">Lutolf, Matthias</subfield>
+            <subfield code="g">106911</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228074</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">221255</controlfield>
+        <controlfield tag="005">20190507143829.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP 3065189 A1 20160907</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Novel hole transport materials and optoelectronic devices containing the same</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="b">Eur. Pat. Appl.</subfield>
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">The present invention concerns novel silolothiophene-bridged triphenylamines and related compds. and their use as hole transport materials (HTM), for example in optoelectronic and/or electrochem. devices. These materials are particularly useful in org.-inorg. perovskite-based solid state solar cells. Preferred compds. are:.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">248384</subfield>
+            <subfield code="a">Paek, Sanghyun</subfield>
+            <subfield code="g">251158</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Abate, Antonio</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Nazeeruddin, Mohammad Khaja</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Graetzel, Michael</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252519</subfield>
+            <subfield code="p">GMF</subfield>
+            <subfield code="x">U12965</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:221255</subfield>
+            <subfield code="p">SB</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">105958</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-221255</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228154</controlfield>
+        <controlfield tag="005">20180913064326.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2016139570</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160909</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP3065190</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160907</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">52589308</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">5.0044</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Small molecule hole transporting material for optoelectronic and photoelectrochemical devices</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">The present invention relates to a compound of formula (I) based on carbazole substituted by diphenylamine and used as organic hole conductors or hole transporting material in a optoelectronic or photoelectrochemical device. (I), D being being selected from formula (1) or (2):</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">247534</subfield>
+            <subfield code="a">Gratia, Paul</subfield>
+            <subfield code="g">186477</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">240422</subfield>
+            <subfield code="a">Nazeeruddin, Mohammad Khaja</subfield>
+            <subfield code="g">105958</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">240191</subfield>
+            <subfield code="a">Graetzel, Michael</subfield>
+            <subfield code="g">105292</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Getautis, Vytaudas</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Magomedov, Artiom</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Malinauskas, Tadas</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Daskeviciene, Maryte</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252085</subfield>
+            <subfield code="p">TTO</subfield>
+            <subfield code="x">U10021</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252519</subfield>
+            <subfield code="p">GMF</subfield>
+            <subfield code="x">U12965</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252060</subfield>
+            <subfield code="p">LPI</subfield>
+            <subfield code="x">U10101</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228154</subfield>
+            <subfield code="p">SB</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">105528</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228154</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+    </record>
+
+
+    <record>
+        <controlfield tag="001">228124</controlfield>
+        <controlfield tag="005">20180913064326.0</controlfield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">EP3242673</subfield>
+            <subfield code="b">EP</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20171115</subfield>
+        </datafield>
+        <datafield tag="013" ind1=" " ind2=" ">
+            <subfield code="a">WO2016110768</subfield>
+            <subfield code="b">WO</subfield>
+            <subfield code="c">A1</subfield>
+            <subfield code="d">20160714</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">EPO Family ID</subfield>
+            <subfield code="a">55361909</subfield>
+        </datafield>
+        <datafield tag="024" ind1="7" ind2="0">
+            <subfield code="2">TTO</subfield>
+            <subfield code="a">6.1465</subfield>
+        </datafield>
+        <datafield tag="037" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+        <datafield tag="245" ind1=" " ind2=" ">
+            <subfield code="a">Gastro-intestinal biomarkers for diagnosis and therapies of proteinopathies</subfield>
+        </datafield>
+        <datafield tag="269" ind1=" " ind2=" ">
+            <subfield code="a">2016</subfield>
+        </datafield>
+        <datafield tag="260" ind1=" " ind2=" ">
+            <subfield code="c">2016</subfield>
+        </datafield>
+        <datafield tag="336" ind1=" " ind2=" ">
+            <subfield code="a">Patents</subfield>
+        </datafield>
+        <datafield tag="520" ind1=" " ind2=" ">
+            <subfield code="a">Pharmaceutical composition for the treatment of proteinopathies comprising products which are able to stimulate growth or inhibition of at least one of Odoribacter, Oscillospira, Dehalobacterium, Alistipes, Parabacteroides, Lactobacillus and Sutterella, Firmicutes, Bacteroidetes, Allobaculum and Akkermansia bacteria population in the gut of individuals.</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">240555</subfield>
+            <subfield code="a">Lasser, Theo</subfield>
+            <subfield code="g">120900</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">244198</subfield>
+            <subfield code="a">Bolmont, Tristan</subfield>
+            <subfield code="g">182017</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="0">244178</subfield>
+            <subfield code="a">Harach, Taoufiq</subfield>
+            <subfield code="g">198020</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Hanna, Walid</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Fak, Frida</subfield>
+        </datafield>
+        <datafield tag="700" ind1=" " ind2=" ">
+            <subfield code="a">Marungruang, Nittaya</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252112</subfield>
+            <subfield code="p">LOB</subfield>
+            <subfield code="x">U10345</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="0">
+            <subfield code="0">252023</subfield>
+            <subfield code="p">NCEM</subfield>
+            <subfield code="x">U11905</subfield>
+        </datafield>
+        <datafield tag="909" ind1="C" ind2="O">
+            <subfield code="o">oai:infoscience.tind.io:228124</subfield>
+            <subfield code="p">SV</subfield>
+            <subfield code="p">STI</subfield>
+        </datafield>
+        <datafield tag="917" ind1="Z" ind2="8">
+            <subfield code="x">206670</subfield>
+        </datafield>
+        <datafield tag="937" ind1=" " ind2=" ">
+            <subfield code="a">EPFL-PATENT-228124</subfield>
+        </datafield>
+        <datafield tag="973" ind1=" " ind2=" ">
+            <subfield code="a">EPFL</subfield>
+        </datafield>
+        <datafield tag="980" ind1=" " ind2=" ">
+            <subfield code="a">PATENT</subfield>
+        </datafield>
+   </record>
+</collection>

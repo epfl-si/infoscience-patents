@@ -13,9 +13,7 @@ class EspacenetMixin(object):
         """
         exchange_document may be used to get data
         """
-
-        self.invention_title_en = ''
-        self.invention_title_fr = ''
+        self.invention_titles = []  # will be a tuple (title, langue_code)
 
         if exchange_document:
             self.set_from_exchange_document(exchange_document)
@@ -121,6 +119,7 @@ class EspacenetMixin(object):
         ######
         try:
             invention_titles = patent_bibliographic['invention-title']
+            self.invention_titles = []
 
             if not isinstance(invention_titles, (list, tuple)):
                 # if we have only one value
@@ -128,14 +127,12 @@ class EspacenetMixin(object):
 
             for invention_title in invention_titles:
                 try:
-                    if invention_title['@lang'] == 'fr':
-                        self.invention_title_fr = invention_title['$']
-                        self.invention_title_fr = self.invention_title_fr.lower()
-                        self.invention_title_fr = self.invention_title_fr.capitalize()
-                    elif invention_title['@lang'] == 'en':
-                        self.invention_title_en = invention_title['$']
-                        self.invention_title_en = self.invention_title_en.lower()
-                        self.invention_title_en = self.invention_title_en.capitalize()
+                    code = invention_title['@lang']
+                    title = invention_title['$']
+
+                    if code and title:
+                        title = title.lower().capitalize()
+                        self.invention_titles.append((title, code))
                 except KeyError:
                     pass
         except KeyError:

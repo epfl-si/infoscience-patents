@@ -60,6 +60,11 @@
 		<datafield ind1=" " ind2=" " tag="336">
 			<subfield code="a">Patents</subfield>
 		</datafield>
+		<datafield ind1=" " ind2=" " tag="500">
+			<subfield code="a">Alternative title(s) :
+				(de) Verfahren und system zur bestimmung der geometrie und/oder der position eines objekts
+				(fr) Procédé et système permettant de déterminer la géométrie et/ou l'emplacement d'un objet</subfield>
+			</datafield>
 		<datafield ind1=" " ind2=" " tag="520">
 			<subfield code="a">The present invention concerns a method for calibrating an array of receivers (ri), each receiver being configured for receiving a signal transmitted by at least one transmitter (si), and echoes of the transmitted signal as reflected by one or more reflective surfaces (w), said method comprising the following steps: sorting said echoes, by assigning each echo to a reflective surface or to a combination of reflective surfaces (w) calibrating said array of receivers (ri) based on said sorting.</subfield>
 		</datafield>
