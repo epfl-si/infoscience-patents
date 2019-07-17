@@ -43,15 +43,18 @@ export EPO_CLIENT_SECRET=123456
 ### Updating Infoscience patent from a XML export
 
 You have to provide the MarcXML file from Infoscience to get an update.
-Warning, as the limit of record per request is 1000 and there is 1'305 patents at thhis day, it is better to do in year range.
 
-Example for the year 2016 :
+Be warned, you need be logged in Infoscience with advanced right to download the +1000 patents
 
-- get the lastest infoscience export of patents for the 2016 year
-    - `wget "https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'+and+year%3A2016" -O infoscience_patents_2016_export.xml --header="Content-Type: text/xml"`
-
+- Retrive the patents export
+    - get the lastest infoscience export of patents
+        - connect to infoscience.epfl.ch
+        - log in with advanced right
+        - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'`
+        - assert you have more than 1'300 records
+        - download the file to your disk
 - import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
-    - `pipenv run python updater.py --infoscience_patents ./infoscience_patents_2016_export.xml`
+    - `pipenv run python updater.py --infoscience_patents_export path_to_the_saved_export.xml`
     -  or, to get the maximum of information, add --debug and --info
         - `pipenv run python updater.py --infoscience_patents ./infoscience_patents_2016_export.xml --debug --verbose`
 
@@ -65,8 +68,8 @@ Before fetching new patents for a specific year, you should launch an update for
     - `wget "https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'+and+year%3A2016" -O infoscience_patents_2016_export.xml --header="Content-Type: text/xml"`
 
 - import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
-    - `pipenv run python fetch_new.py --infoscience_patents ./infoscience_patents_2016_export.xml --year 2016`
+    - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --year 2019`
     -  or, to get the maximum of information, add --debug and --info
-        - `pipenv run python fetch_new.py --infoscience_patents ./infoscience_patents_2016_export.xml --year 2016 --debug --verbose`
+        - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --year 2019 --debug --verbose`
 
 - download the produced files found in ./output into the Infoscience bibedit. This is the new records that need to be added to Infoscience

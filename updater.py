@@ -31,10 +31,22 @@ __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 
-def update_infoscience_export(xml_file):
+def is_full_export(xml_file):
+    # do a basic check on how many records we are provided
+    xml_file = filter_out_namespace(xml_file.read())
+    provided_collection = ET.fromstring(xml_file)
+    records = provided_collection.findall('record')
+    # assert we have +1300 records or cancel the update
+    assert len(records) > 1300, """It looks like you did not provide the full export,
+                                    we have only %s records, and we need more than 1300""" % len(records)
+
+def update_infoscience_export(xml_file, range_start=None, range_end=None):
     """
     Load patents inside the xml provided
     and an updated version of it (aka added new patent to existing ones)
+    args:
+        xml_file: the marcXML of infoscience patents
+        range_start, range_end: set one if you want to update only a range of patents (mainly used in tests)
     """
     logger_infoscience.info("Loading provided xml file for an update...")
     client = EspacenetBuilderClient(use_cache=True)
@@ -44,11 +56,15 @@ def update_infoscience_export(xml_file):
 
     update_collection = MarcCollection()
     records = provided_collection.findall('record')
-    logger_infoscience.info("Provided xml file as %s records, starting the update..." % len(records))
+
+    logger_infoscience.info("Starting the update with the provided xml...")
 
     # some counters for logs
     patent_updated = 0
     family_updated = 0
+
+    # limit as asked
+    records = records[range_start:range_end]
 
     for i, record in enumerate(records):
         has_been_patent_updated = False
@@ -144,7 +160,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-f",
-                        "--infoscience_patents",
+                        "--infoscience_patents_export",
                         help="The infoscience file of patents, in a MarcXML format",
                         required=True,
                         type=argparse.FileType('r'))
@@ -162,9 +178,15 @@ if __name__ == '__main__':
         "output",
         "patents-update-%s.xml" % time.strftime("%Y%m%d-%H%M%S")
         )
+
     args = parser.parse_args()
     set_logging_configuration()
 
-    updated_xml_collection = update_infoscience_export(args.infoscience_patents)
+    is_full_export(args.infoscience_patents_export)
+
+    updated_xml_collection = update_infoscience_export(args.infoscience_patents_export)
 
     updated_xml_collection.write(update_xml_path)
+
+
+

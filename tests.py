@@ -225,6 +225,8 @@ class TestLoadingInfosciencExport(unittest.TestCase):
     patent_incomplete_sample_xml_path = os.path.join(__location__, "fixtures", "infoscience_incomplete_patent_sample_marc.xml")
     # a big samples full of need to update data
     one_big_year_of_patent_xml_path = os.path.join(__location__, "fixtures", "infoscience_patents_some_from_2016_export.xml")
+    # a full export
+    all_patents_xml_path = os.path.join(__location__, "fixtures", "infoscience_patents_all.xml")
 
     # what I removed from the original
     """
@@ -289,15 +291,17 @@ class TestLoadingInfosciencExport(unittest.TestCase):
             raise AssertionError("Updating the patents has removed some information") from e
 
     def test_should_update_a_big_export(self):
-        with open(self.__class__.one_big_year_of_patent_xml_path) as patent_xml:
+        with open(self.__class__.all_patents_xml_path) as patent_xml:
             # load before update, to check the fixture is complete
             patent_xml = filter_out_namespace(patent_xml.read())
             collection = ET.fromstring(patent_xml)
             original_records = collection.findall(".//record")
             self.assertGreater(len(original_records), 1)
 
-        with open(self.__class__.one_big_year_of_patent_xml_path) as full_infoscience_export_xml:
-            updated_xml_collection = update_infoscience_export(full_infoscience_export_xml)
+        with open(self.__class__.all_patents_xml_path) as full_infoscience_export_xml:
+            updated_xml_collection = update_infoscience_export(full_infoscience_export_xml,
+                                            len(original_records)-10,
+                                            len(original_records))
 
         self.assertTrue(updated_xml_collection)
 

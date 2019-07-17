@@ -20,6 +20,8 @@ from Espacenet.marc_xml_utils import \
     _get_datafield_values, \
     _get_multifield_values
 
+from updater import is_full_export
+
 
 logger = logging.getLogger('main')
 logger_infoscience = logging.getLogger('INFOSCIENCE')
@@ -29,7 +31,7 @@ __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 
-def fetch_new_infoscience_patents(xml_file):
+def fetch_new_infoscience_patents(xml_file, year):
     """
     Load patents inside the xml provided
     and an updated version of it (aka added new patent to existing ones)
@@ -41,18 +43,11 @@ def fetch_new_infoscience_patents(xml_file):
 
     new_collection = MarcCollection()
     records = provided_collection.findall('record')
-    # first assert we are in an unique year
-    for i, record in enumerate(records):
-        year = record.find('datafield[@tag="260"]/subfield[@code="c"]').text
-        if i == 0:
-            year_of_ref = year
-
-        assert year == year_of_ref
 
     logger_infoscience.info(
-        "Reference xml file as %s records for year %s, starting the fetch of new patents..." % (
-            year,
-            len(records)
+        "Reference xml file as %s records, starting the fetch of new patents for the year %s..." % (
+            len(records),
+            year
             )
     )
 
@@ -65,6 +60,8 @@ def fetch_new_infoscience_patents(xml_file):
     patents_for_year = client.search(
         value = 'pa all "Ecole Polytech* Lausanne" and pd=%s' % year,
         )
+
+    logger_infoscience.debug("Fetched %s family ids from infoscience xml" % len(infoscience_family_patent_list))
 
     infoscience_family_patent_list = []
 
@@ -81,7 +78,6 @@ def fetch_new_infoscience_patents(xml_file):
             # add the patent to new
             logger_infoscience.info("The family id %s is not in Infosicence, adding it" % family_id)
 
-            # -> create a new record with {patents}
             # add it to collection
             m_record = MarcRecordBuilder().from_epo_patents(family_id=family_id, patents=patents)
 
@@ -98,7 +94,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-f",
-                        "--infoscience_patents",
+                        "--infoscience_patents_export",
                         help="The infoscience file of patents, in a MarcXML format",
                         required=True,
                         type=argparse.FileType('r'))
@@ -108,7 +104,6 @@ if __name__ == '__main__':
                         help="The specific year to compare Espacenet with the infoscience data",
                         required=True,
                         type=int)
-
 
     # create the place where we add the results
     try:
@@ -130,5 +125,7 @@ if __name__ == '__main__':
             )
         )
 
-    new_xml_collection = fetch_new_infoscience_patents(args.infoscience_patents)
+    is_full_export(args.infoscience_patents_export)
+
+    new_xml_collection = fetch_new_infoscience_patents(args.infoscience_patents_export, args.year)
     new_xml_collection.write(new_xml_path)
