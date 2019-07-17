@@ -55,8 +55,6 @@ Be warned, you need be logged in Infoscience with advanced right to download the
         - download the file to your disk
 - import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
     - `pipenv run python updater.py --infoscience_patents_export path_to_the_saved_export.xml`
-    -  or, to get the maximum of information, add --debug and --info
-        - `pipenv run python updater.py --infoscience_patents ./infoscience_patents_2016_export.xml --debug --verbose`
 
 - download the produced files found in ./output into the Infoscience bibedit.
 
@@ -69,7 +67,5 @@ Before fetching new patents for a specific year, you should launch an update for
 
 - import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
     - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --year 2019`
-    -  or, to get the maximum of information, add --debug and --info
-        - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --year 2019 --debug --verbose`
 
 - download the produced files found in ./output into the Infoscience bibedit. This is the new records that need to be added to Infoscience
