@@ -329,12 +329,6 @@ class TestLoadingInfosciencExport(unittest.TestCase):
             self.assertGreater(len(original_records), 1)
             year_of_ref = original_records[0].find('datafield[@tag="260"]/subfield[@code="c"]').text
 
-            #TODO: check multiple titles in note
-            # we may want more notes, as alternatives title take their place
-            #note_datafield = _get_multifield_values(record, '500')
-            #note_text = list(map(lambda d: d.get('a'), note_datafield))
-            #self.assertGreater(len(note_text), 0, "notes should be fullfil with alternatives titles")
-
             for record in original_records:
                 # we want only one year
                 self.assertEqual(
