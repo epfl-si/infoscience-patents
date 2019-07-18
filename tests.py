@@ -245,7 +245,8 @@ class TestLoadingInfosciencExport(unittest.TestCase):
     def test_should_update_existing_patents(self):
         with open(self.__class__.patent_incomplete_sample_xml_path) as patent_xml:
             # load before update, to check the fixture is not complete
-            patent_xml = filter_out_namespace(patent_xml.read())
+            patent_xml_str = patent_xml.read()
+            patent_xml = filter_out_namespace(patent_xml_str)
             collection = ET.fromstring(patent_xml)
             original_records = collection.findall(".//record")
             original_record = original_records[0]
@@ -254,7 +255,8 @@ class TestLoadingInfosciencExport(unittest.TestCase):
             self.assertEqual(len(original_patents_epodocs), 2)
 
         with open(self.__class__.patent_incomplete_sample_xml_path) as patent_xml:
-            updated_xml_collection = update_infoscience_export(patent_xml)
+            patent_str = patent_xml.read()
+            updated_xml_collection = update_infoscience_export(patent_str)
         self.assertTrue(updated_xml_collection)
 
         records = updated_xml_collection.findall(".//record")
@@ -293,13 +295,15 @@ class TestLoadingInfosciencExport(unittest.TestCase):
     def test_should_update_a_big_export(self):
         with open(self.__class__.all_patents_xml_path) as patent_xml:
             # load before update, to check the fixture is complete
-            patent_xml = filter_out_namespace(patent_xml.read())
-            collection = ET.fromstring(patent_xml)
+            patent_xml_str = patent_xml.read()
+            patent_xml_str = filter_out_namespace(patent_xml_str)
+            collection = ET.fromstring(patent_xml_str)
             original_records = collection.findall(".//record")
             self.assertGreater(len(original_records), 1)
 
         with open(self.__class__.all_patents_xml_path) as full_infoscience_export_xml:
-            updated_xml_collection = update_infoscience_export(full_infoscience_export_xml,
+            updated_patent_xml_str = full_infoscience_export_xml.read()
+            updated_xml_collection = update_infoscience_export(updated_patent_xml_str,
                                             len(original_records)-10,
                                             len(original_records))
 
@@ -323,7 +327,8 @@ class TestLoadingInfosciencExport(unittest.TestCase):
         # fetch all results for a specific year, and assert the incoming infoscience export is set to the good year
         with open(self.__class__.one_big_year_of_patent_xml_path) as patent_xml:
             # load before update, to check the fixture is complete
-            patent_xml = filter_out_namespace(patent_xml.read())
+            patent_xml_str = patent_xml.read()
+            patent_xml = filter_out_namespace(patent_xml_str)
             collection = ET.fromstring(patent_xml)
             original_records = collection.findall(".//record")
             self.assertGreater(len(original_records), 1)

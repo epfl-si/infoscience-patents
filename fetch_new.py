@@ -31,15 +31,15 @@ __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 
-def fetch_new_infoscience_patents(xml_file, year):
+def fetch_new_infoscience_patents(xml_str, year):
     """
     Load patents inside the xml provided
     and an updated version of it (aka added new patent to existing ones)
     """
     logger_infoscience.info("Loading provided xml file for an update...")
 
-    xml_file = filter_out_namespace(xml_file.read())
-    provided_collection = ET.fromstring(xml_file)
+    xml_str = filter_out_namespace(xml_str)
+    provided_collection = ET.fromstring(xml_str)
 
     new_collection = MarcCollection()
     records = provided_collection.findall('record')
@@ -125,7 +125,9 @@ if __name__ == '__main__':
             )
         )
 
-    is_full_export(args.infoscience_patents_export)
+    export_as_string = args.infoscience_patents_export.read()
 
-    new_xml_collection = fetch_new_infoscience_patents(args.infoscience_patents_export, args.year)
+    is_full_export(export_as_string)
+
+    new_xml_collection = fetch_new_infoscience_patents(export_as_string, args.year)
     new_xml_collection.write(new_xml_path)

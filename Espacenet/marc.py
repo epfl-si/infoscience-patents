@@ -91,13 +91,11 @@ class MarcRecordBuilder:
     def from_infoscience_record(self, record):
         m_record = MarcRecord()
         # init from a marc record
-        logger_infoscience.debug("Creating a patent from a existing xml data")
         assert isinstance(record, ET.Element)
         m_record.marc_record = record
         return m_record
 
     def from_epo_patents(self, family_id, patents):
-        logger_infoscience.debug("Creating a new patent from a family from Espacenet")
         m_record = MarcRecord()
 
         m_record.marc_record = ET.Element('record')

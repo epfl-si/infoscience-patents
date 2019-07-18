@@ -33,14 +33,14 @@ __location__ = os.path.realpath(
 
 def is_full_export(xml_file):
     # do a basic check on how many records we are provided
-    xml_file = filter_out_namespace(xml_file.read())
+    xml_file = filter_out_namespace(xml_file)
     provided_collection = ET.fromstring(xml_file)
     records = provided_collection.findall('record')
     # assert we have +1300 records or cancel the update
     assert len(records) > 1300, """It looks like you did not provide the full export,
                                     we have only %s records, and we need more than 1300""" % len(records)
 
-def update_infoscience_export(xml_file, range_start=None, range_end=None):
+def update_infoscience_export(xml_str, range_start=None, range_end=None):
     """
     Load patents inside the xml provided
     and an updated version of it (aka added new patent to existing ones)
@@ -51,8 +51,8 @@ def update_infoscience_export(xml_file, range_start=None, range_end=None):
     logger_infoscience.info("Loading provided xml file for an update...")
     client = EspacenetBuilderClient(use_cache=True)
 
-    xml_file = filter_out_namespace(xml_file.read())
-    provided_collection = ET.fromstring(xml_file)
+    xml_str = filter_out_namespace(xml_str)
+    provided_collection = ET.fromstring(xml_str)
 
     update_collection = MarcCollection()
     records = provided_collection.findall('record')
@@ -172,6 +172,9 @@ if __name__ == '__main__':
     except FileExistsError:
         pass
 
+    args = parser.parse_args()
+    set_logging_configuration()
+
     # set the name of the file
     update_xml_path = os.path.join(
         BASE_DIR,
@@ -179,14 +182,9 @@ if __name__ == '__main__':
         "patents-update-%s.xml" % time.strftime("%Y%m%d-%H%M%S")
         )
 
-    args = parser.parse_args()
-    set_logging_configuration()
+    export_as_string = args.infoscience_patents_export.read()
 
-    is_full_export(args.infoscience_patents_export)
+    is_full_export(export_as_string)
 
-    updated_xml_collection = update_infoscience_export(args.infoscience_patents_export)
-
+    updated_xml_collection = update_infoscience_export(export_as_string)
     updated_xml_collection.write(update_xml_path)
-
-
-
