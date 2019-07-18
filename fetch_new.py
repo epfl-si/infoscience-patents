@@ -61,8 +61,6 @@ def fetch_new_infoscience_patents(xml_str, year):
         value = 'pa all "Ecole Polytech* Lausanne" and pd=%s' % year,
         )
 
-    logger_infoscience.debug("Fetched %s family ids from infoscience xml" % len(infoscience_family_patent_list))
-
     infoscience_family_patent_list = []
 
     for element_family_id in provided_collection.findall(
