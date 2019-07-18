@@ -1,6 +1,7 @@
 import argparse
 import logging
 import xml.etree.ElementTree as ET
+from datetime import datetime
 import time
 import os
 
@@ -78,6 +79,9 @@ def fetch_new_infoscience_patents(xml_str, year):
 
             # add it to collection
             m_record = MarcRecordBuilder().from_epo_patents(family_id=family_id, patents=patents)
+            # force date, espacenet should be a right source
+            year_date = datetime.strptime(str(year), '%Y')
+            m_record.publication_date = year_date
 
             new_collection.append(m_record.marc_record)
             new_patents_for_infoscience_found += 1
