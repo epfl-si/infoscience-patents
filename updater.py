@@ -71,11 +71,13 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
         has_been_family_updated = False
         marc_record = MarcRecordBuilder().from_infoscience_record(record=record)
 
-        logger_infoscience.info("Parsing %s/%s record %s, family id %s" % (
-            i+1,
-            len(records),
-            marc_record.record_id,
-            marc_record.family_id)
+        logger_infoscience.info("--------")
+        logger_infoscience.info("Parsing record %s, family id %s (%s/%s)" % (
+                marc_record.record_id,
+                marc_record.family_id,
+                i+1,
+                len(records),
+                )
             )
 
         # is it good to go ?
@@ -125,7 +127,7 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
                 input = epo_ops.models.Epodoc(epodoc_for_query)
             )
         except HTTPError as e:
-            logger_epo.warning("Skipping this record, it crash Espacenet: %s, error was %s" % (epodoc_for_query, e))
+            logger_epo.warning("Skipping this record, Espacenet has problem with it: %s, error was %s" % (epodoc_for_query, e))
             continue
 
         # comparing the length should do the trick, the epodoc don't change everytimes
@@ -139,7 +141,7 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
             has_been_patent_updated = True
             patent_updated += 1
 
-            logger_infoscience.debug("Updated this record to : %s" % marc_record.patents)
+            logger_infoscience.info("Updated this record to : %s" % marc_record.patents)
         else:
             logger_infoscience.info("This record does not need an update")
 
@@ -187,4 +189,5 @@ if __name__ == '__main__':
     is_full_export(export_as_string)
 
     updated_xml_collection = update_infoscience_export(export_as_string)
+    logger_infoscience.info("Writing the updated record(s) in %s" % new_xml_path)
     updated_xml_collection.write(update_xml_path)

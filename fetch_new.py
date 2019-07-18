@@ -75,7 +75,7 @@ def fetch_new_infoscience_patents(xml_str, year):
     for family_id, patents in patents_for_year.patent_families.items():
         if family_id not in infoscience_family_patent_list:
             # add the patent to new
-            logger_infoscience.info("The family id %s is not in Infosicence, adding it" % family_id)
+            logger_infoscience.info("The family id %s is not in Infoscience, adding it to our xml" % family_id)
 
             # add it to collection
             m_record = MarcRecordBuilder().from_epo_patents(family_id=family_id, patents=patents)
@@ -132,4 +132,5 @@ if __name__ == '__main__':
     is_full_export(export_as_string)
 
     new_xml_collection = fetch_new_infoscience_patents(export_as_string, args.year)
+    logger_infoscience.info("Writing the new record(s) in %s" % new_xml_path)
     new_xml_collection.write(new_xml_path)

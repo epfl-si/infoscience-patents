@@ -26,7 +26,7 @@ def set_logging_configuration():
     # https://stackoverflow.com/questions/16061641/python-logging-split-between-stdout-and-stderr/16066513#16066513
 
     default_formatter = logging.Formatter('%(asctime)s - %(levelname)s:%(name)s: %(message)s')
-    loglevel = logging.DEBUG
+    loglevel = logging.INFO
 
     logger = logging.getLogger('main')
     logger.setLevel(loglevel)
@@ -38,7 +38,7 @@ def set_logging_configuration():
     logger_epo.setLevel(loglevel)
 
     h1 = logging.StreamHandler(sys.stdout)
-    h1.setLevel(logging.DEBUG)
+    h1.setLevel(logging.INFO)
     h1.addFilter(InfoFilter())
     h1.setFormatter(default_formatter)
     h2 = logging.StreamHandler()

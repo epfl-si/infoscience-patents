@@ -171,7 +171,6 @@ class EspacenetBuilderClient(epo_ops.Client):
         if not json_fetched:
             return PatentFamilies()
 
-        logger_epo.info("Loading published data as patent families")
         family_patents_list = self._parse_family_member(json_fetched['ops:patent-family']['ops:family-member'])
 
         return family_patents_list
