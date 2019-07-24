@@ -117,10 +117,9 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
                 continue
 
             marc_record.family_id = patent.family_id
+            logger_infoscience.info("Updating Family id to %s" % marc_record.family_id)
             has_been_family_updated = True
             family_updated += 1
-
-            logger_infoscience.debug("Fetched family id %s" % marc_record.family_id)
 
         try:
             patents_families = client.family(
@@ -189,5 +188,5 @@ if __name__ == '__main__':
     is_full_export(export_as_string)
 
     updated_xml_collection = update_infoscience_export(export_as_string)
-    logger_infoscience.info("Writing the updated record(s) in %s" % new_xml_path)
+    logger_infoscience.info("Writing the updated record(s) in %s" % update_xml_path)
     updated_xml_collection.write(update_xml_path)
