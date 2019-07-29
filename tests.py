@@ -62,6 +62,28 @@ class TestEspacenetBuilder(unittest.TestCase):
         self.assertGreater(len(patent.inventors), 0)
         self.assertNotEqual(patent.inventors[0], '')
 
+    def test_should_fetch_inventor_unicode_correctly(self):
+        patents_family = self.__class__.client.family(  # Retrieve bibliography data
+                input = epo_ops.models.Epodoc('EP3487508'),  # original, docdb, epodoc
+            )
+
+        # get the marc transformation
+        marcxml_collection = MarcCollection()
+        new_record = MarcRecordBuilder().from_epo_patents(family_id="56550084", patents=patents_family.patents)
+        marcxml_collection.append(new_record.marc_record)
+
+        # Check when we write that the authors list is correct
+        tmp_file = tempfile.NamedTemporaryFile(mode='w', delete=False)
+        marcxml_collection.write(tmp_file.name)
+        tmp_file.close()
+
+        with open(tmp_file.name) as tmp_file_readed:
+            tmp_file_readed.seek(0)
+            read_it = tmp_file_readed.read()
+
+            self.assertTrue('Stellacci' in read_it,
+                "Missing or badly formatted authors in xml result %s" % read_it)
+
     def test_should_fetch_family_from_patent(self):
         patents_families = self.__class__.client.family(  # Retrieve bibliography data
             input = epo_ops.models.Epodoc('EP1000000'),  # original, docdb, epodoc
@@ -179,13 +201,9 @@ class TestPatentToMarc(unittest.TestCase):
             )
 
         # get the marc transformation
-        #marcxml_collection = ET.Element('collection', attrib={'xmlns':"http://www.loc.gov/MARC21/slim"})
         marcxml_collection = MarcCollection()
-
         new_record = MarcRecordBuilder().from_epo_patents(family_id="50975639", patents=patents_family.patents)
-
         marcxml_collection.append(new_record.marc_record)
-        #marc_collection_dumped = MarcRecord(patent_family=patent_family).marc_record #.to_marc(marcxml_collection)
 
         # check the result look like the reference file
         with open(self.__class__.patent_sample_xml_path) as patent_xml:
