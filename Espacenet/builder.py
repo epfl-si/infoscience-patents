@@ -52,7 +52,7 @@ class EspacenetBuilderClient(epo_ops.Client):
 
         if use_cache:
             logger_epo.debug("Cache middleware is enabled")
-            kwargs['middlewares'].append(epo_ops.middlewares.Dogpile())
+            kwargs['middlewares'].insert(0, epo_ops.middlewares.Dogpile())
         else:
             logger_epo.debug("Cache middleware is disabled")
 
