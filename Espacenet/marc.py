@@ -125,38 +125,50 @@ class MarcRecordBuilder:
     def set_titles(self, m_record, patents):
         """
         try to find at least an english title in all patents,
-        otherwise a french one, and fullfile notes
+        it will be our main title if no title is already set
+        otherwise get the french one.
+        Other titles that is not the main are fullfiled in a note if not already
+        Return a boolean saying if we changed anything
         """
-        best_title = ""
-        code_use_for_title = []
+        has_changed = False
+        titles_by_code = {}
 
         for patent in patents:
             for title, code in patent.invention_titles:
-                if code == 'en':
-                    best_title = title
-                    code_use_for_title.append("en")
+                titles_by_code[code] = title
 
-        if not best_title:  # nothing found in english ? try in french
-            for patent in patents:
-                for title, code in patent.invention_titles:
-                    if code == 'fr':
-                        best_title = title
-                        code_use_for_title.append("fr")
+            # try to get the en, or fr
+            if 'en' in titles_by_code:
+                if not (m_record.title or m_record.title == titles_by_code['en']):
+                    m_record.title = titles_by_code['en']
+                del titles_by_code['en']
+                has_changed = True
+            elif 'fr' in titles_by_code:
+                if not (m_record.title or m_record.title == titles_by_code['fr']):
+                    m_record.title = titles_by_code['fr']
+                del titles_by_code['fr']
+                has_changed = True
 
-        if best_title:
-            m_record.title = best_title
+        # do we already a build alternative titles ?
+        found_alternative_titles = False
+        if m_record.notes:
+            for note in m_record.notes:
+                if note and 'Alternative title(s)' in note:
+                    found_alternative_titles = True
 
-        final_note_text = ""
+        # fullfil alternative titles is not already set
+        if not found_alternative_titles:
+            final_note_text = ""
 
-        for patent in patents:
-            for title, code in patent.invention_titles:
-                if code not in code_use_for_title:
-                    final_note_text += "\n\t(" + code + ")" + " " + title
-                    code_use_for_title.append(code)
+            for code, title in titles_by_code.items():
+                final_note_text += "\n\t(" + code + ")" + " " + title
 
-        if final_note_text:
-            final_note_text = "Alternative title(s) :" + final_note_text
-            m_record.add_a_note(final_note_text)
+            if final_note_text:
+                final_note_text = "Alternative title(s) :" + final_note_text
+                m_record.add_a_note(final_note_text)
+                has_changed = True
+
+        return has_changed
 
     def best_abstract(self, patents):
         """
@@ -307,7 +319,7 @@ class MarcRecord:
 
     @property
     def title(self):
-        return _get_datafield_values(self.marc_record, '245', 'a')
+        return _get_datafield_values(self.marc_record, '245').get('a')
 
     @title.setter
     def title(self, value):
@@ -358,7 +370,7 @@ class MarcRecord:
         subfield_269__a.text = value.strftime('%Y')
 
     @property
-    def note(self):
+    def notes(self):
         notes_datafields = _get_multifield_values(self.marc_record, '500')
         notes = []
 

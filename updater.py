@@ -62,6 +62,7 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
     # some counters for logs
     patent_updated = 0
     family_updated = 0
+    alternative_titles_updated = 0
 
     # limit as asked
     records = records[range_start:range_end]
@@ -144,7 +145,13 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
         else:
             logger_infoscience.info("This record does not need an update")
 
-        if has_been_patent_updated or has_been_family_updated:
+        # set alternative titles
+        has_been_notes_for_alternatives_title_changed = MarcRecordBuilder().set_titles(marc_record, patents_families.patents)
+
+        if has_been_notes_for_alternatives_title_changed:
+            alternative_titles_updated += 1
+
+        if has_been_patent_updated or has_been_family_updated or has_been_notes_for_alternatives_title_changed:
             # update timestamp
             marc_record.update_at = True
             marc_record.sort_record_content()
@@ -152,7 +159,9 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
             update_collection.append(marc_record.marc_record)
 
     logger.info("End of parsing, %s records will be updated from this batch" % len(update_collection.findall("record")))
-    logger.info("%s were missing their family_id, and/or %s needed patent(s) update" % (family_updated, patent_updated))
+    logger.info("%s with a new family_id" % family_updated)
+    logger.info("%s with a update for at least a patent" % patent_updated)
+    logger.info("%s with new alternative titles" % alternative_titles_updated)
 
     return update_collection
 
