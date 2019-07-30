@@ -58,6 +58,10 @@ Be warned, you need be logged in Infoscience with advanced right to download the
 
 - download the produced files found in ./output into the Infoscience bibedit.
 
+#### Advanced use
+- you can upload only a specific range of the patents list by doing a
+    - `pipenv run python updater.py --infoscience_patents_export path_to_the_saved_export.xml --start 0 --end 200`
+
 ### Fetching for new patents
 
 Before fetching new patents for a specific year, you should launch an update for the year you are trying to fetch, as the updater add the family ID to the patents, and family ID are the reference used for the fetch.

@@ -166,6 +166,18 @@ if __name__ == '__main__':
                         required=True,
                         type=argparse.FileType('r'))
 
+    parser.add_argument("-s",
+                        "--start",
+                        help="the range to start patents update",
+                        required=False,
+                        type=int)
+
+    parser.add_argument("-e",
+                        "--end",
+                        help="the range to end patents update",
+                        required=False,
+                        type=int)
+
     # create the place where we add the results
     try:
         BASE_DIR = __location__
@@ -187,6 +199,9 @@ if __name__ == '__main__':
 
     is_full_export(export_as_string)
 
-    updated_xml_collection = update_infoscience_export(export_as_string)
+    if (args.start or args.start == 0) and args.end:
+        updated_xml_collection = update_infoscience_export(export_as_string, args.start, args.end)
+    else:
+        updated_xml_collection = update_infoscience_export(export_as_string)
     logger_infoscience.info("Writing the updated record(s) in %s" % update_xml_path)
     updated_xml_collection.write(update_xml_path)
