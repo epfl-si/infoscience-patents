@@ -61,14 +61,18 @@ Be warned, you need be logged in Infoscience with advanced right to download the
 - you can upload only a specific range of the patents list by doing a
     - `pipenv run python updater.py --infoscience_patents_export path_to_the_saved_export.xml --start 0 --end 200`
 
-### Fetching for new patents
+### Fetching for new patents for a specific year
 
-Before fetching new patents for a specific year, you should launch an update for the year you are trying to fetch, as the updater add the family ID to the patents, and family ID are the reference used for the fetch.
+Before fetching new patents, you should launch an update for the year you are trying to fetch, as the updater add the family ID to the patents, and family ID are the reference used for the fetch.
 
-- get the lastest infoscience export of patents for the 2016 year
-    - `wget "https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'+and+year%3A2016" -O infoscience_patents_2016_export.xml --header="Content-Type: text/xml"`
-
-- import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
+Then, 
+- get the lastest infoscience export of all patents
+    - connect to infoscience.epfl.ch
+    - log in with advanced right
+    - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'`
+    - assert you have more than 1'300 records
+    - download the file to your disk
+- import the MarcXML file freshly downloaded with the last command and compare it the provided Espacenet patents for a specific year
     - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --year 2019`
 
-- download the produced files found in ./output into the Infoscience bibedit. This is the new records that need to be added to Infoscience
+- download the produced files found in ./output into the Infoscience bibedit.
