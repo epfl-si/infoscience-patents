@@ -1,5 +1,4 @@
-# infoscience-patents (WIP)
-
+# infoscience-patents
 ## What it is
 
 This project consist of two processes:
