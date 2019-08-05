@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 import xml.dom.minidom
 import logging
 import re
+import unicodedata
 
 from Espacenet.models import EspacenetPatent
 
@@ -95,6 +96,23 @@ class MarcRecordBuilder:
         m_record.marc_record = record
         return m_record
 
+    def _get_best_patent_for_data(self, patents):
+        """ from multiple patents, find the best one that as data we need
+            Like, not using the chinese name of inventors, ...
+        """
+        for patent in patents:
+            has_extended_unicode_char = False
+            if patent.inventors:
+                for inventor in patent.inventors:
+                    for charact in inventor:
+                        if unicodedata.category(charact) == 'Lo':
+                            has_extended_unicode_char = True
+
+                if not has_extended_unicode_char:
+                    return patent
+
+        return patents[0]
+
     def from_epo_patents(self, family_id, patents):
         m_record = MarcRecord()
 
@@ -108,12 +126,12 @@ class MarcRecordBuilder:
         m_record.sort_record_content()
 
         m_record.family_id = family_id
-        patent_for_data = patents[0]  # the first should be the good
+        patent_for_data = self._get_best_patent_for_data(patents)  # the first should be the good
 
         self.set_titles(m_record, patents)
         m_record.publication_date = self.oldest_date(patents)
         m_record.abstract = self.best_abstract(patents)
-        m_record.authors = [author[1] for author in patent_for_data.inventors]
+        m_record.authors = [author for author in patent_for_data.inventors]
 
         m_record.update_patents_from_espacenet(patents)
 

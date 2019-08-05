@@ -152,11 +152,14 @@ class EspacenetMixin(object):
             for inventor_exchange in inventors_exchange:
                 # keep only original format, at we don't want year and country inside name
                 if '@data-format' in inventor_exchange and  inventor_exchange['@data-format'] == 'original':
-                    #sequence are here to keep the right order
-                    sequence = inventor_exchange['@sequence']
                     name = inventor_exchange['inventor-name']['name']['$']
                     name = name.title().rstrip(',')
-                    inventors.append((sequence, name))
+                    #sequence are here to keep the right order
+                    try:
+                        sequence = int(inventor_exchange['@sequence'])
+                        inventors.insert(sequence-1, name)
+                    except ValueError:
+                        inventors.append(name)
 
             self.inventors = inventors
         except KeyError:
