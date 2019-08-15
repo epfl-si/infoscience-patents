@@ -291,6 +291,9 @@ class MarcRecord:
         # find the best epodoc trough the list of patents
         epodoc_for_query = ""
         for patent in self.patents:
+            # ignore the one that are of kind "T" (translations)
+            if patent.kind.upper() == "T":
+                continue
 
             # we may have a 'WO2016075599 A1', so try
             epodoc_with_space = patent.epodoc.split(' ')
