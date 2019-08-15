@@ -350,7 +350,7 @@ class MarcRecord:
 
     @property
     def abstract(self):
-        return _get_datafield_values(self.marc_record, '520', 'a')
+        return _get_datafield_values(self.marc_record, '520').get('a')
 
     @abstract.setter
     def abstract(self, value):
