@@ -3,12 +3,6 @@ import sys
 import os
 import time
 
-"""
-Use it like this :
-logger = logging.getLogger('main')
-logger_infoscience = logging.getLogger('INFOSCIENCE')
-logger_epo = logging.getLogger('EPO')
-"""
 
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
@@ -19,7 +13,7 @@ class InfoFilter(logging.Filter):
         return rec.levelno in (logging.DEBUG, logging.INFO)
 
 
-def set_logging_configuration():
+def set_logging_configuration(debug=False):
     """
     Use --verbose and/or --debug from arguments to fix level of logging
     """
@@ -27,6 +21,8 @@ def set_logging_configuration():
 
     default_formatter = logging.Formatter('%(asctime)s - %(levelname)s:%(name)s: %(message)s')
     loglevel = logging.INFO
+    if debug:
+        loglevel = logging.DEBUG
 
     logger = logging.getLogger('main')
     logger.setLevel(loglevel)
@@ -38,11 +34,17 @@ def set_logging_configuration():
     logger_epo.setLevel(loglevel)
 
     h1 = logging.StreamHandler(sys.stdout)
-    h1.setLevel(logging.INFO)
+    if debug:
+        h1.setLevel(logging.DEBUG)
+    else:
+        h1.setLevel(logging.INFO)
     h1.addFilter(InfoFilter())
     h1.setFormatter(default_formatter)
     h2 = logging.StreamHandler()
-    h2.setLevel(logging.WARNING)
+    if debug:
+        h2.setLevel(logging.DEBUG)
+    else:
+        h2.setLevel(logging.WARNING)
     h2.setFormatter(default_formatter)
 
     try:

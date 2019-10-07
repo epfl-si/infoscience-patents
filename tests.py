@@ -363,5 +363,5 @@ class TestLoadingInfosciencExport(unittest.TestCase):
 if __name__ == '__main__':
     # force debug logging
     parser = argparse.ArgumentParser()
-    set_logging_configuration()
+    set_logging_configuration(debug=True)
     unittest.main()
