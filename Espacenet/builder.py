@@ -7,17 +7,9 @@ import epo_ops
 from .patent_models import PatentFamilies
 from .marc import MarcEspacenetPatent as EspacenetPatent
 from .epo_secrets import get_secret
+from .utils import pp_json
 
 logger_epo = logging.getLogger('EPO')
-
-
-# utils to pretty print
-def pp_json(json_thing, sort=True, indents=4):
-    if type(json_thing) is str:
-        print(json.dumps(json.loads(json_thing), sort_keys=sort, indent=indents))
-    else:
-        print(json.dumps(json_thing, sort_keys=sort, indent=indents))
-    return None
 
 
 class EspacenetSearchResult:

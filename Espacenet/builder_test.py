@@ -3,6 +3,7 @@ import unittest
 import epo_ops
 
 from .builder import EspacenetBuilderClient
+from .utils import p_json
 
 
 class TestEspacenetBuilderStructure(unittest.TestCase):
@@ -12,7 +13,7 @@ class TestEspacenetBuilderStructure(unittest.TestCase):
         self.assertNotEqual(json_parsed, "", "Nothing has been returned from the API")
 
         self.assertTrue('ops:world-patent-data' in json_parsed,
-            "There is ops:world-patent-data in returned data, %s" % json_parsed)
+            "There is ops:world-patent-data in returned data, %s" % p_json(json_parsed))
 
     def test_patent_service_structure(self):
         patent = self.__class__.client.patent(  # Retrieve bibliography data
@@ -29,10 +30,10 @@ class TestEspacenetBuilderStructure(unittest.TestCase):
         exchange_document = world_patent_data['exchange-documents']['exchange-document']
 
         self.assertTrue('@family-id' in exchange_document,
-            "Can't find the family ID in the exchange-document, %s" % exchange_document)
+            "Can't find the family ID in the exchange-document, %s" % p_json(exchange_document))
 
         self.assertTrue('bibliographic-data' in exchange_document,
-        "Can't find the bibliographic data in the exchange-document, %s" % exchange_document)
+        "Can't find the bibliographic data in the exchange-document, %s" % p_json(exchange_document))
         bibliographic_data = exchange_document['bibliographic-data']
 
     def test_family_service_structure(self):
@@ -46,7 +47,7 @@ class TestEspacenetBuilderStructure(unittest.TestCase):
         world_patent_data = json_parsed['ops:world-patent-data']
 
         self.assertTrue('ops:patent-family' in world_patent_data,
-            "There is no ops:patent-family wrapper in returned data, %s" % world_patent_data)
+            "There is no ops:patent-family wrapper in returned data, %s" % p_json(world_patent_data))
         patents_family = world_patent_data['ops:patent-family']
 
         """
@@ -70,19 +71,19 @@ class TestEspacenetBuilderStructure(unittest.TestCase):
         world_patent_data = json_parsed['ops:world-patent-data']
 
         self.assertTrue('ops:biblio-search' in world_patent_data,
-            "There is no 'ops:biblio-search' wrapper in returned data, %s" % world_patent_data)
+            "There is no 'ops:biblio-search' wrapper in returned data, %s" % p_json(world_patent_data))
         biblio_search = world_patent_data['ops:biblio-search']
 
 
         self.assertTrue('ops:search-result' in biblio_search,
-            "There is no 'ops:search-result' wrapper in returned data, %s" % world_patent_data)
+            "There is no 'ops:search-result' wrapper in returned data, %s" % p_json(world_patent_data))
         search_result = biblio_search['ops:search-result']
 
         self.assertTrue('exchange-documents' in search_result,
-            "There is no 'exchange-documents' wrapper in returned data, %s" % search_result)
+            "There is no 'exchange-documents' wrapper in returned data, %s" % p_json(search_result))
         self.assertIsInstance(search_result['exchange-documents'], list)
         exchange_document = search_result['exchange-documents'][0]['exchange-document']
 
         self.assertTrue('bibliographic-data' in exchange_document,
-        "Can't find the bibliographic data in the exchange-document, %s" % exchange_document)
+        "Can't find the bibliographic data in the exchange-document, %s" % p_json(exchange_document))
         bibliographic_data = exchange_document['bibliographic-data']
