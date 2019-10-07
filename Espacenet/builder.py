@@ -58,6 +58,9 @@ class EspacenetBuilderClient(epo_ops.Client):
 
         super().__init__(*args, **kwargs)
 
+        # save raw returned json
+        json_parsed = ""
+
     def _parse_exchange_document(self, exchange_document):
         """ from an exchange_document, verify it's valid and sent it to patent builder """
         if '@status' in exchange_document and exchange_document['@status'] == 'not found':
@@ -92,22 +95,22 @@ class EspacenetBuilderClient(epo_ops.Client):
         json_fetched = request.content
 
         try:
-            json_fetched = json.loads(json_fetched)
+            self.json_parsed = json.loads(json_fetched)
         except ValueError as e:
             raise ValueError("Value error for : %s" % request.content) from e
 
         try:
-            json_fetched = json_fetched['ops:world-patent-data']
+            json_parsed = self.json_parsed['ops:world-patent-data']
         except KeyError:
             # this should not happens
             raise
 
-        if not json_fetched:
+        if not json_parsed:
             return PatentFamilies()
 
         logger_epo.debug("Parsing a returned json...")
 
-        patent = self._parse_patent(json_fetched)
+        patent = self._parse_patent(json_parsed)
 
         logger_epo.debug("Patent found and returning")
 
@@ -158,20 +161,20 @@ class EspacenetBuilderClient(epo_ops.Client):
         json_fetched = request.content
 
         try:
-            json_fetched = json.loads(json_fetched)
+            self.json_parsed = json.loads(json_fetched)
         except ValueError as e:
             raise ValueError("Value error for : %s" % request.content) from e
 
         try:
-            json_fetched = json_fetched['ops:world-patent-data']
+            json_parsed = self.json_parsed['ops:world-patent-data']
         except KeyError:
             # this should not happens
             raise
 
-        if not json_fetched:
+        if not json_parsed:
             return PatentFamilies()
 
-        family_patents_list = self._parse_family_member(json_fetched['ops:patent-family']['ops:family-member'])
+        family_patents_list = self._parse_family_member(json_parsed['ops:patent-family']['ops:family-member'])
 
         return family_patents_list
 
@@ -182,24 +185,24 @@ class EspacenetBuilderClient(epo_ops.Client):
         json_fetched = request.content
 
         try:
-            json_fetched = json.loads(json_fetched)
+            self.json_parsed = json.loads(json_fetched)
         except ValueError as e:
             raise ValueError("Value error for : %s" % request.content) from e
 
         try:
-            json_fetched = json_fetched['ops:world-patent-data']
+            json_parsed = self.json_parsed['ops:world-patent-data']
         except KeyError:
             # this should not happens
             raise
 
-        results = EspacenetSearchResult(json_fetched)
+        results = EspacenetSearchResult(json_parsed)
 
         if results.total_count == 0:
             results.patent_families = PatentFamilies()
         else:
             # fullfil results with a families patents dict
             patent_families = PatentFamilies()
-            search_result_json = json_fetched['ops:biblio-search']['ops:search-result']['exchange-documents']
+            search_result_json = json_parsed['ops:biblio-search']['ops:search-result']['exchange-documents']
 
             for exchange_document in search_result_json:
                 patent_json = exchange_document['exchange-document']

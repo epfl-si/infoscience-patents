@@ -1,5 +1,4 @@
 import os
-import re
 import unittest
 import argparse
 import tempfile
@@ -10,6 +9,7 @@ from log_utils import set_logging_configuration
 import epo_ops
 
 from Espacenet.builder import EspacenetBuilderClient
+from Espacenet.builder_test import *
 from Espacenet.models import EspacenetPatent
 from Espacenet.patent_models import PatentFamilies
 from Espacenet.marc import MarcRecord, MarcCollection, MarcRecordBuilder
@@ -47,7 +47,6 @@ def is_patent_from_epfl(patent):
 
 
 class TestEspacenetBuilder(unittest.TestCase):
-
     client = EspacenetBuilderClient(use_cache=True)
 
     def test_should_fetch_a_patent(self):
