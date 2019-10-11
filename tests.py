@@ -24,7 +24,7 @@ __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 
-class TestLoadingInfosciencExport(unittest.TestCase):
+class TestLoadingInfoscienceExport(unittest.TestCase):
     # a sample that is used as reference
     patent_sample_xml_path = os.path.join(__location__, "infoscience_patents_export.xml")
     # a sample that need to be updated
