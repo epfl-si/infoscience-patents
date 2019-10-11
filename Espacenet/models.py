@@ -36,6 +36,8 @@ class EspacenetMixin(object):
 
         for document in document_id:
             if document.get('@document-id-type') and document['@document-id-type'] == 'docdb':
+                # we use docdb, as this is suerly the best way to decompose into number-country-date-kind
+                # epodoc format has only doc-number and date info
                 self.number = document.get('doc-number', {}).get('$')
                 self.country = document.get('country', {}).get('$')
                 self.kind = document.get('kind', {}).get('$')

@@ -7,8 +7,7 @@ import unicodedata
 
 from Espacenet.models import EspacenetPatent
 
-from .patent_models import PatentFamilies, \
-                           Patent, \
+from .patent_models import Patent, \
                            PatentClassificationWithDefault, \
                            _convert_to_date
 
@@ -96,24 +95,7 @@ class MarcRecordBuilder:
         m_record.marc_record = record
         return m_record
 
-    def _get_best_patent_for_data(self, patents):
-        """ from multiple patents, find the best one that as data we need
-            Like, not using the chinese name of inventors, ...
-        """
-        for patent in patents:
-            has_extended_unicode_char = False
-            if patent.inventors:
-                for inventor in patent.inventors:
-                    for charact in inventor:
-                        if unicodedata.category(charact) == 'Lo':
-                            has_extended_unicode_char = True
-
-                if not has_extended_unicode_char:
-                    return patent
-
-        return patents[0]
-
-    def from_epo_patents(self, family_id, patents):
+    def from_epo_patents(self, family_id, patents, fulfilled_patent):
         m_record = MarcRecord()
 
         m_record.marc_record = ET.Element('record')
@@ -126,7 +108,7 @@ class MarcRecordBuilder:
         m_record.sort_record_content()
 
         m_record.family_id = family_id
-        patent_for_data = self._get_best_patent_for_data(patents)  # the first should be the good
+        patent_for_data = fulfilled_patent
 
         self.set_titles(m_record, patents)
         m_record.publication_date = self.oldest_date(patents)
@@ -196,7 +178,7 @@ class MarcRecordBuilder:
         best_abstract = ""
 
         for patent in patents:
-            if patent.abstract_en != "":
+            if hasattr(patent, "abstract_en") and patent.abstract_en != "":
                 best_abstract =  patent.abstract_en
 
         if best_abstract:
@@ -204,7 +186,7 @@ class MarcRecordBuilder:
         else:
             # no english title, try in french
             for patent in patents:
-                if patent.abstract_fr != "":
+                if hasattr(patent, "abstract_fr") and patent.abstract_fr != "":
                     best_abstract =  patent.abstract_fr
 
     def oldest_date(self, patents):

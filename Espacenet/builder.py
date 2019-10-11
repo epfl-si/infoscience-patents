@@ -7,9 +7,36 @@ import epo_ops
 from .patent_models import PatentFamilies
 from .marc import MarcEspacenetPatent as EspacenetPatent
 from .epo_secrets import get_secret
-from .utils import pp_json
+from .utils import p_json
 
 logger_epo = logging.getLogger('EPO')
+
+def _get_best_patent_for_data(patents):
+    """ from multiple patents, find the best one that as data we need
+        Like, not using the chinese name of inventors, ...
+    """
+    # not used anymore, unless we fetch multiple patent in a family
+    # for patent in patents:
+    #    has_extended_unicode_char = False
+    #    if patent.inventors:
+    #        for inventor in patent.inventors:
+    #            for charact in inventor:
+    #                if unicodedata.category(charact) == 'Lo':
+    #                    has_extended_unicode_char = True
+    #
+    #        if not has_extended_unicode_char:
+    #            return patent
+
+    # Find a patent that is first EP, then US, then WO
+    patent_priority = ['EP', 'US', 'WO']
+
+    for country in patent_priority:
+        for patent in patents:
+            if patent.epodoc.startswith(country) or patent.country == country:
+                return patent
+
+    # no patent found in this range ? then get the first at least
+    return patents[0]
 
 
 class EspacenetSearchResult:
@@ -55,9 +82,6 @@ class EspacenetBuilderClient(epo_ops.Client):
 
     def _parse_exchange_document(self, exchange_document):
         """ from an exchange_document, verify it's valid and sent it to patent builder """
-        if '@status' in exchange_document and exchange_document['@status'] == 'not found':
-            return None
-
         return EspacenetPatent(exchange_document = exchange_document)
 
     def _parse_patent(self, exchange_documents_json):
@@ -108,26 +132,21 @@ class EspacenetBuilderClient(epo_ops.Client):
 
         return patent
 
-    def _parse_family_member(self, family_member):
-        """ when we ask for bibliographical data (on a search or in a specific patent number)
-        trough the use of endpoint or constituent, Espacenet return an exchange_document
+    def _parse_families_members(self, family_member):
+        """
+        Set all patent to his family ID (as dict key)
+        Note : you can get all the patents in the family, but not the biblio data
+        (it was possible before the update of 24 August 2019)
+        so crawl aterward one patent to get biblio info
         """
         families_patents = PatentFamilies()
 
-        if not isinstance(family_member, (list, tuple)):
-            # only one exchange-document, make it like a multiple
-            family_member = [family_member]
-
         for patent_in_family in family_member:
-            if 'exchange-document' not in patent_in_family:
-                # sometimes we don't have an exchange-document
-                continue
-
-            patent = patent_in_family['exchange-document']
-            patent_object = self._parse_exchange_document(patent)
+            family_id = patent_in_family['@family-id']
+            patent_object = EspacenetPatent(publication_reference = patent_in_family['publication-reference'], family_id=family_id)
 
             if patent_object:
-                if patent_object.family_id in families_patents:
+                if family_id in families_patents:
                     families_patents[patent_object.family_id].append(patent_object)
                 else:
                     families_patents[patent_object.family_id] = [patent_object]
@@ -140,7 +159,6 @@ class EspacenetBuilderClient(epo_ops.Client):
         :Keyword Arguments:
             * *input* (``epo_ops.models``) --
         """
-
         logger_epo.debug("Family fetching API with patent %s ..." % kwargs['input'].number)
 
         # only published patents
@@ -166,9 +184,23 @@ class EspacenetBuilderClient(epo_ops.Client):
         if not json_parsed:
             return PatentFamilies()
 
-        family_patents_list = self._parse_family_member(json_parsed['ops:patent-family']['ops:family-member'])
+        family_member = json_parsed['ops:patent-family']['ops:family-member']
 
-        return family_patents_list
+        if not isinstance(family_member, (tuple, list)):
+            family_member = [family_member]
+
+        # check if we have only one value, transform it to array anyway
+        family_patents_list = self._parse_families_members(family_member)
+
+        best_patent_to_fetch = _get_best_patent_for_data(family_patents_list.patents)
+
+        client = EspacenetBuilderClient(use_cache=True)
+
+        fullfiled_patent = client.patent(  # Retrieve bibliography data
+            input = epo_ops.models.Docdb(best_patent_to_fetch.number, best_patent_to_fetch.country, best_patent_to_fetch.kind),  # original, docdb, epodoc
+            )
+
+        return family_patents_list, fullfiled_patent
 
     def _fetch_search_in_range(self, *args, **kwargs):
         kwargs['constituents'] = ['biblio']  # we always want biblio

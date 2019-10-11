@@ -29,6 +29,7 @@ class PatentFamilies(collections.defaultdict):
     def patents(self):
         return [patent for patents_list in self.values() for patent in patents_list]
 
+
 PatentClassification = collections.namedtuple("PatentClassification",
                                               """sequence
                                                  class_nr

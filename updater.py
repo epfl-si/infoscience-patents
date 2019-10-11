@@ -9,7 +9,6 @@ from requests.exceptions import HTTPError
 
 from log_utils import set_logging_configuration
 
-from Espacenet.patent_models import PatentFamilies
 from Espacenet.marc import MarcRecordBuilder, MarcCollection
 from Espacenet.patent_models import Patent
 from Espacenet.builder import EspacenetBuilderClient
@@ -126,7 +125,7 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
             family_updated += 1
 
         try:
-            patents_families = client.family(
+            patents_families, fulfilled_patent = client.family(
                 input = epo_ops.models.Epodoc(epodoc_for_query)
             )
         except HTTPError as e:
