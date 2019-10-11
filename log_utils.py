@@ -20,7 +20,7 @@ def set_logging_configuration(debug=False):
     # https://stackoverflow.com/questions/16061641/python-logging-split-between-stdout-and-stderr/16066513#16066513
 
     default_formatter = logging.Formatter('%(asctime)s - %(levelname)s:%(name)s: %(message)s')
-    loglevel = logging.INFO
+    loglevel = logging.WARNING
     if debug:
         loglevel = logging.DEBUG
 
@@ -33,19 +33,12 @@ def set_logging_configuration(debug=False):
     logger_epo = logging.getLogger('EPO')
     logger_epo.setLevel(loglevel)
 
-    h1 = logging.StreamHandler(sys.stdout)
+    stdout_handler = logging.StreamHandler(sys.stdout)
     if debug:
-        h1.setLevel(logging.DEBUG)
+        stdout_handler.setLevel(logging.DEBUG)
     else:
-        h1.setLevel(logging.INFO)
-    h1.addFilter(InfoFilter())
-    h1.setFormatter(default_formatter)
-    h2 = logging.StreamHandler()
-    if debug:
-        h2.setLevel(logging.DEBUG)
-    else:
-        h2.setLevel(logging.WARNING)
-    h2.setFormatter(default_formatter)
+        stdout_handler.setLevel(logging.WARNING)
+    stdout_handler.setFormatter(default_formatter)
 
     try:
         BASE_DIR = __location__
@@ -59,18 +52,15 @@ def set_logging_configuration(debug=False):
         "%s.log" % time.strftime("%Y%m%d-%H%M%S")
         )
 
-    h3_file = logging.FileHandler(log_path)
-    h3_file.setLevel(logging.DEBUG)
-    h3_file.setFormatter(default_formatter)
+    file_handler = logging.FileHandler(log_path)
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(default_formatter)
 
-    logger.addHandler(h1)
-    logger.addHandler(h2)
-    logger.addHandler(h3_file)
+    logger.addHandler(stdout_handler)
+    logger.addHandler(file_handler)
 
-    logger_infoscience.addHandler(h1)
-    logger_infoscience.addHandler(h2)
-    logger_infoscience.addHandler(h3_file)
+    logger_infoscience.addHandler(stdout_handler)
+    logger_infoscience.addHandler(file_handler)
 
-    logger_epo.addHandler(h1)
-    logger_epo.addHandler(h2)
-    logger_epo.addHandler(h3_file)
+    logger_epo.addHandler(stdout_handler)
+    logger_epo.addHandler(file_handler)
