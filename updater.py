@@ -35,9 +35,9 @@ def is_full_export(xml_file):
     xml_file = filter_out_namespace(xml_file)
     provided_collection = ET.fromstring(xml_file)
     records = provided_collection.findall('record')
-    # assert we have +1200 records or cancel the update
-    assert len(records) > 1200, """It looks like you did not provide the full export,
-                                    we have only %s records, and we need more than 1300""" % len(records)
+    # assert we have +1000 records or cancel the update
+    assert len(records) > 1000, """It looks like you did not provide the full export,
+                                    we have only %s records, and we need more than 1000""" % len(records)
 
 def update_infoscience_export(xml_str, range_start=None, range_end=None):
     """
