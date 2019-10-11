@@ -36,7 +36,13 @@ def _get_best_patent_for_data(patents):
                 return patent
 
     # no patent found in this range ? then get the first at least
-    return patents[0]
+    # find any patent that don't start with a T[0-9], they are translations
+
+    for patent in patents:
+        if not (patent.country.startswith('T') and patent.country[1:2].isdigit()):
+            return patent
+
+    return patents[0]  # at least
 
 
 class EspacenetSearchResult:
