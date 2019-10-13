@@ -20,7 +20,7 @@ def set_logging_configuration(debug=False):
     # https://stackoverflow.com/questions/16061641/python-logging-split-between-stdout-and-stderr/16066513#16066513
 
     default_formatter = logging.Formatter('%(asctime)s - %(levelname)s:%(name)s: %(message)s')
-    loglevel = logging.WARNING
+    loglevel = logging.INFO
     if debug:
         loglevel = logging.DEBUG
 
@@ -37,7 +37,7 @@ def set_logging_configuration(debug=False):
     if debug:
         stdout_handler.setLevel(logging.DEBUG)
     else:
-        stdout_handler.setLevel(logging.WARNING)
+        stdout_handler.setLevel(logging.INFO)
     stdout_handler.setFormatter(default_formatter)
 
     try:
