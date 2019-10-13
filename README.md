@@ -50,7 +50,7 @@ Be warned, you need be logged in Infoscience with advanced right to download the
         - connect to infoscience.epfl.ch
         - log in with advanced right
         - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'`
-        - assert you have more than 1'300 records
+        - assert you have more than 1'000 records, 1'000 is the limit if you are not logged
         - download the file to your disk
 - import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
     - `pipenv run python updater.py --infoscience_patents_export path_to_the_saved_export.xml`
@@ -65,12 +65,12 @@ Be warned, you need be logged in Infoscience with advanced right to download the
 
 Before fetching new patents, you should launch an update for the year you are trying to fetch, as the updater add the family ID to the patents, and family ID are the reference used for the fetch.
 
-Then, 
+Then,
 - get the lastest infoscience export of all patents
     - connect to infoscience.epfl.ch
     - log in with advanced right
     - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'`
-    - assert you have more than 1'300 records
+    - assert you have more than 1'000 records, 1'000 is the limit if you are not logged
     - download the file to your disk
 - import the MarcXML file freshly downloaded with the last command and compare it the provided Espacenet patents for a specific year
     - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --year 2019`
