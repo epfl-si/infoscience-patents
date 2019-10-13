@@ -148,7 +148,7 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
             logger_infoscience.info("This record does not need an update")
 
         # set alternative titles
-        has_been_notes_for_alternatives_title_changed = MarcRecordBuilder().set_titles(marc_record, patents_families.patents)
+        has_been_notes_for_alternatives_title_changed = MarcRecordBuilder().set_titles(marc_record, fulfilled_patent)
 
         if has_been_notes_for_alternatives_title_changed:
             alternative_titles_updated += 1

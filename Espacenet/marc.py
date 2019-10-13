@@ -110,9 +110,9 @@ class MarcRecordBuilder:
         m_record.family_id = family_id
         patent_for_data = fulfilled_patent
 
-        self.set_titles(m_record, patents)
-        m_record.publication_date = self.oldest_date(patents)
-        m_record.abstract = self.best_abstract(patents)
+        self.set_titles(m_record, patent_for_data)
+        m_record.publication_date = patent_for_data.date
+        m_record.abstract = self.best_abstract(patent_for_data)
         m_record.authors = [author for author in patent_for_data.inventors]
 
         m_record.update_patents_from_espacenet(patents)
@@ -122,7 +122,7 @@ class MarcRecordBuilder:
 
         return m_record
 
-    def set_titles(self, m_record, patents):
+    def set_titles(self, m_record, patent):
         """
         try to find at least an english title in all patents,
         it will be our main title if no title is already set
@@ -133,21 +133,20 @@ class MarcRecordBuilder:
         has_changed = False
         titles_by_code = {}
 
-        for patent in patents:
-            for title, code in patent.invention_titles:
-                titles_by_code[code] = title
+        for title, code in patent.invention_titles:
+            titles_by_code[code] = title
 
-            # try to get the en, or fr
-            if 'en' in titles_by_code:
-                if not (m_record.title or m_record.title == titles_by_code['en']):
-                    m_record.title = titles_by_code['en']
-                del titles_by_code['en']
-                has_changed = True
-            elif 'fr' in titles_by_code:
-                if not (m_record.title or m_record.title == titles_by_code['fr']):
-                    m_record.title = titles_by_code['fr']
-                del titles_by_code['fr']
-                has_changed = True
+        # try to get the en, or fr
+        if 'en' in titles_by_code:
+            if not (m_record.title or m_record.title == titles_by_code['en']):
+                m_record.title = titles_by_code['en']
+            del titles_by_code['en']
+            has_changed = True
+        elif 'fr' in titles_by_code:
+            if not (m_record.title or m_record.title == titles_by_code['fr']):
+                m_record.title = titles_by_code['fr']
+            del titles_by_code['fr']
+            has_changed = True
 
         # do we already a build alternative titles ?
         found_alternative_titles = False
@@ -170,24 +169,19 @@ class MarcRecordBuilder:
 
         return has_changed
 
-    def best_abstract(self, patents):
+    def best_abstract(self, patent):
         """
-        try to find at least an english abstract in all patents,
+        try to find at least an english abstract in the patent,
         otherwise a french version
         """
         best_abstract = ""
 
-        for patent in patents:
-            if hasattr(patent, "abstract_en") and patent.abstract_en != "":
-                best_abstract =  patent.abstract_en
-
-        if best_abstract:
-            return best_abstract
+        if hasattr(patent, "abstract_en") and patent.abstract_en != "":
+            return patent.abstract_en
         else:
             # no english title, try in french
-            for patent in patents:
-                if hasattr(patent, "abstract_fr") and patent.abstract_fr != "":
-                    best_abstract =  patent.abstract_fr
+            if hasattr(patent, "abstract_fr") and patent.abstract_fr != "":
+                return patent.abstract_fr
 
     def oldest_date(self, patents):
         """

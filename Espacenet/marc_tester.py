@@ -1,6 +1,7 @@
 import os
 import unittest
 import xml.etree.ElementTree as ET
+import tempfile
 
 import epo_ops
 
@@ -35,6 +36,7 @@ class TestPatentToMarc(unittest.TestCase):
         marcxml_collection = MarcCollection()
         new_record = MarcRecordBuilder().from_epo_patents(family_id="50975639", patents=patents_family.patents, fulfilled_patent=fulfilled_patent)
         marcxml_collection.append(new_record.marc_record)
+        # print(ET.dump(marcxml_collection))
 
         # check the result look like the reference file
         with open(self.__class__.patent_sample_xml_path) as patent_xml:

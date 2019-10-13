@@ -105,7 +105,7 @@ class EspacenetBuilderClient(epo_ops.Client):
         :Keyword Arguments:
             * *input* (``epo_ops.models``) --
         """
-        logger_epo.debug("Patent fetching API with patent %s ..." % kwargs['input'].number)
+        logger_epo.debug("Patent fetching API with patent %s ..." % kwargs['input'].as_api_input())
 
         # only published patents
         kwargs['reference_type'] = 'publication'  # publication, application, priority
@@ -165,7 +165,7 @@ class EspacenetBuilderClient(epo_ops.Client):
         :Keyword Arguments:
             * *input* (``epo_ops.models``) --
         """
-        logger_epo.debug("Family fetching API with patent %s ..." % kwargs['input'].number)
+        logger_epo.debug("Family fetching API with patent %s ..." % kwargs['input'].as_api_input())
 
         # only published patents
         kwargs['reference_type'] = 'publication'  # publication, application, priority
@@ -201,6 +201,16 @@ class EspacenetBuilderClient(epo_ops.Client):
         best_patent_to_fetch = _get_best_patent_for_data(family_patents_list.patents)
 
         client = EspacenetBuilderClient(use_cache=True)
+
+        #MAYBE: fullfil all patent in the family (in bulk), as some have the abstract and some don't
+        # Proto :
+        # if not "abstract" in "%s" % json_parsed:
+        #   for patent in family_patents_list:
+        #         finding_abstract = client.patent(  # Retrieve bibliography data
+        #      input = epo_ops.models.Docdb(best_patent_to_fetch.number, best_patent_to_fetch.country, best_patent_to_fetch.kind),  # original, docdb, epodoc
+        #      )
+        #         if abstract" in "%s" % finding_abstract:
+        #
 
         fullfiled_patent = client.patent(  # Retrieve bibliography data
             input = epo_ops.models.Docdb(best_patent_to_fetch.number, best_patent_to_fetch.country, best_patent_to_fetch.kind),  # original, docdb, epodoc
