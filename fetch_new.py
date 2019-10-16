@@ -5,9 +5,11 @@ from datetime import datetime
 import time
 import os
 
+import epo_ops
+
 from log_utils import set_logging_configuration
 
-from Espacenet.builder import EspacenetBuilderClient
+from Espacenet.builder import EspacenetBuilderClient, _get_best_patent_for_data
 
 from Espacenet.marc import MarcRecordBuilder, MarcCollection
 from Espacenet.patent_models import Patent
@@ -78,7 +80,15 @@ def fetch_new_infoscience_patents(xml_str, year):
             logger_infoscience.info("The family id %s is not in Infoscience, adding it to our xml" % family_id)
 
             # add it to collection
-            m_record = MarcRecordBuilder().from_epo_patents(family_id=family_id, patents=patents)
+            # but fist, get some data from a patent
+            best_patent_to_fetch = _get_best_patent_for_data(patents)
+            client = EspacenetBuilderClient(use_cache=True)
+
+            fulfilled_patent = client.patent(  # Retrieve bibliography data
+                input = epo_ops.models.Docdb(best_patent_to_fetch.number, best_patent_to_fetch.country, best_patent_to_fetch.kind),  # original, docdb, epodoc
+            )
+
+            m_record = MarcRecordBuilder().from_epo_patents(family_id=family_id, patents=patents, fulfilled_patent=fulfilled_patent)
             # force date, espacenet should be a right source
             year_date = datetime.strptime(str(year), '%Y')
             m_record.publication_date = year_date

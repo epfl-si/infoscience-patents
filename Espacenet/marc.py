@@ -111,7 +111,9 @@ class MarcRecordBuilder:
 
         self.set_titles(m_record, patent_for_data)
         m_record.publication_date = patent_for_data.date
-        m_record.abstract = self.best_abstract(patent_for_data)
+        abstract = self.best_abstract(patent_for_data)
+        if abstract:
+            m_record.abstract = abstract
         m_record.authors = [author for author in patent_for_data.inventors]
 
         m_record.update_patents_from_espacenet(patents)
