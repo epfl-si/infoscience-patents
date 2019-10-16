@@ -101,7 +101,6 @@ class MarcRecordBuilder:
         m_record.marc_record = ET.Element('record')
         # we are in a new record mode, so build essential information, in same order as infoscience
         m_record.update_at = True  # use setter default values
-        m_record.tto_id = True  # use setter default values
         m_record.content_type = True  # use setter default values
         m_record.epfl_id = True  # use setter default values
         m_record.doctype = True  # use setter default values
@@ -392,24 +391,6 @@ class MarcRecord:
         subfield_336__a.text = "Patents"
 
     @property
-    def tto_id(self):
-        tto_id = []
-        tto_id.append(_get_datafield_values(self.marc_record, '909', 'C', '0').get('p'))
-        tto_id.append(_get_datafield_values(self.marc_record, '909', 'C', '0').get('0'))
-        tto_id.append(_get_datafield_values(self.marc_record, '909', 'C', '0').get('x'))
-        return tto_id
-
-    @tto_id.setter
-    def tto_id(self, value):
-        datafield_909 = _datafield(self.marc_record, '909', 'C', '0')
-        subfield_909__p = _subfield(datafield_909, 'p')
-        subfield_909__p.text = "TTO"
-        subfield_909__0 = _subfield(datafield_909, '0')
-        subfield_909__0.text = "252085"
-        subfield_909__x = _subfield(datafield_909, 'x')
-        subfield_909__x.text = "U10021"
-
-    @property
     def epfl_id(self):
         return _get_datafield_values(self.marc_record, '973').get('a')
 
@@ -429,6 +410,16 @@ class MarcRecord:
         datafield_980 = _datafield(self.marc_record, '980')
         subfield_980__a = _subfield(datafield_980, 'a')
         subfield_980__a.text = "PATENT"
+
+    @property
+    def S2_collection(self):
+        return _get_datafield_values(self.marc_record, '981').get('a')
+
+    @S2_collection.setter
+    def S2_collection(self, value):
+        datafield_981 = _datafield(self.marc_record, '981')
+        datafield_981__a = _subfield(datafield_981, 'a')
+        datafield_981__a.text = "S2"
 
     def update_patents_from_espacenet(self, espacenet_patents):
         """

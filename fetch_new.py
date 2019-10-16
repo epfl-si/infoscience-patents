@@ -83,6 +83,9 @@ def fetch_new_infoscience_patents(xml_str, year):
             year_date = datetime.strptime(str(year), '%Y')
             m_record.publication_date = year_date
 
+            # Set to collection S2 for SISB
+            m_record.S2_collection = True  # use setter default values
+
             new_collection.append(m_record.marc_record)
             new_patents_for_infoscience_found += 1
 
