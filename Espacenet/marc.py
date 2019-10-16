@@ -69,9 +69,9 @@ class MarcPatent:
         subfield_013__a = _subfield(datafield_013, 'a')
         subfield_013__a.text = self.epodoc
         subfield_013__b = _subfield(datafield_013, 'b')
-        subfield_013__b.text = self.kind
+        subfield_013__b.text = self.country
         subfield_013__c = _subfield(datafield_013, 'c')
-        subfield_013__c.text = self.country
+        subfield_013__c.text = self.kind
         subfield_013__d = _subfield(datafield_013, 'd')
         subfield_013__d.text = self.date.strftime('%Y%m%d')
 
@@ -308,9 +308,9 @@ class MarcRecord:
             subfield_013__a = _subfield(datafield_013, 'a')
             subfield_013__a.text = patent.epodoc
             subfield_013__b = _subfield(datafield_013, 'b')
-            subfield_013__b.text = patent.kind
+            subfield_013__b.text = patent.country
             subfield_013__c = _subfield(datafield_013, 'c')
-            subfield_013__c.text = patent.country
+            subfield_013__c.text = patent.kind
             subfield_013__d = _subfield(datafield_013, 'd')
             subfield_013__d.text = patent.date.strftime('%Y%m%d')
 
@@ -475,8 +475,8 @@ class MarcEspacenetPatent(EspacenetPatent):
         subfield_013__a = _subfield(datafield_013, 'a')
         subfield_013__a.text = self.epodoc
         subfield_013__b = _subfield(datafield_013, 'b')
-        subfield_013__b.text = self.kind
+        subfield_013__b.text = self.country
         subfield_013__c = _subfield(datafield_013, 'c')
-        subfield_013__c.text = self.country
+        subfield_013__c.text = self.kind
         subfield_013__d = _subfield(datafield_013, 'd')
         subfield_013__d.text = self.date.strftime('%Y%m%d')
