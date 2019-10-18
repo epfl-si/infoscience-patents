@@ -74,10 +74,16 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
         has_been_abstract_added = False
         marc_record = MarcRecordBuilder().from_infoscience_record(record=record)
 
+        family_id_text = ""
+        if marc_record.family_id:
+            family_id_text = "family id = %s" % marc_record.family_id
+        else:
+            family_id_text = "No family id"
+
         logger_infoscience.info("--------")
-        logger_infoscience.info("Parsing record %s, family id %s (%s/%s)" % (
+        logger_infoscience.info("Parsing record %s, %s (%s/%s)" % (
                 marc_record.record_id,
-                marc_record.family_id,
+                family_id_text,
                 i+1,
                 len(records),
                 )
