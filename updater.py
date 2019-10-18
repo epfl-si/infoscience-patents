@@ -11,7 +11,7 @@ from log_utils import set_logging_configuration
 
 from Espacenet.marc import MarcRecordBuilder, MarcCollection
 from Espacenet.patent_models import Patent
-from Espacenet.builder import EspacenetBuilderClient
+from Espacenet.builder import EspacenetBuilderClient, fetch_abstract_from_all_patents
 from Espacenet.marc_xml_utils import \
     filter_out_namespace, \
     _get_controlfield_element, \
@@ -155,7 +155,7 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
 
         # set abstract if needed
         if not marc_record.abstract:
-            new_abstract = MarcRecordBuilder().best_abstract(patents_families.patents)
+            new_abstract = fetch_abstract_from_all_patents(patents_families.patents)
             if new_abstract:
                 marc_record.abstract = new_abstract
                 has_been_abstract_added = True

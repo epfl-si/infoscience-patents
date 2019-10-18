@@ -111,7 +111,7 @@ class MarcRecordBuilder:
 
         self.set_titles(m_record, patent_for_data)
         m_record.publication_date = patent_for_data.date
-        abstract = self.best_abstract(patent_for_data)
+        abstract = self.best_abstract(patents)
         if abstract:
             m_record.abstract = abstract
         m_record.authors = [author for author in patent_for_data.inventors]

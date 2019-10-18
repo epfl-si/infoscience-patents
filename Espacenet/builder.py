@@ -44,6 +44,25 @@ def _get_best_patent_for_data(patents):
 
     return patents[0]  # at least
 
+def fetch_abstract_from_all_patents(patents):
+    """
+    As abstract may not be fulfilled, try to fetch some patents until we get one
+    """
+    patent_country_with_potential_abstract = ['EP', 'US', 'WO']
+    client = EspacenetBuilderClient(use_cache=True)
+
+    for patent in patents:
+        if patent.epodoc and patent.epodoc[0:2] in patent_country_with_potential_abstract:
+            patent = client.patent(
+                    input = epo_ops.models.Epodoc(patent.epodoc),
+                )
+            if patent.abstract_en:
+                logger_epo.debug("An abtract is needed and found in english in %s ..." % patent.epodoc)
+                return patent.abstract_en
+            if patent.abstract_fr:
+                logger_epo.debug("An abtract is needed and found in french in %s ..." % patent.epodoc)
+                return patent.abstract_fr
+
 
 class EspacenetSearchResult:
     patent_families = PatentFamilies()

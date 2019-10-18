@@ -9,7 +9,7 @@ import epo_ops
 
 from log_utils import set_logging_configuration
 
-from Espacenet.builder import EspacenetBuilderClient, _get_best_patent_for_data
+from Espacenet.builder import EspacenetBuilderClient, _get_best_patent_for_data, fetch_abstract_from_all_patents
 
 from Espacenet.marc import MarcRecordBuilder, MarcCollection
 from Espacenet.patent_models import Patent
@@ -92,6 +92,11 @@ def fetch_new_infoscience_patents(xml_str, year):
             # force date, espacenet should be a right source
             year_date = datetime.strptime(str(year), '%Y')
             m_record.publication_date = year_date
+            # set abstract if needed
+            if not m_record.abstract:
+                new_abstract = fetch_abstract_from_all_patents(patents)
+                if new_abstract:
+                    m_record.abstract = new_abstract
 
             # Set to collection S2 for SISB
             m_record.S2_collection = True  # use setter default values
