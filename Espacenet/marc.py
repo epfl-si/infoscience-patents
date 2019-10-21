@@ -100,7 +100,6 @@ class MarcRecordBuilder:
 
         m_record.marc_record = ET.Element('record')
         # we are in a new record mode, so build essential information, in same order as infoscience
-        m_record.update_at = True  # use setter default values
         m_record.content_type = True  # use setter default values
         m_record.epfl_id = True  # use setter default values
         m_record.doctype = True  # use setter default values
