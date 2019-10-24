@@ -168,8 +168,6 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
                 abstract_added += 1
 
         if has_been_patent_updated or has_been_family_updated or has_been_notes_for_alternatives_title_changed or has_been_abstract_added:
-            # update timestamp
-            marc_record.update_at = True
             marc_record.sort_record_content()
             # save record to the update collection
             update_collection.append(marc_record.marc_record)
