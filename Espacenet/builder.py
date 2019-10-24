@@ -39,7 +39,7 @@ def _get_best_patent_for_data(patents):
     # find any patent that don't start with a T[0-9], they are translations
 
     for patent in patents:
-        if not (patent.country.startswith('T') and patent.country[1:2].isdigit()):
+        if not (patent.kind and patent.kind[0].upper() == "T"):
             return patent
 
     return patents[0]  # at least
