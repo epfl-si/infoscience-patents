@@ -155,14 +155,15 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
             has_been_patent_updated = True
             patent_updated += 1
 
-            logger_infoscience.info("Updated this record to : %s" % marc_record.patents)
+            logger_infoscience.info("Updated patents for this record to : %s" % marc_record.patents)
         else:
-            logger_infoscience.info("This record does not need an update")
+            logger_infoscience.info("This record does not need an update of his patents")
 
         # set alternative titles
         has_been_notes_for_alternatives_title_changed = MarcRecordBuilder().set_titles(marc_record, fulfilled_patent)
 
         if has_been_notes_for_alternatives_title_changed:
+            logger_infoscience.info("This record need an update of his alternative titles")
             alternative_titles_updated += 1
 
         # set abstract if needed
@@ -170,6 +171,7 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
             new_abstract = fetch_abstract_from_all_patents(patents_families.patents)
             if new_abstract:
                 marc_record.abstract = new_abstract
+                logger_infoscience.info("This record need an update of his abstract")
                 has_been_abstract_added = True
                 abstract_added += 1
 
