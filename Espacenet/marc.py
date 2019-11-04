@@ -138,15 +138,19 @@ class MarcRecordBuilder:
 
         # try to get the en, or fr
         if 'en' in titles_by_code:
-            if not (m_record.title or m_record.title == titles_by_code['en']):
+            if not m_record.title:
                 m_record.title = titles_by_code['en']
-            del titles_by_code['en']
-            has_changed = True
+                has_changed = True
+                del titles_by_code['en']
+            elif m_record.title == titles_by_code['en']:
+                del titles_by_code['en']
         elif 'fr' in titles_by_code:
-            if not (m_record.title or m_record.title == titles_by_code['fr']):
+            if not m_record.title:
                 m_record.title = titles_by_code['fr']
-            del titles_by_code['fr']
-            has_changed = True
+                del titles_by_code['fr']
+                has_changed = True
+            elif m_record.title == titles_by_code['fr']:
+                del titles_by_code['fr']
 
         # do we already a build alternative titles ?
         found_alternative_titles = False
