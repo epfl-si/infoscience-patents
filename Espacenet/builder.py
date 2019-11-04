@@ -7,42 +7,9 @@ import epo_ops
 from .patent_models import PatentFamilies
 from .marc import MarcEspacenetPatent as EspacenetPatent
 from .epo_secrets import get_secret
-from .utils import p_json
+from .utils import p_json, _get_best_patent_for_data
 
 logger_epo = logging.getLogger('EPO')
-
-def _get_best_patent_for_data(patents):
-    """ from multiple patents, find the best one that as data we need
-        Like, not using the chinese name of inventors, ...
-    """
-    # not used anymore, unless we fetch multiple patent in a family
-    # for patent in patents:
-    #    has_extended_unicode_char = False
-    #    if patent.inventors:
-    #        for inventor in patent.inventors:
-    #            for charact in inventor:
-    #                if unicodedata.category(charact) == 'Lo':
-    #                    has_extended_unicode_char = True
-    #
-    #        if not has_extended_unicode_char:
-    #            return patent
-
-    # Find a patent that is first EP, then US, then WO
-    patent_priority = ['EP', 'US', 'WO']
-
-    for country in patent_priority:
-        for patent in patents:
-            if patent.epodoc.startswith(country) or patent.country == country:
-                return patent
-
-    # no patent found in this range ? then get the first at least
-    # find any patent that don't start with a T[0-9], they are translations
-
-    for patent in patents:
-        if not (patent.kind and patent.kind[0].upper() == "T"):
-            return patent
-
-    return patents[0]  # at least
 
 def fetch_abstract_from_all_patents(patents):
     """

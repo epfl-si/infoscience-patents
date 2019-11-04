@@ -2,7 +2,6 @@ from datetime import datetime
 import xml.etree.ElementTree as ET
 import xml.dom.minidom
 import logging
-import re
 import unicodedata
 
 from Espacenet.models import EspacenetPatent
@@ -10,6 +9,8 @@ from Espacenet.models import EspacenetPatent
 from .patent_models import Patent, \
                            PatentClassificationWithDefault, \
                            _convert_to_date
+
+from .utils import _get_best_patent_for_data
 
 from .marc_xml_utils import \
     _get_controlfield_element, \
@@ -26,7 +27,6 @@ from .marc_xml_utils import \
 logger_infoscience = logging.getLogger('INFOSCIENCE')
 logger_epo = logging.getLogger('EPO')
 
-patent_regex = r"^(?P<country>\D{2})(?P<number>\d{1,})[\s|-]?(?P<kind>\w\d)?"
 
 class MarcCollection(ET.Element):
     def __init__(self):
@@ -274,26 +274,15 @@ class MarcRecord:
     @property
     def epodoc_for_query(self):
         # find the best epodoc trough the list of patents
-        epodoc_for_query = ""
-        for patent in self.patents:
-            # ignore the one that are of kind "T" (translations)
-            if patent.kind and patent.kind[0].upper() == "T":
-                continue
-
-            # we may have a 'WO2016075599 A1', so try
+        patent = _get_best_patent_for_data(self.patents)
+        if patent:
             epodoc_with_space = patent.epodoc.split(' ')
             if len(epodoc_with_space) > 1:
                 epodoc_for_query = epodoc_with_space[0]
             else:
                 epodoc_for_query = patent.epodoc
 
-            matched = re.match(patent_regex, epodoc_for_query)
-            if matched:
-                # can be a good one, check for special chars
-                if "'" in epodoc_for_query:
-                    continue
-
-                return epodoc_for_query
+            return epodoc_for_query
 
     @property
     def patents(self):

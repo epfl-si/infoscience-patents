@@ -147,7 +147,7 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
         # comparing the length should do the trick, the epodoc don't change everytimes
         if len(patents_families.patents) != len(marc_record.patents):
             # we have a different number of patents, update the marc record
-            logger_infoscience.info("The record need a patent update, doing the update...")
+            logger_infoscience.info("The record need a patent update, doing the update with through patent %s..." % epodoc_for_query)
 
             marc_record.update_patents_from_espacenet(patents_families.patents)
 

@@ -9,9 +9,9 @@ import epo_ops
 
 from log_utils import set_logging_configuration
 
-from Espacenet.builder import EspacenetBuilderClient, _get_best_patent_for_data, fetch_abstract_from_all_patents
+from Espacenet.builder import EspacenetBuilderClient, fetch_abstract_from_all_patents
 
-from Espacenet.marc import MarcRecordBuilder, MarcCollection
+from Espacenet.marc import MarcRecordBuilder, MarcCollection, _get_best_patent_for_data
 from Espacenet.patent_models import Patent
 from Espacenet.builder import EspacenetBuilderClient
 from Espacenet.marc_xml_utils import \
