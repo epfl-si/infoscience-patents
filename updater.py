@@ -96,6 +96,12 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
                 )
             continue
 
+        if marc_record.tagged_done:
+            logger_infoscience.info(
+                "Skipping record %s, the tag 974__b is set" % marc_record.record_id
+                )
+            continue
+
         if len(marc_record.patents) == 0:
             logger_infoscience.info(
                 "Skipping record %s, no patents have been found in it" % marc_record.record_id

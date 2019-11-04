@@ -263,6 +263,15 @@ class MarcRecord:
         subfield_024__2.text = "EPO Family ID"
 
     @property
+    def tagged_done(self):
+        """ we don't want to redo patent with this tag set"""
+        datafield_974 = _datafield(self.marc_record, '974')
+        subfield_974__b = _subfield(datafield_974, 'b')
+
+        if subfield_974__b and subfield_974__b.text:
+            return True
+
+    @property
     def epodoc_for_query(self):
         # find the best epodoc trough the list of patents
         epodoc_for_query = ""
