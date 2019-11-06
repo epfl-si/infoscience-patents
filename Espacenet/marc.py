@@ -424,6 +424,20 @@ class MarcRecord:
         datafield_981__a = _subfield(datafield_981, 'a')
         datafield_981__a.text = "S2"
 
+    @property
+    def TTO_collection(self):
+        return _get_datafield_values(self.marc_record, '999', 'C', '0')
+
+    @TTO_collection.setter
+    def TTO_collection(self, value):
+        subfield_999C0 = _datafield(self.marc_record, '999', 'C', '0')
+        subfield_999C00 = _subfield(subfield_999C0, '0')
+        subfield_999C00.text = '252085'
+        subfield_999C0p = _subfield(subfield_999C0, 'p')
+        subfield_999C0p.text = 'TTO'
+        subfield_999C0x = _subfield(subfield_999C0, 'x')
+        subfield_999C0x.text = 'U10021'
+
     def update_patents_from_espacenet(self, espacenet_patents):
         """
         -* Updating patents *-
