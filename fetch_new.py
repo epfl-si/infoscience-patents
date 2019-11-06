@@ -102,6 +102,7 @@ def fetch_new_infoscience_patents(xml_str, year):
             m_record.S2_collection = True  # use setter default values
             # Set to collection TTO
             m_record.TTO_collection = True  # use setter default values
+            m_record.collection_id = 'PATENT'
 
             new_collection.append(m_record.marc_record)
             new_patents_for_infoscience_found += 1

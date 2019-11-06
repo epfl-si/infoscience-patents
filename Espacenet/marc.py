@@ -318,6 +318,16 @@ class MarcRecord:
         subfield_245__a.text = value
 
     @property
+    def collection_id(self):
+        return _get_datafield_values(self.marc_record, '037').get('a')
+
+    @collection_id.setter
+    def collection_id(self, value):
+        datafield_037 = _datafield(self.marc_record, '037')
+        subfield_037__a = _subfield(datafield_037, 'a')
+        subfield_037__a.text = value
+
+    @property
     def publication_date(self):
         date_as_string = _get_datafield_values(self.marc_record, '260').get('c')
         # date is mainly a year thing
