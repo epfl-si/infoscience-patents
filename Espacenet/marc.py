@@ -95,7 +95,7 @@ class MarcRecordBuilder:
         m_record.marc_record = record
         return m_record
 
-    def from_epo_patents(self, family_id, patents, fulfilled_patent):
+    def from_epo_patents(self, family_id, patents, fulfilled_patent, forced_publication_date=None):
         m_record = MarcRecord()
 
         m_record.marc_record = ET.Element('record')
@@ -109,7 +109,12 @@ class MarcRecordBuilder:
         patent_for_data = fulfilled_patent
 
         self.set_titles(m_record, patent_for_data)
-        m_record.publication_date = patent_for_data.date
+
+        if forced_publication_date:
+            m_record.publication_date = forced_publication_date
+        else:
+            m_record.publication_date = patent_for_data.date
+
         abstract = self.best_abstract(patents)
         if abstract:
             m_record.abstract = abstract

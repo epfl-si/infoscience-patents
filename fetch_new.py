@@ -87,11 +87,12 @@ def fetch_new_infoscience_patents(xml_str, year):
             fulfilled_patent = client.patent(  # Retrieve bibliography data
                 input = epo_ops.models.Docdb(best_patent_to_fetch.number, best_patent_to_fetch.country, best_patent_to_fetch.kind),  # original, docdb, epodoc
             )
-
-            m_record = MarcRecordBuilder().from_epo_patents(family_id=family_id, patents=patents, fulfilled_patent=fulfilled_patent)
             # force date, espacenet should be a right source
             year_date = datetime.strptime(str(year), '%Y')
-            m_record.publication_date = year_date
+            m_record = MarcRecordBuilder().from_epo_patents(family_id=family_id,
+                                                            patents=patents,
+                                                            fulfilled_patent=fulfilled_patent,
+                                                            forced_publication_date=year_date)
             # set abstract if needed
             if not m_record.abstract:
                 new_abstract = fetch_abstract_from_all_patents(patents)
