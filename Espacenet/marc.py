@@ -247,35 +247,6 @@ class MarcRecord:
         raise NotImplementedError("Setting a new recid is not advised")
 
     @property
-    def family_id(self):
-        # EPO family id
-        record_family_id = None
-        sources_data = _get_multifield_values(self.marc_record, '024', '7', '0')
-
-        for source in sources_data:
-            if source.get("2") == 'EPO Family ID':
-                record_family_id = source.get("a")
-
-        return record_family_id
-
-    @family_id.setter
-    def family_id(self, value):
-        datafield_024 = _datafield(self.marc_record, '024', '7', '0')
-        subfield_024__a = _subfield(datafield_024, 'a')
-        subfield_024__a.text = value
-        subfield_024__2 = _subfield(datafield_024, '2')
-        subfield_024__2.text = "EPO Family ID"
-
-    @property
-    def tagged_done(self):
-        """ we don't want to redo patent with this tag set"""
-        datafield_974 = _datafield(self.marc_record, '974')
-        subfield_974__b = _subfield(datafield_974, 'b')
-
-        if subfield_974__b and subfield_974__b.text:
-            return True
-
-    @property
     def epodoc_for_query(self):
         # find the best epodoc trough the list of patents
         patent = _get_best_patent_for_data(self.patents)
@@ -317,6 +288,26 @@ class MarcRecord:
             subfield_013__d.text = patent.date.strftime('%Y%m%d')
 
     @property
+    def family_id(self):
+        # EPO family id
+        record_family_id = None
+        sources_data = _get_multifield_values(self.marc_record, '024', '7', '0')
+
+        for source in sources_data:
+            if source.get("2") == 'EPO Family ID':
+                record_family_id = source.get("a")
+
+        return record_family_id
+
+    @family_id.setter
+    def family_id(self, value):
+        datafield_024 = _datafield(self.marc_record, '024', '7', '0')
+        subfield_024__a = _subfield(datafield_024, 'a')
+        subfield_024__a.text = value
+        subfield_024__2 = _subfield(datafield_024, '2')
+        subfield_024__2.text = "EPO Family ID"
+
+    @property
     def title(self):
         return _get_datafield_values(self.marc_record, '245').get('a')
 
@@ -325,6 +316,46 @@ class MarcRecord:
         datafield_245 = _datafield(self.marc_record, '245')
         subfield_245__a = _subfield(datafield_245, 'a')
         subfield_245__a.text = value
+
+    @property
+    def publication_date(self):
+        date_as_string = _get_datafield_values(self.marc_record, '260').get('c')
+        # date is mainly a year thing
+        return datetime.strptime(date_as_string, "%Y").date()
+
+    @publication_date.setter
+    def publication_date(self, value):
+        datafield_260 = _datafield(self.marc_record, '260')
+        subfield_260__c = _subfield(datafield_260, 'c')
+        subfield_260__c.text = value.strftime('%Y')
+        datafield_269 = _datafield(self.marc_record, '269')
+        subfield_269__a = _subfield(datafield_269, 'a')
+        subfield_269__a.text = value.strftime('%Y')
+
+    @property
+    def content_type(self):
+        return _get_datafield_values(self.marc_record, '336').get('a')
+
+    @content_type.setter
+    def content_type(self, value):
+        datafield_336 = _datafield(self.marc_record, '336')
+        subfield_336__a = _subfield(datafield_336, 'a')
+        subfield_336__a.text = "Patents"
+
+    @property
+    def notes(self):
+        notes_datafields = _get_multifield_values(self.marc_record, '500')
+        notes = []
+
+        for field in notes_datafields:
+            notes.append(field.get('a'))
+
+        return notes
+
+    def add_a_note(self, value):
+        datafield_500 = _datafield(self.marc_record, '500')
+        subfield_500__a = _subfield(datafield_500, 'a')
+        subfield_500__a.text = value
 
     @property
     def abstract(self):
@@ -354,46 +385,6 @@ class MarcRecord:
             subfield_700__a.text = "%s" % author
 
     @property
-    def publication_date(self):
-        date_as_string = _get_datafield_values(self.marc_record, '260').get('c')
-        # date is mainly a year thing
-        return datetime.strptime(date_as_string, "%Y").date()
-
-    @publication_date.setter
-    def publication_date(self, value):
-        datafield_260 = _datafield(self.marc_record, '260')
-        subfield_260__c = _subfield(datafield_260, 'c')
-        subfield_260__c.text = value.strftime('%Y')
-        datafield_269 = _datafield(self.marc_record, '269')
-        subfield_269__a = _subfield(datafield_269, 'a')
-        subfield_269__a.text = value.strftime('%Y')
-
-    @property
-    def notes(self):
-        notes_datafields = _get_multifield_values(self.marc_record, '500')
-        notes = []
-
-        for field in notes_datafields:
-            notes.append(field.get('a'))
-
-        return notes
-
-    def add_a_note(self, value):
-        datafield_500 = _datafield(self.marc_record, '500')
-        subfield_500__a = _subfield(datafield_500, 'a')
-        subfield_500__a.text = value
-
-    @property
-    def content_type(self):
-        return _get_datafield_values(self.marc_record, '336').get('a')
-
-    @content_type.setter
-    def content_type(self, value):
-        datafield_336 = _datafield(self.marc_record, '336')
-        subfield_336__a = _subfield(datafield_336, 'a')
-        subfield_336__a.text = "Patents"
-
-    @property
     def epfl_id(self):
         return _get_datafield_values(self.marc_record, '973').get('a')
 
@@ -402,6 +393,15 @@ class MarcRecord:
         datafield_973 = _datafield(self.marc_record, '973')
         subfield_973__a = _subfield(datafield_973, 'a')
         subfield_973__a.text = "EPFL"
+
+    @property
+    def tagged_done(self):
+        """ we don't want to redo patent with this tag set"""
+        datafield_974 = _datafield(self.marc_record, '974')
+        subfield_974__b = _subfield(datafield_974, 'b')
+
+        if subfield_974__b and subfield_974__b.text:
+            return True
 
     @property
     def doctype(self):
