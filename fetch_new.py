@@ -39,7 +39,7 @@ def fetch_new_infoscience_patents(xml_str, starting_year):
     Load patents inside the xml provided
     and an updated version of it (aka added new patent to existing ones)
     """
-    logger_infoscience.info("Loading provided xml file for an update...")
+    logger_infoscience.info("Loading provided xml file for fetching new patents...")
 
     xml_str = filter_out_namespace(xml_str)
     provided_collection = ET.fromstring(xml_str)
