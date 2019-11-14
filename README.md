@@ -72,7 +72,7 @@ Then,
     - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'`
     - assert you have more than 1'000 records, 1'000 is the limit if you are not logged
     - download the file to your disk
-- import the MarcXML file freshly downloaded with the last command and compare it the provided Espacenet patents for a specific year
-    - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --year 2019`
+- import the MarcXML file freshly downloaded with the last command and compare it the provided Espacenet patents from a specific year
+    - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --starting-year 2015`
 
 - download the produced files found in ./output into the Infoscience bibedit.

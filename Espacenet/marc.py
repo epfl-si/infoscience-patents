@@ -95,7 +95,10 @@ class MarcRecordBuilder:
         m_record.marc_record = record
         return m_record
 
-    def from_epo_patents(self, family_id, patents, fulfilled_patent, forced_publication_date=None):
+    def from_epo_patents(self, family_id, patents, fulfilled_patent, auto_year=False):
+        """
+        Use auto_year when you want to get the year from the earliest patent in the list
+        """
         m_record = MarcRecord()
 
         m_record.marc_record = ET.Element('record')
@@ -110,8 +113,13 @@ class MarcRecordBuilder:
 
         self.set_titles(m_record, patent_for_data)
 
-        if forced_publication_date:
-            m_record.publication_date = forced_publication_date
+        if auto_year:
+            oldest = self.oldest_date(patents)
+            if oldest:
+                m_record.publication_date = oldest
+            else:
+                # fallback to a working solution
+                m_record.publication_date = patent_for_data.date
         else:
             m_record.publication_date = patent_for_data.date
 

@@ -34,7 +34,7 @@ __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
 
 
-def fetch_new_infoscience_patents(xml_str, year):
+def fetch_new_infoscience_patents(xml_str, starting_year):
     """
     Load patents inside the xml provided
     and an updated version of it (aka added new patent to existing ones)
@@ -48,9 +48,9 @@ def fetch_new_infoscience_patents(xml_str, year):
     records = provided_collection.findall('record')
 
     logger_infoscience.info(
-        "Reference xml file as %s records, starting the fetch of new patents for the year %s..." % (
+        "Reference xml file as %s records, starting the fetch of new patents from the year %s..." % (
             len(records),
-            year
+            starting_year
             )
     )
 
@@ -61,7 +61,7 @@ def fetch_new_infoscience_patents(xml_str, year):
 
     client = EspacenetBuilderClient(use_cache=True)
     patents_for_year = client.search(
-        value = 'pa all "Ecole Polytech* Lausanne" and pd=%s' % year,
+        value = 'pa all "Ecole Polytech* Lausanne" and pd>%s' % starting_year,
         )
 
     infoscience_family_patent_list = []
@@ -87,12 +87,10 @@ def fetch_new_infoscience_patents(xml_str, year):
             fulfilled_patent = client.patent(  # Retrieve bibliography data
                 input = epo_ops.models.Docdb(best_patent_to_fetch.number, best_patent_to_fetch.country, best_patent_to_fetch.kind),  # original, docdb, epodoc
             )
-            # force date, espacenet should be a right source
-            year_date = datetime.strptime(str(year), '%Y')
             m_record = MarcRecordBuilder().from_epo_patents(family_id=family_id,
                                                             patents=patents,
                                                             fulfilled_patent=fulfilled_patent,
-                                                            forced_publication_date=year_date)
+                                                            auto_year=True)
             # set abstract if needed
             if not m_record.abstract:
                 new_abstract = fetch_abstract_from_all_patents(patents)
@@ -124,8 +122,8 @@ if __name__ == '__main__':
                         type=argparse.FileType('r'))
 
     parser.add_argument("-y",
-                        "--year",
-                        help="The specific year to compare Espacenet with the infoscience data",
+                        "--starting_year",
+                        help="The starting year to compare Espacenet with the infoscience data",
                         required=True,
                         type=int)
 
@@ -143,8 +141,8 @@ if __name__ == '__main__':
     new_xml_path = os.path.join(
         BASE_DIR,
         "output",
-        "patents-new-%s-%s.xml" % (
-            args.year,
+        "patents-new-from-%s-%s.xml" % (
+            args.starting_year,
             time.strftime("%Y%m%d-%H%M%S")
             )
         )
@@ -153,6 +151,6 @@ if __name__ == '__main__':
 
     is_full_export(export_as_string)
 
-    new_xml_collection = fetch_new_infoscience_patents(export_as_string, args.year)
+    new_xml_collection = fetch_new_infoscience_patents(export_as_string, args.starting_year)
     logger_infoscience.info("Writing the new record(s) in %s" % new_xml_path)
     new_xml_collection.write(new_xml_path)
