@@ -49,7 +49,7 @@ Be warned, you need be logged in Infoscience with advanced right to download the
     - get the lastest infoscience export of patents
         - connect to infoscience.epfl.ch
         - log in with advanced right
-        - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'`
+        - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=980__a%3A%27patent%27`
         - assert you have more than 1'000 records, 1'000 is the limit if you are not logged
         - download the file to your disk
 - import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
@@ -69,7 +69,7 @@ Then,
 - get the lastest infoscience export of all patents
     - connect to infoscience.epfl.ch
     - log in with advanced right
-    - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=collection%3A'patent'`
+    - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=980__a%3A%27patent%27`
     - assert you have more than 1'000 records, 1'000 is the limit if you are not logged
     - download the file to your disk
 - import the MarcXML file freshly downloaded with the last command and compare it the provided Espacenet patents from a specific year
