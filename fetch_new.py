@@ -61,7 +61,7 @@ def fetch_new_infoscience_patents(xml_str, starting_year):
 
     client = EspacenetBuilderClient(use_cache=True)
     patents_for_year = client.search(
-        value = 'pa all "Ecole Polytech* Lausanne" and pd>%s' % starting_year,
+        value = 'pa all "Ecole Polytech* Lausanne" and pd>=%s' % starting_year,
         )
 
     infoscience_family_patent_list = []
