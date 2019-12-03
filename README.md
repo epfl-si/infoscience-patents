@@ -55,9 +55,16 @@ Be warned, you need be logged in Infoscience with advanced right to download the
 - import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
     - `pipenv run python updater.py --infoscience_patents_export path_to_the_saved_export.xml`
 
-- download the produced files found in ./output into the Infoscience bibedit.
+- download the produced file in ./output into Infoscience, using this process :
+    - go in infoscience.epfl.ch
+    - log in with admin rights
+    - click in the menu : Administration->Batch Uploader
+    - Select this option in the inteface :
+        - the xml file generated in ./output
+        - "File type" : XML
+        - "Upload mode" : --replace
 
-#### Advanced use
+#### Advanced use - Range update
 - you can upload only a specific range of the patents list by doing a
     - `pipenv run python updater.py --infoscience_patents_export path_to_the_saved_export.xml --start 0 --end 200`
 
@@ -75,4 +82,11 @@ Then,
 - import the MarcXML file freshly downloaded with the last command and compare it the provided Espacenet patents from a specific year
     - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --starting-year 2015`
 
-- download the produced files found in ./output into the Infoscience bibedit.
+- download the produced file in ./output into Infoscience, using this process :
+    - go in infoscience.epfl.ch
+    - log in with admin rights
+    - click in the menu : Administration->Batch Uploader
+    - Select this option in the inteface :
+        - the xml file generated in ./output
+        - "File type" : XML
+        - "Upload mode" : --insert
