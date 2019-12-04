@@ -27,31 +27,29 @@ For additional information about patents and design choice, take a look at the T
 - Install the needed library
     - `pipenv install --python 3.7`
 
+
+### Test
+You may run some test by doing a :
+- `pipenv run python tests.py --verbose`
+
 ## Usage
 
-Before running any command, set your environnement variable :
+ - Before running any command, set your environnement variable :
 ```
 export EPO_CLIENT_ID=123456
 export EPO_CLIENT_SECRET=123456
 ```
+- You have to provide the MarcXML file from Infoscience to get an update, so now we get the Infoscience database on patents :
+    - connect to infoscience.epfl.ch
+    - log in with advanced right (Be warned, you need be logged in Infoscience with advanced right to download the +1000 patents)
+    - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=980__a%3A%27patent%27`
+    - assert you have more than 1'000 records, 1'000 is the limit if you are not logged
+    - download the file to your disk
 
- ### Test
-
-- `pipenv run python tests.py --verbose`
+The path of the freshly downloaded file will be needed for the two later operations, so keep it in mind.
 
 ### Updating Infoscience patent from a XML export
 
-You have to provide the MarcXML file from Infoscience to get an update.
-
-Be warned, you need be logged in Infoscience with advanced right to download the +1000 patents
-
-- Retrive the patents export
-    - get the lastest infoscience export of patents
-        - connect to infoscience.epfl.ch
-        - log in with advanced right
-        - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=980__a%3A%27patent%27`
-        - assert you have more than 1'000 records, 1'000 is the limit if you are not logged
-        - download the file to your disk
 - import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
     - `pipenv run python updater.py --infoscience_patents_export path_to_the_saved_export.xml`
 
@@ -70,15 +68,6 @@ Be warned, you need be logged in Infoscience with advanced right to download the
 
 ### Fetching for new patents for a specific year
 
-Before fetching new patents, you should launch an update for the year you are trying to fetch, as the updater add the family ID to the patents, and family ID are the reference used for the fetch.
-
-Then,
-- get the lastest infoscience export of all patents
-    - connect to infoscience.epfl.ch
-    - log in with advanced right
-    - go to this address: `https://infoscience.epfl.ch/search?ln=en&rm=&ln=en&sf=&so=d&rg=5000&c=Infoscience&of=xm&p=980__a%3A%27patent%27`
-    - assert you have more than 1'000 records, 1'000 is the limit if you are not logged
-    - download the file to your disk
 - import the MarcXML file freshly downloaded with the last command and compare it the provided Espacenet patents from a specific year
     - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --starting-year 2015`
 
