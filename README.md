@@ -51,7 +51,7 @@ The path of the freshly downloaded file will be needed for the two later operati
 ### Updating Infoscience patent from a XML export
 
 - import the MarcXML file freshly downloaded with the last command and compare it with Espacenet database
-    - `pipenv run python updater.py --infoscience_patents_export path_to_the_saved_export.xml`
+    - `pipenv run python updater.py --infoscience_patents_export path/to/the/saved/export.xml`
 
 - download the produced file in ./output into Infoscience, using this process :
     - go in infoscience.epfl.ch
@@ -64,12 +64,12 @@ The path of the freshly downloaded file will be needed for the two later operati
 
 #### Advanced use - Range update
 - you can upload only a specific range of the patents list by doing a
-    - `pipenv run python updater.py --infoscience_patents_export path_to_the_saved_export.xml --start 0 --end 200`
+    - `pipenv run python updater.py --infoscience_patents_export path/to/the/saved/export.xml --start 0 --end 200`
 
 ### Fetching for new patents for a specific year
 
 - import the MarcXML file freshly downloaded with the last command and compare it the provided Espacenet patents from a specific year
-    - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --starting_year 2015`
+    - `pipenv run python fetch_new.py --infoscience_patents_export path/to/the/saved/export.xml --starting_year 2015`
 
 - download the produced file in ./output into Infoscience, using this process :
     - go in infoscience.epfl.ch
