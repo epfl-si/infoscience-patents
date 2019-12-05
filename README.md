@@ -18,7 +18,7 @@ For additional information about patents and design choice, take a look at the T
     tar -xf Python-3.7.3.tar.xz
     cd Python-3.7.3
     ./configure --enable-optimizations --enable-loadable-sqlite-extensions
-    make -j 4
+    make -j4
     sudo make altinstall
     ```
 
@@ -69,7 +69,7 @@ The path of the freshly downloaded file will be needed for the two later operati
 ### Fetching for new patents for a specific year
 
 - import the MarcXML file freshly downloaded with the last command and compare it the provided Espacenet patents from a specific year
-    - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --starting-year 2015`
+    - `pipenv run python fetch_new.py --infoscience_patents_export path_to_the_saved_export.xml --starting_year 2015`
 
 - download the produced file in ./output into Infoscience, using this process :
     - go in infoscience.epfl.ch
