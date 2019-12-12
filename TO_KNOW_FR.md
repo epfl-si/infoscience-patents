@@ -21,45 +21,59 @@ Lorsque l'on charge une famille de brevet, la date de publication (260__c) est l
 - Chaque nouvelle famille de brevet est transformé en MarcXML ainsi :
 
 ~~~
-  <datafield tag="013" ind1=" " ind2=" ">
-    <subfield code="a">patent number</subfield>
-    <subfield code="c">patent kind</subfield>
-    <subfield code="b">patent country</subfield>
-    <subfield code="d">patent publication date</subfield>
-  </datafield>
-  <datafield tag="024" ind1="7" ind2="0">
-    <subfield code="a">l'id</subfield>
-    <subfield code="2">EPO Family ID</subfield>
-  </datafield>
-  <datafield tag="245" ind1=" " ind2=" ">
-    <subfield code="a">The title</subfield>
-  </datafield>
-  <datafield tag="260" ind1=" " ind2=" ">
-    <subfield code="c">année de publication</subfield>
-  </datafield>
-  <datafield tag="269" ind1=" " ind2=" ">
-    <subfield code="a">année de publication</subfield>
-  </datafield>
-  <datafield tag="336" ind1=" " ind2=" ">
-    <subfield code="a">Patents</subfield>
-  </datafield>
-  <datafield tag="520" ind1=" " ind2=" ">
-    <subfield code="a">English abstract</subfield>
-  </datafield>
-  <datafield tag="700" ind1=" " ind2=" ">
-    <subfield code="a">Inventor name</subfield>
-  </datafield>
-  <datafield tag="909" ind1="C" ind2="0">
-    <subfield code="p">TTO</subfield>
-    <subfield code="0">252085</subfield>
-    <subfield code="x">U10021</subfield>
-  </datafield>
-  <datafield tag="973" ind1=" " ind2=" ">
-    <subfield code="a">EPFL</subfield>
-  </datafield>
-  <datafield tag="980" ind1=" " ind2=" ">
-    <subfield code="a">PATENT</subfield>
-  </datafield>
+  <record>
+    <datafield ind1=" " ind2=" " tag="013">
+      <subfield code="a">US2019336649234</subfield>
+      <subfield code="b">US</subfield>
+      <subfield code="c">A1</subfield>
+      <subfield code="d">20191107</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="013">
+      <subfield code="a">WO2018130949563463</subfield>
+      <subfield code="b">WO</subfield>
+      <subfield code="c">A1</subfield>
+      <subfield code="d">20180719</subfield>
+    </datafield>
+    <datafield ind1="7" ind2="0" tag="024">
+      <subfield code="a">58463685324234234</subfield>
+      <subfield code="2">EPO Family ID</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="245">
+      <subfield code="a">Cryogel scaffolds</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="260">
+      <subfield code="c">2018</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="269">
+      <subfield code="a">2018</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="336">
+      <subfield code="a">Patents</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="700">
+      <subfield code="a">Author, Author</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="973">
+      <subfield code="a">EPFL</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="980">
+      <subfield code="a">PATENT</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="520">
+      <subfield code="a">A method of producing a cryogel.</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="981">
+      <subfield code="a">S2</subfield>
+    </datafield>
+    <datafield ind1="C" ind2="0" tag="999">
+      <subfield code="0">252085</subfield>
+      <subfield code="p">TTO</subfield>
+      <subfield code="x">U10021</subfield>
+    </datafield>
+    <datafield ind1=" " ind2=" " tag="037">
+      <subfield code="a">PATENT</subfield>
+    </datafield>
+  </record>
 ~~~
 
 
