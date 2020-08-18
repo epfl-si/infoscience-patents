@@ -150,13 +150,17 @@ class EspacenetBuilderClient(epo_ops.Client):
         Do a search inside a specific range
         :Keyword Arguments:
             * *input* (``epo_ops.models``) --
+            * *endpoint* = 'biblio'
         """
         logger_epo.debug("Family fetching API with patent %s ..." % kwargs['input'].as_api_input())
 
         # only published patents
         kwargs['reference_type'] = 'publication'  # publication, application, priority
-        # we need biblio info
-        kwargs['endpoint'] = 'biblio'
+
+        # we need biblio info by default
+        if not 'endpoint' in kwargs:
+            kwargs['endpoint'] = 'biblio'
+
         kwargs['constituents'] = []
 
         request = super().family(*args, **kwargs)

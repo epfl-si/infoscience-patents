@@ -141,8 +141,24 @@ def update_infoscience_export(xml_str, range_start=None, range_end=None):
                 input = epo_ops.models.Epodoc(epodoc_for_query)
             )
         except HTTPError as e:
-            logger_epo.warning("Skipping this record, Espacenet has problem with it: %s, error was %s" % (epodoc_for_query, e))
-            continue
+            #TODO:
+            # voir si une attaque sur l'api que du brevet nous retourne les meta données, sinon :
+            # si erreur 413, essayer de parser le contenu sans le /biblio (ce qui devrait nous
+            # fournir la liste des brevets sans les meta données)
+            if e.response.status_code == 413:
+                # retry without pyblio, so get at least some patents
+                try:
+                    logger_epo.info("Retrying this record without biblio information, Espacenet has problem with it: %s, error was %s" % (epodoc_for_query, e))
+                    patents_families = client.family(
+                        input = epo_ops.models.Epodoc(epodoc_for_query),
+                        endpoint = ''
+                    )
+                except HTTPError as e:
+                    logger_epo.warning("Skipping this record, Espacenet has a problem with it: %s, error was %s" % (epodoc_for_query, e))
+                    continue
+            else:
+                logger_epo.warning("Skipping this record, Espacenet has a problem with it: %s, error was %s" % (epodoc_for_query, e))
+                continue
 
         # comparing the length should do the trick, the epodoc don't change everytimes
         if len(patents_families.patents) != len(marc_record.patents):
