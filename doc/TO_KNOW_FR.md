@@ -1,6 +1,6 @@
 # Sources des données
 
-Les données proviennent de [l'Office Européen des Brevets ("EPO")](https://www.epo.org/index_fr.html), grâce au service Espacenet "Open Patent Services" ("OPS") ([documentation technique](http://documents.epo.org/projects/babylon/eponet.nsf/0/F3ECDCC915C9BCD8C1258060003AA712/$File/ops_v3.2_documentation_-_version_1.3.81_en.pdf)).
+Les données proviennent de [l'Office Européen des Brevets ("EPO")](https://www.epo.org/index_fr.html), grâce au service Espacenet "Open Patent Services" ("OPS") ([documentations techniques de l'API](https://www.epo.org/mobile/searching-for-patents/data/web-services/ops.html)).
 
 Afin de respecter les règles de la [charte d'utilisation équitable d'EPO](https://www.epo.org/service-support/ordering/fair-use_fr.html), les données récupéré au travers de ce programme sont mises en cache deux semaines.
 
